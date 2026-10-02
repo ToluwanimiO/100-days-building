@@ -10,7 +10,7 @@ export default function Home() {
   const allProjects = sampleProjects;
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-[#2d5a6e]">
       <Hero projects={allProjects} />
       <ProjectGrid projects={allProjects} />
       <TechShowcase />
