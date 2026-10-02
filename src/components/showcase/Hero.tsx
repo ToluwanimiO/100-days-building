@@ -18,7 +18,7 @@ export default function Hero({ projects }: HeroProps) {
   const floatingProjects = projects.slice(0, 4);
 
   return (
-    <div className="bg-[#2d5a6e] text-neutral-900 min-h-screen sm:p-6 lg:p-10 selection:bg-emerald-300 selection:text-emerald-950">
+    <div className="bg-[#2d5a6e] text-neutral-900 min-h-screen selection:bg-emerald-300 selection:text-emerald-950">
       
       {/* Hero Canvas */}
       <section className="relative w-full max-w-7xl mx-auto bg-[#f8f4e8] rounded-[2.5rem] sm:rounded-[3.5rem] border border-white/20 shadow-2xl overflow-hidden px-6 py-8 sm:px-12 sm:py-12 lg:px-16 lg:py-16 min-h-[92vh] flex flex-col justify-between">
