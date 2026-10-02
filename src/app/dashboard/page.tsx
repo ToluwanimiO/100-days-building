@@ -1,3 +1,5 @@
+'use client';
+
 import { sampleProjects } from '@/lib/sample-data';
 import DashboardLayout from '@/components/dashboard/DashboardLayout';
 import ProjectList from '@/components/dashboard/ProjectList';

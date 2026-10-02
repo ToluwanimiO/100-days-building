@@ -1,3 +1,5 @@
+'use client';
+
 import { ReactNode } from 'react';
 import Link from 'next/link';
 import { Home, PlusCircle, Settings, LogOut } from 'lucide-react';
