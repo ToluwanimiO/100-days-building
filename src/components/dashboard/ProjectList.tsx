@@ -13,7 +13,7 @@ interface ProjectListProps {
   onDelete?: (project: Project) => void;
 }
 
-export default function ProjectList({ projects, onEdit, onDelete }: ProjectListProps) {
+export default function ProjectList({ projects = [], onEdit, onDelete }: ProjectListProps) {
   const sortedProjects = [...projects].sort((a, b) => b.dayNumber - a.dayNumber);
   
   if (projects.length === 0) {
