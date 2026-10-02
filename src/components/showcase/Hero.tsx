@@ -200,7 +200,7 @@ export default function Hero({ projects }: HeroProps) {
         </div>
 
         {/* Hero Bottom Bar */}
-        <div className="relative z-20 pt-6 mt-6 border-t border-black/5 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+        <div className="relative z-20 pt-6 mt-6 border-black/5 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
           <div className="bg-white/70 backdrop-blur-sm rounded-2xl py-3 px-4 border border-black/5 shadow-sm">
             <p className="text-2xl font-black text-neutral-900">{completedDays}</p>
             <p className="text-[11px] font-bold text-neutral-500 uppercase tracking-wider">Builds Done</p>
