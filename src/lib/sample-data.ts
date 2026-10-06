@@ -2,6 +2,158 @@ import { Project } from '@/types';
 
 export const sampleProjects: Project[] = [
   {
+  id: '6',
+  dayNumber: 6,
+  title: 'Spreadsheet to Web App',
+  slug: 'spreadsheet-to-web-app',
+  date: '2026-10-06',
+  shortDescription:
+    'A web app that turns Excel spreadsheets into searchable, browsable web interfaces with cards, filters, and detailed record views.',
+  problem:
+    'Excel spreadsheets can contain useful information but become difficult to browse and search as the number of records grows.',
+  solution:
+    'A simple web app where users can upload an Excel spreadsheet and automatically turn its rows into a searchable card-based interface with filtering and detailed views for individual records.',
+  features: [
+    'Excel file upload',
+    'Automatic spreadsheet parsing',
+    'Card-based data display',
+    'Search across records',
+    'Filter records',
+    'Detailed record views',
+  ],
+  instructions: [
+    {
+      id: '1',
+      title: 'Upload an Excel file',
+      description:
+        'Upload an Excel spreadsheet and let the app parse the data automatically.',
+    },
+    {
+      id: '2',
+      title: 'Browse your data',
+      description:
+        'View each spreadsheet entry as a card instead of navigating through rows and columns.',
+    },
+    {
+      id: '3',
+      title: 'Search and filter',
+      description:
+        'Search across your data, use filters to narrow the results, and click any card to view its full details.',
+    },
+  ],
+  technologies: ['Next JS', 'TypeScript', 'SheetJS'],
+  category: 'Frontend',
+  featured: true,
+  coverImage:
+    'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop',
+  images: [
+    {
+      id: '1',
+      url:
+        'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop',
+      alt: 'Spreadsheet to Web App',
+      isCover: true,
+    },
+  ],
+  links: [
+    {
+       id: '1',
+  label: "Live Demo",   
+  url: "https://excel-browser.netlify.app/",
+  type: 'demo'
+    }
+  ],
+  challenges:
+    'Parsing an Excel file with an unknown structure and dynamically turning its rows and columns into a useful interface without hardcoding the type of data being uploaded.',
+  lessons:
+    'A spreadsheet does not have to remain a spreadsheet. Once the data is parsed and structured, the same information can be presented in a completely different interface that makes it easier to browse and interact with.',
+  buildNotes:
+    'This build was directly inspired by yesterday’s project. While working with the Excel dataset for yesterday’s app, I found the process of parsing the spreadsheet and turning its data into something the app could use surprisingly interesting. I decided to build a small tool around that process.',
+  whoIsItFor:
+    'Anyone who has useful information stored in an Excel spreadsheet and wants a simpler way to browse, search, filter, and view the individual records.',
+  inspiration:
+    'Yesterday’s build required me to parse an Excel dataset because I could not find an API with the country and religious statistics I needed. That small technical challenge became the inspiration for today’s project.',
+  createdAt: '2026-10-06T09:00:00Z',
+  updatedAt: '2026-10-06T19:00:00Z',
+  publishedAt: '2026-10-06T19:00:00Z',
+},
+  {
+  id: '5',
+  dayNumber: 5,
+  title: 'Pray for the Nations',
+  slug: 'pray-for-the-nations',
+  date: '2026-10-05',
+  shortDescription:
+    'An interactive tool for exploring countries, learning about their people and religious makeup, and being inspired to pray for them.',
+  problem:
+    'It can be difficult to intentionally learn about different countries and the people who live there, especially when trying to understand their religious makeup and use that information to pray for the nations.',
+  solution:
+    'An interactive web app that lets users explore countries around the world, view information about their population and religious makeup, and use what they learn as a starting point for praying for that nation.',
+  features: [
+    'Explore countries around the world',
+    'Country information',
+    'Religious makeup statistics',
+    'Search and browse countries',
+    'Interactive country views',
+    'Prayer-focused exploration',
+  ],
+  instructions: [
+    {
+      id: '1',
+      title: 'Explore a country',
+      description:
+        'Browse or select a country to learn more about its people and religious makeup.',
+    },
+    {
+      id: '2',
+      title: 'Learn about the country',
+      description:
+        'View country information and religious statistics to better understand the people who live there.',
+    },
+    {
+      id: '3',
+      title: 'Pray for the nation',
+      description:
+        'Use what you learn as a starting point to intentionally pray for the people and needs of that country.',
+    },
+  ],
+  technologies: ['Next JS', 'TypeScript'],
+  category: 'Frontend',
+  featured: true,
+  coverImage:
+    'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=1200&h=800&fit=crop',
+  images: [
+    {
+      id: '1',
+      url:
+        'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=1200&h=800&fit=crop',
+      alt: 'Pray for the Nations',
+      isCover: true,
+    },
+  ],
+    links: [
+    {
+       id: '2',
+  label: "Live Demo",   
+  url: "https://pray-for-the-nations.netlify.app/",
+  type: 'demo'
+    }
+  ],
+  challenges:
+    'Finding a suitable source for the religious statistics and parsing the Excel dataset so the information could be transformed into structured data that the application could display.',
+  lessons:
+    'Not every useful dataset comes from an API. Sometimes working with a raw dataset means figuring out how to parse, structure, and transform the data yourself before an application can use it.',
+  buildNotes:
+    'This build started with a simple challenge: I wanted country data that included religious statistics, but I could not find an API with exactly what I needed. I ended up using a Pew Research Center dataset in an Excel file and had to parse the spreadsheet data for the app.',
+  whoIsItFor:
+    'Anyone who wants to explore countries around the world, learn about their people and religious makeup, and be intentional about praying for the nations.',
+  inspiration:
+    'A challenge from my pastor to adopt a nation and intentionally pray for them, which made me want to create a simple way to explore countries and learn more about the people I was praying for.',
+  createdAt: '2026-10-05T09:00:00Z',
+  updatedAt: '2026-10-05T18:00:00Z',
+  publishedAt: '2026-10-05T18:00:00Z',
+},
+  {
     id: '4',
     dayNumber: 4,
     title: '100 Days of Building Log',

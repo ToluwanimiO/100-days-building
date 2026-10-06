@@ -5,13 +5,13 @@ import { ExternalLink } from 'lucide-react';
 
 export default function TechShowcase() {
   const technologies = [
-    { name: 'Next.js 15', category: 'frontend', icon: Globe, count: '1 build' },
-    { name: 'Tailwind CSS', category: 'frontend', icon: Layers, count: '1 build' },
+    { name: 'Next.js 15', category: 'frontend', icon: Globe, count: '2 builds' },
+    { name: 'Tailwind CSS', category: 'frontend', icon: Layers, count: '3 builds' },
     { name: 'CSS', category: 'frontend', icon: Layers, count: '3 builds' },
-    { name: 'React Native', category: 'mobile', icon: Layers, count: '3 builds' },
-    { name: 'Framer Motion', category: 'frontend', icon: Sparkles, count: '1 build' },
+    { name: 'React Native', category: 'mobile', icon: Layers, count: '2 builds' },
+    { name: 'Framer Motion', category: 'frontend', icon: Sparkles, count: '3 builds' },
     { name: 'Google Script', category: 'ai', icon: Cpu, count: '1 build' },
-    { name: 'TypeScript', category: 'tools', icon: Code2, count: '3 builds' }
+    { name: 'TypeScript', category: 'tools', icon: Code2, count: '5 builds' }
   ];
 
   return (
