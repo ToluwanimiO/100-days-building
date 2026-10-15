@@ -2,6 +2,113 @@ import { Project } from "@/types";
 
 export const sampleProjects: Project[] = [
   {
+  id: "13",
+  dayNumber: 13,
+  title: "Vision 52",
+  slug: "vision-52",
+  date: "2026-10-12",
+  shortDescription:
+    "A faith-centered PWA that helps Christians be more intentional about evangelism, prayer, and following up with people they meet.",
+  problem:
+    "It can be difficult to stay intentional about evangelism and caring for people beyond the initial conversation. Remembering the people we meet, their prayer points, and when to follow up can become challenging without a simple way to keep track of them.",
+  solution:
+    "A web app that helps Christians organise the people they meet, record responses to Gospel conversations, save prayer points, create prayer and follow-up lists, and plan regular evangelism sessions.",
+  features: [
+    "User authentication and personalised accounts",
+    "Dashboard with an overview of people added and recorded Gospel responses",
+    "Set and edit a recurring evangelism schedule",
+    "Add evangelism sessions to Google Calendar",
+    "Create and manage records of people met",
+    "Record Gospel responses, including giving one's life to Christ and rededication",
+    "Save prayer points, locations, and additional notes",
+    "Organise people into Prayer List, Follow-up List, and custom lists",
+    "Create and manage custom lists",
+    "Installable Progressive Web App (PWA)",
+  ],
+  instructions: [
+    {
+      id: "1",
+      title: "Create an account",
+      description:
+        "Sign up to create your personal Vision 52 account. Your people records and lists are associated with your account.",
+    },
+    {
+      id: "2",
+      title: "Set your evangelism schedule",
+      description:
+        "Choose the day, time, and duration for your regular evangelism sessions. You can add a session to Google Calendar to help you remember to make time for it.",
+    },
+    {
+      id: "3",
+      title: "Add the people you meet",
+      description:
+        "Create a record for someone you meet during evangelism. Save their name or preferred identifier, the date you met, their Gospel response, and any relevant details or prayer points.",
+    },
+    {
+      id: "4",
+      title: "Organise your people",
+      description:
+        "Add people to your Prayer List, Follow-up List, or custom lists so you can remember to pray for them and reconnect with them intentionally.",
+    },
+    {
+      id: "5",
+      title: "Keep taking the next step",
+      description:
+        "Return to your dashboard to see the people you've added and your next scheduled evangelism session. Use your lists to stay intentional about prayer and follow-up.",
+    },
+    {
+      id: "6",
+      title: "Install the app (optional)",
+      description:
+        "Vision 52 can be installed as a PWA from a supported browser, allowing you to add it to your device's home screen and access it like an app without an app store.",
+    },
+  ],
+  technologies: [
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "Vite",
+    "Supabase",
+    "PostgreSQL",
+    "Supabase Auth",
+    "Lucide React",
+    "vite-plugin-pwa",
+    "Google Calendar Event Links",
+  ],
+  category: "Frontend",
+  featured: true,
+  coverImage: "https://images.unsplash.com/photo-1758502033995-e52a218738ee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+  images: [
+    {
+      id: "1",
+      url: "https://images.unsplash.com/photo-1758502033995-e52a218738ee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+      alt: "Vision 52 dashboard",
+      isCover: true,
+    },
+  ],
+  links: [
+    {
+      id: "1",
+      label: "Live Demo",
+      url: "http://vision-52.netlify.app/",
+      type: "demo",
+    },
+  ],
+  challenges:
+    "Designing a simple way to manage people and their relationships with multiple lists while keeping the data associated with the correct user. Another consideration was integrating Google Calendar without requiring OAuth or Google Calendar API access. Calendar links can prefill events, but users still need to save the events and configure recurrence or notifications themselves.",
+  lessons:
+    "I was reminded that building a useful solution involves more than writing code. I spent time thinking through the user flow, deciding what information to capture, and considering how the different features should work together. I also worked with Supabase for authentication and database operations, including organising related records across people, lists, and list memberships.",
+  buildNotes:
+    "I knew what I wanted to build fairly early, but the desire to make everything perfect made it difficult to start coding. I had to remind myself that it is okay to ship something that still needs improvement. Vision 52 grew from my desire to make it easier to be intentional about sharing the Gospel, praying for people, and following up after conversations.",
+  whoIsItFor:
+    "Christians, evangelism teams, and individuals who want a more intentional way to organise the people they meet, remember prayer points, plan evangelism sessions, and follow up with people.",
+  inspiration:
+    "The idea came from wanting to be more intentional about evangelism and recognising that sharing the Gospel is not the end of caring for someone. Prayer, remembering people, and following up matter too.",
+  createdAt: "2026-10-12T09:00:00Z",
+  updatedAt: "2026-10-12T21:00:00Z",
+  publishedAt: "2026-10-12T21:00:00Z",
+},
+  {
     id: "7",
     dayNumber: 7,
     title: "TimeTrail",
