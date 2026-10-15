@@ -63,7 +63,7 @@ export default function ProjectGrid({ projects }: ProjectGridProps) {
       {/* Project Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <AnimatePresence mode="popLayout">
-          {filteredProjects.slice(0, 6).map((project, idx) => (
+          {filteredProjects.map((project, idx) => (
             <motion.div
               key={project.id || idx}
               layout

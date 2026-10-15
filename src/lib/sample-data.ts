@@ -108,6 +108,234 @@ export const sampleProjects: Project[] = [
   updatedAt: "2026-10-12T21:00:00Z",
   publishedAt: "2026-10-12T21:00:00Z",
 },
+
+{
+  id: "10",
+  dayNumber: 10,
+  title: "Nourish",
+  slug: "nourish",
+  date: "2026-10-13",
+  shortDescription:
+    "A food discovery web app that helps users explore recipes, search by dish or ingredient, and find inspiration when they don't know what to cook.",
+  problem:
+    "Deciding what to cook can be difficult when you have no particular meal in mind. Finding inspiration across a large collection of recipes can involve endless scrolling, making it harder to discover something new to try.",
+  solution:
+    "A food discovery web app that allows users to browse a large recipe collection, search for dishes and ingredients, explore recipe details, and discover a random meal when they need inspiration.",
+  features: [
+    "Browse a collection of over 13,000 recipes",
+    "Search recipes by dish name or ingredient",
+    "Filter recipes to show only those with available photos",
+    "View recipe cards with food images and titles",
+    "Open individual recipes to view ingredients and cooking instructions",
+    "Surprise Me feature for discovering a random recipe",
+    "Paginated recipe gallery for browsing large datasets",
+  ],
+  instructions: [
+    {
+      id: "1",
+      title: "Explore the collection",
+      description:
+        "Open Nourish to browse featured recipes and discover meal ideas from the recipe collection.",
+    },
+    {
+      id: "2",
+      title: "Search for something specific",
+      description:
+        "Enter a dish name or ingredient to find recipes that match what you have in mind.",
+    },
+    {
+      id: "3",
+      title: "Browse and filter recipes",
+      description:
+        "Explore the recipe gallery, sort the results, and filter for recipes with available photos.",
+    },
+    {
+      id: "4",
+      title: "View a recipe",
+      description:
+        "Select a recipe to see its ingredients and cooking instructions before deciding what to make.",
+    },
+    {
+      id: "5",
+      title: "Let Nourish surprise you",
+      description:
+        "Use the Surprise Me feature when you want to discover a meal but don't know what to cook.",
+    },
+  ],
+  technologies: [
+    "Python",
+    "Pandas",
+    "Streamlit",
+    "CSV Data Processing",
+    "Git",
+    "GitHub",
+    "Streamlit Community Cloud",
+  ],
+  category: "Frontend",
+  featured: true,
+  coverImage: "https://images.unsplash.com/photo-1767277672167-18105701959b?q=80&w=388&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+  images: [],
+  links: [
+    {
+      id: "1",
+      label: "Live Demo",
+      url: "https://wellness-recommender.streamlit.app/",
+      type: "demo",
+    },
+    {
+      id: "2",
+      label: "Source Code",
+      url: "https://github.com/ToluwanimiO/wellness-recommender",
+      type: "github",
+    },
+  ],
+  challenges:
+    "The build evolved from an initial wellness-focused food recommendation system into a recipe discovery app. Working with a dataset of over 13,000 recipes introduced data preparation and image-matching challenges. Another challenge was debugging Streamlit's rerun behaviour, which caused randomly selected recipes to change during interactions and interfered with recipe navigation. Preparing the app for deployment also required ensuring that local image paths worked in the cloud environment.",
+  lessons:
+    "I learned more about processing larger datasets with Pandas, matching recipe records to image files, building interactive interfaces with Streamlit, and managing application state across reruns. I also learned that file paths that work on a local Windows machine may need adjustment when deploying to a Linux-based environment.",
+  buildNotes:
+    "I started the day building a wellness-oriented recommendation system that matched food ingredients to nutritional goals. However, I wanted to work with a larger dataset and reconsidered the direction of the project. I pivoted to Nourish, using a dataset of over 13,000 recipes to build a more visual food discovery experience. The day involved changing direction, processing data, designing the interface, debugging navigation, and working towards deployment. The result was not perfect, but the process reinforced the importance of learning through consistent building rather than waiting for the perfect idea.",
+  whoIsItFor:
+    "Anyone looking for meal inspiration, home cooks who want to discover new recipes, and people who need a simple way to browse dishes by name or ingredient.",
+  inspiration:
+    "The idea evolved from an interest in food recommendation systems and nutritional wellness. Working with a larger recipe dataset led me to focus on a more general problem: helping people discover what to cook when they don't know where to start.",
+  createdAt: "2026-10-13T09:00:00Z",
+  updatedAt: "2026-10-13T21:00:00Z",
+  publishedAt: "2026-10-13T21:00:00Z",
+},
+
+{
+  id: "9",
+  dayNumber: 9,
+  title: "Open When Letters",
+  slug: "open-when-letters",
+  date: "2026-10-10",
+  shortDescription:
+    "A web app for creating personalized 'open when' letters for yourself or loved ones and sharing them through unique links.",
+  problem:
+    "Sometimes, people need a little reminder that they are loved, especially when they feel sad, lonely, or miss someone. Traditional letters are meaningful, but they are not always easy to create, personalize, and share digitally.",
+  solution:
+    "A web app that lets users write personalized letters for specific moments, customize their appearance, and share them through unique links. The MVP keeps the experience simple, with no sign-up or login required.",
+  features: [
+    "Create personalized 'open when' letters for yourself or others",
+    "Customize the appearance of letters",
+    "Save letters to a personal collection",
+    "Generate unique shareable links for individual letters",
+    "Access shared letters through their links without creating an account",
+    "Responsive interface for mobile and desktop devices",
+  ],
+  instructions: [
+    {
+      id: "1",
+      title: "Create a letter",
+      description:
+        "Write a message for a particular moment, such as when someone feels sad, misses you, or needs encouragement.",
+    },
+    {
+      id: "2",
+      title: "Personalize your letter",
+      description:
+        "Customize the appearance to make your letter feel more personal and meaningful.",
+    },
+    {
+      id: "3",
+      title: "Save your letter",
+      description:
+        "Save your letter and keep track of your created letters in your collection. Your collection is tied to the browser you created it in.",
+    },
+    {
+      id: "4",
+      title: "Share it with someone",
+      description:
+        "Copy the unique link for your letter and send it to the intended recipient so they can open and read it.",
+    },
+  ],
+  technologies: [
+    "Next.js",
+    "TypeScript",
+    "Supabase",
+    "PostgreSQL",
+    "Token-Based Access",
+    "Responsive Web Design",
+  ],
+  category: "Frontend",
+  featured: false,
+  coverImage: "https://images.unsplash.com/photo-1567473030492-533b30c5494c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+  images: [],
+  links: [
+    {
+        id: "1",
+        label: "Live Demo",
+        url: "https://open-whenletters.netlify.app/",
+        type: "demo",
+      }
+  ],
+  challenges:
+    "One interesting challenge was managing letter ownership and sharing without traditional user accounts. I needed a way to associate letters with their creators while allowing recipients to access individual letters through unique links. Another consideration was keeping the MVP simple without introducing a full authentication system.",
+  lessons:
+    "I learned more about implementing token-based access and designing a simple sharing experience without traditional user accounts. I was also reminded that building an MVP involves making deliberate trade-offs: delivering the core experience first while being clear about the limitations that remain.",
+  buildNotes:
+    "This MVP was built with Next.js, TypeScript, and Supabase. It does not require sign-up or login, but the letter collection is tied to the browser used to create it. Letters are text-only, cannot be edited or deleted after saving, and do not support scheduled delivery or email notifications. Users need to share their letter links themselves.",
+  whoIsItFor:
+    "People who want to send thoughtful, personalized messages to friends, family, or themselves for specific moments when encouragement, comfort, or a reminder of love might be needed.",
+  inspiration:
+    "The idea came from the concept of 'open when' letters: messages written for someone to read at a particular moment. I wanted to explore how to bring that thoughtful, sentimental experience into a simple web app that makes creating and sharing these letters easier.",
+  createdAt: "2026-10-10T09:00:00Z",
+  updatedAt: "2026-10-10T21:00:00Z",
+  publishedAt: "2026-10-10T21:00:00Z",
+},
+
+{
+  id: "8",
+  dayNumber: 8,
+  title: "Church Website",
+  slug: "church-website",
+  date: "2026-10-09",
+  shortDescription:
+    "A website for my church, designed to communicate its identity, share its mission, and make information about the ministry accessible online.",
+  problem:
+    "Churches need an accessible online presence where people can learn about the ministry, understand its mission, find relevant information, and discover ways to connect with and support the work of the church.",
+  solution:
+    "A church website that brings together information about the ministry, its mission, and opportunities to connect and give. The first iteration focuses on presenting the church's identity and making important information accessible through a welcoming digital experience.",
+  features: [
+    "Church landing page with a welcoming introduction",
+    "Sections communicating the church's identity, mission, and vision",
+    "Visual storytelling using shapes, colors, and design elements",
+    "Information about the ministry and its work",
+    "Responsive layout for different screen sizes",
+  ],
+  instructions: [
+    {
+      id: "1",
+      title: "Not available yet",
+      description:"The website is still in development and has not been publicly deployed. It will be shared once it is ready for public access.",
+    }
+  ],
+  technologies: [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Responsive Web Design",
+  ],
+  category: "Frontend",
+  featured: false,
+  coverImage: "https://images.unsplash.com/photo-1515162305285-0293e4767cc2?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+  images: [],
+  links: [],
+  challenges:
+    "Turning the church's identity and needs into a clear, welcoming digital experience while making design decisions that communicate its mission effectively. Another consideration was that the website needed to go through the church's approval process before it could be deployed publicly.",
+  lessons:
+    "I was reminded that building a solution involves more than writing code. Understanding the organisation, communicating its message, and deciding how information should be presented are important parts of the process. I also got to think about how design can make a website feel welcoming while helping visitors find what they need.",
+  buildNotes:
+    "This was the first iteration of a website for my church. It is not publicly deployed yet because it needs to go through the approval process and may require further refinement. Even though there is no live link to share yet, it was an opportunity to work on a real-world project with an actual organisation and a genuine need.",
+  whoIsItFor:
+    "Churches and faith-based organisations that want to communicate their identity, share their mission, provide useful information, and establish an accessible online presence.",
+  inspiration:
+    "The project came from the need for my church to have a website. I wanted to create a digital space that communicates the church's identity and makes information about the ministry accessible to people online.",
+  createdAt: "2026-10-09T09:00:00Z",
+  updatedAt: "2026-10-09T21:00:00Z",
+  publishedAt: "2026-10-09T21:00:00Z",
+},
   {
     id: "7",
     dayNumber: 7,
