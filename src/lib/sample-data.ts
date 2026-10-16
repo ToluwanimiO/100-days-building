@@ -2,340 +2,549 @@ import { Project } from "@/types";
 
 export const sampleProjects: Project[] = [
   {
-  id: "13",
-  dayNumber: 13,
-  title: "Vision 52",
-  slug: "vision-52",
-  date: "2026-10-12",
+    id: "14",
+    dayNumber: 14,
+    title: "TimeTrail Update",
+    slug: "timetrail-floating-timer",
+    date: "2026-10-16",
+    shortDescription:
+      "An update to TimeTrail that makes it easier to keep track of time with a floating desktop timer and mobile notifications.",
+    problem:
+      "When tracking time spent on an activity, it is easy to forget to pause the timer when switching tasks or leaving the app. Having to return to the main app just to check or pause a timer adds unnecessary friction.",
+    solution:
+      "An update to TimeTrail that lets desktop users keep an active timer visible in a floating Picture-in-Picture window and gives mobile PWA users notifications they can tap to return to their active timer.",
+    features: [
+      "Floating desktop timer using Picture-in-Picture",
+      "Keep the timer visible while switching tabs or windows",
+      "Pause an active timer from the floating window",
+      "Notifications on mobile app when a timer starts",
+      "Return to the active timer by tapping a notification",
+      "Pause an active session from the main timer screen",
+    ],
+    instructions: [
+      {
+        id: "1",
+        title: "Open TimeTrail",
+        description:
+          "Visit the TimeTrail app and open an activity you want to track.",
+      },
+      {
+        id: "2",
+        title: "Start a timer",
+        description:
+          "Start tracking your activity. On mobile, TimeTrail sends a notification to help you return to your active timer.",
+      },
+      {
+        id: "3",
+        title: "Use the floating timer on desktop",
+        description:
+          "Open the Picture-in-Picture timer to keep your timer visible while you switch tabs or work in other windows.",
+      },
+      {
+        id: "4",
+        title: "Pause your session",
+        description:
+          "On desktop, pause directly from the floating timer. On mobile, tap the notification to return to the active timer and pause your session.",
+      },
+    ],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "vite-plugin-pwa",
+      "Picture-in-Picture API",
+      "Service Workers",
+      "Notifications API",
+    ],
+    category: "Frontend",
+    featured: true,
+    coverImage:
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=800&fit=crop",
+    images: [
+      {
+        id: "1",
+        url: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=800&fit=crop",
+        alt: "Desktop workspace representing the TimeTrail floating timer update",
+        isCover: true,
+      },
+    ],
+    links: [
+      {
+        id: "1",
+        label: "Live Demo",
+        url: "https://time-trails.netlify.app/",
+        type: "demo",
+      },
+    ],
+    challenges:
+      "Finding ways to make the active timer accessible outside the main app while working within the capabilities of web technologies. Desktop Picture-in-Picture provides a floating timer experience, while mobile PWA notifications offer a way to return to the active timer without providing the same floating-window functionality as native apps.",
+    lessons:
+      "This update helped me better understand the capabilities and limitations of Progressive Web Apps. I explored Picture-in-Picture for a floating desktop timer and learned more about notifications, service workers, and the differences between what web apps and native apps can do in the background.",
+    buildNotes:
+      "This update was inspired by feedback from someone using TimeTrail who mentioned sometimes forgetting to pause a timer after starting an activity. I wanted to make the timer easier to access without requiring users to return to the main app every time.",
+    whoIsItFor:
+      "TimeTrail users who want to keep track of their activities while switching between apps, browser tabs, or other tasks.",
+    inspiration:
+      "Feedback from a TimeTrail user prompted me to explore ways to make the timer more accessible outside the main app and reduce the friction involved in pausing a session.",
+    createdAt: "2026-10-16T09:00:00Z",
+    updatedAt: "2026-10-16T21:00:00Z",
+    publishedAt: "2026-10-16T21:00:00Z",
+  },
+  {
+    id: "13",
+    dayNumber: 13,
+    title: "Vision 52",
+    slug: "vision-52",
+    date: "2026-10-12",
+    shortDescription:
+      "A faith-centered PWA that helps Christians be more intentional about evangelism, prayer, and following up with people they meet.",
+    problem:
+      "It can be difficult to stay intentional about evangelism and caring for people beyond the initial conversation. Remembering the people we meet, their prayer points, and when to follow up can become challenging without a simple way to keep track of them.",
+    solution:
+      "A web app that helps Christians organise the people they meet, record responses to Gospel conversations, save prayer points, create prayer and follow-up lists, and plan regular evangelism sessions.",
+    features: [
+      "User authentication and personalised accounts",
+      "Dashboard with an overview of people added and recorded Gospel responses",
+      "Set and edit a recurring evangelism schedule",
+      "Add evangelism sessions to Google Calendar",
+      "Create and manage records of people met",
+      "Record Gospel responses, including giving one's life to Christ and rededication",
+      "Save prayer points, locations, and additional notes",
+      "Organise people into Prayer List, Follow-up List, and custom lists",
+      "Create and manage custom lists",
+      "Installable Progressive Web App (PWA)",
+    ],
+    instructions: [
+      {
+        id: "1",
+        title: "Create an account",
+        description:
+          "Sign up to create your personal Vision 52 account. Your people records and lists are associated with your account.",
+      },
+      {
+        id: "2",
+        title: "Set your evangelism schedule",
+        description:
+          "Choose the day, time, and duration for your regular evangelism sessions. You can add a session to Google Calendar to help you remember to make time for it.",
+      },
+      {
+        id: "3",
+        title: "Add the people you meet",
+        description:
+          "Create a record for someone you meet during evangelism. Save their name or preferred identifier, the date you met, their Gospel response, and any relevant details or prayer points.",
+      },
+      {
+        id: "4",
+        title: "Organise your people",
+        description:
+          "Add people to your Prayer List, Follow-up List, or custom lists so you can remember to pray for them and reconnect with them intentionally.",
+      },
+      {
+        id: "5",
+        title: "Keep taking the next step",
+        description:
+          "Return to your dashboard to see the people you've added and your next scheduled evangelism session. Use your lists to stay intentional about prayer and follow-up.",
+      },
+      {
+        id: "6",
+        title: "Install the app (optional)",
+        description:
+          "Vision 52 can be installed as a PWA from a supported browser, allowing you to add it to your device's home screen and access it like an app without an app store.",
+      },
+    ],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Vite",
+      "Supabase",
+      "PostgreSQL",
+      "Supabase Auth",
+      "Lucide React",
+      "vite-plugin-pwa",
+      "Google Calendar Event Links",
+    ],
+    category: "Frontend",
+    featured: true,
+    coverImage:
+      "https://images.unsplash.com/photo-1758502033995-e52a218738ee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+    images: [
+      {
+        id: "1",
+        url: "https://images.unsplash.com/photo-1758502033995-e52a218738ee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+        alt: "Vision 52 dashboard",
+        isCover: true,
+      },
+    ],
+    links: [
+      {
+        id: "1",
+        label: "Live Demo",
+        url: "http://vision-52.netlify.app/",
+        type: "demo",
+      },
+    ],
+    challenges:
+      "Designing a simple way to manage people and their relationships with multiple lists while keeping the data associated with the correct user. Another consideration was integrating Google Calendar without requiring OAuth or Google Calendar API access. Calendar links can prefill events, but users still need to save the events and configure recurrence or notifications themselves.",
+    lessons:
+      "I was reminded that building a useful solution involves more than writing code. I spent time thinking through the user flow, deciding what information to capture, and considering how the different features should work together. I also worked with Supabase for authentication and database operations, including organising related records across people, lists, and list memberships.",
+    buildNotes:
+      "I knew what I wanted to build fairly early, but the desire to make everything perfect made it difficult to start coding. I had to remind myself that it is okay to ship something that still needs improvement. Vision 52 grew from my desire to make it easier to be intentional about sharing the Gospel, praying for people, and following up after conversations.",
+    whoIsItFor:
+      "Christians, evangelism teams, and individuals who want a more intentional way to organise the people they meet, remember prayer points, plan evangelism sessions, and follow up with people.",
+    inspiration:
+      "The idea came from wanting to be more intentional about evangelism and recognising that sharing the Gospel is not the end of caring for someone. Prayer, remembering people, and following up matter too.",
+    createdAt: "2026-10-12T09:00:00Z",
+    updatedAt: "2026-10-12T21:00:00Z",
+    publishedAt: "2026-10-12T21:00:00Z",
+  },
+  {
+  id: "12",
+  dayNumber: 12,
+  title: "From Idea to Prototype",
+  slug: "idea-to-prototype",
+  date: "2026-10-16",
   shortDescription:
-    "A faith-centered PWA that helps Christians be more intentional about evangelism, prayer, and following up with people they meet.",
+    "A product discovery and prototyping session focused on understanding a problem, exploring possible solutions, and thinking through the user experience before writing code.",
   problem:
-    "It can be difficult to stay intentional about evangelism and caring for people beyond the initial conversation. Remembering the people we meet, their prayer points, and when to follow up can become challenging without a simple way to keep track of them.",
+    "Jumping straight into coding without fully understanding a problem or considering how people will interact with a solution can lead to unnecessary complexity and products that do not adequately address users' needs.",
   solution:
-    "A web app that helps Christians organise the people they meet, record responses to Gospel conversations, save prayer points, create prayer and follow-up lists, and plan regular evangelism sessions.",
+    "Dedicated time to brainstorming, exploring possible approaches, mapping out the user flow, and prototyping ideas before committing to implementation.",
   features: [
-    "User authentication and personalised accounts",
-    "Dashboard with an overview of people added and recorded Gospel responses",
-    "Set and edit a recurring evangelism schedule",
-    "Add evangelism sessions to Google Calendar",
-    "Create and manage records of people met",
-    "Record Gospel responses, including giving one's life to Christ and rededication",
-    "Save prayer points, locations, and additional notes",
-    "Organise people into Prayer List, Follow-up List, and custom lists",
-    "Create and manage custom lists",
-    "Installable Progressive Web App (PWA)",
+    "Brainstorming and exploring possible solutions",
+    "Thinking through the problem before implementation",
+    "Mapping out the intended user flow",
+    "Prototyping to explore and communicate ideas",
+    "Evaluating the user experience before writing code",
   ],
-  instructions: [
-    {
-      id: "1",
-      title: "Create an account",
-      description:
-        "Sign up to create your personal Vision 52 account. Your people records and lists are associated with your account.",
-    },
-    {
-      id: "2",
-      title: "Set your evangelism schedule",
-      description:
-        "Choose the day, time, and duration for your regular evangelism sessions. You can add a session to Google Calendar to help you remember to make time for it.",
-    },
-    {
-      id: "3",
-      title: "Add the people you meet",
-      description:
-        "Create a record for someone you meet during evangelism. Save their name or preferred identifier, the date you met, their Gospel response, and any relevant details or prayer points.",
-    },
-    {
-      id: "4",
-      title: "Organise your people",
-      description:
-        "Add people to your Prayer List, Follow-up List, or custom lists so you can remember to pray for them and reconnect with them intentionally.",
-    },
-    {
-      id: "5",
-      title: "Keep taking the next step",
-      description:
-        "Return to your dashboard to see the people you've added and your next scheduled evangelism session. Use your lists to stay intentional about prayer and follow-up.",
-    },
-    {
-      id: "6",
-      title: "Install the app (optional)",
-      description:
-        "Vision 52 can be installed as a PWA from a supported browser, allowing you to add it to your device's home screen and access it like an app without an app store.",
-    },
-  ],
-  technologies: [
-    "React",
-    "TypeScript",
-    "Tailwind CSS",
-    "Vite",
-    "Supabase",
-    "PostgreSQL",
-    "Supabase Auth",
-    "Lucide React",
-    "vite-plugin-pwa",
-    "Google Calendar Event Links",
-  ],
-  category: "Frontend",
-  featured: true,
-  coverImage: "https://images.unsplash.com/photo-1758502033995-e52a218738ee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
-  images: [
-    {
-      id: "1",
-      url: "https://images.unsplash.com/photo-1758502033995-e52a218738ee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
-      alt: "Vision 52 dashboard",
-      isCover: true,
-    },
-  ],
-  links: [
-    {
-      id: "1",
-      label: "Live Demo",
-      url: "http://vision-52.netlify.app/",
-      type: "demo",
-    },
-  ],
-  challenges:
-    "Designing a simple way to manage people and their relationships with multiple lists while keeping the data associated with the correct user. Another consideration was integrating Google Calendar without requiring OAuth or Google Calendar API access. Calendar links can prefill events, but users still need to save the events and configure recurrence or notifications themselves.",
-  lessons:
-    "I was reminded that building a useful solution involves more than writing code. I spent time thinking through the user flow, deciding what information to capture, and considering how the different features should work together. I also worked with Supabase for authentication and database operations, including organising related records across people, lists, and list memberships.",
-  buildNotes:
-    "I knew what I wanted to build fairly early, but the desire to make everything perfect made it difficult to start coding. I had to remind myself that it is okay to ship something that still needs improvement. Vision 52 grew from my desire to make it easier to be intentional about sharing the Gospel, praying for people, and following up after conversations.",
-  whoIsItFor:
-    "Christians, evangelism teams, and individuals who want a more intentional way to organise the people they meet, remember prayer points, plan evangelism sessions, and follow up with people.",
-  inspiration:
-    "The idea came from wanting to be more intentional about evangelism and recognising that sharing the Gospel is not the end of caring for someone. Prayer, remembering people, and following up matter too.",
-  createdAt: "2026-10-12T09:00:00Z",
-  updatedAt: "2026-10-12T21:00:00Z",
-  publishedAt: "2026-10-12T21:00:00Z",
-},
-
-{
-  id: "10",
-  dayNumber: 10,
-  title: "Nourish",
-  slug: "nourish",
-  date: "2026-10-13",
-  shortDescription:
-    "A food discovery web app that helps users explore recipes, search by dish or ingredient, and find inspiration when they don't know what to cook.",
-  problem:
-    "Deciding what to cook can be difficult when you have no particular meal in mind. Finding inspiration across a large collection of recipes can involve endless scrolling, making it harder to discover something new to try.",
-  solution:
-    "A food discovery web app that allows users to browse a large recipe collection, search for dishes and ingredients, explore recipe details, and discover a random meal when they need inspiration.",
-  features: [
-    "Browse a collection of over 13,000 recipes",
-    "Search recipes by dish name or ingredient",
-    "Filter recipes to show only those with available photos",
-    "View recipe cards with food images and titles",
-    "Open individual recipes to view ingredients and cooking instructions",
-    "Surprise Me feature for discovering a random recipe",
-    "Paginated recipe gallery for browsing large datasets",
-  ],
-  instructions: [
-    {
-      id: "1",
-      title: "Explore the collection",
-      description:
-        "Open Nourish to browse featured recipes and discover meal ideas from the recipe collection.",
-    },
-    {
-      id: "2",
-      title: "Search for something specific",
-      description:
-        "Enter a dish name or ingredient to find recipes that match what you have in mind.",
-    },
-    {
-      id: "3",
-      title: "Browse and filter recipes",
-      description:
-        "Explore the recipe gallery, sort the results, and filter for recipes with available photos.",
-    },
-    {
-      id: "4",
-      title: "View a recipe",
-      description:
-        "Select a recipe to see its ingredients and cooking instructions before deciding what to make.",
-    },
-    {
-      id: "5",
-      title: "Let Nourish surprise you",
-      description:
-        "Use the Surprise Me feature when you want to discover a meal but don't know what to cook.",
-    },
-  ],
-  technologies: [
-    "Python",
-    "Pandas",
-    "Streamlit",
-    "CSV Data Processing",
-    "Git",
-    "GitHub",
-    "Streamlit Community Cloud",
-  ],
-  category: "Frontend",
-  featured: true,
-  coverImage: "https://images.unsplash.com/photo-1767277672167-18105701959b?q=80&w=388&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
-  images: [],
-  links: [
-    {
-      id: "1",
-      label: "Live Demo",
-      url: "https://wellness-recommender.streamlit.app/",
-      type: "demo",
-    },
-    {
-      id: "2",
-      label: "Source Code",
-      url: "https://github.com/ToluwanimiO/wellness-recommender",
-      type: "github",
-    },
-  ],
-  challenges:
-    "The build evolved from an initial wellness-focused food recommendation system into a recipe discovery app. Working with a dataset of over 13,000 recipes introduced data preparation and image-matching challenges. Another challenge was debugging Streamlit's rerun behaviour, which caused randomly selected recipes to change during interactions and interfered with recipe navigation. Preparing the app for deployment also required ensuring that local image paths worked in the cloud environment.",
-  lessons:
-    "I learned more about processing larger datasets with Pandas, matching recipe records to image files, building interactive interfaces with Streamlit, and managing application state across reruns. I also learned that file paths that work on a local Windows machine may need adjustment when deploying to a Linux-based environment.",
-  buildNotes:
-    "I started the day building a wellness-oriented recommendation system that matched food ingredients to nutritional goals. However, I wanted to work with a larger dataset and reconsidered the direction of the project. I pivoted to Nourish, using a dataset of over 13,000 recipes to build a more visual food discovery experience. The day involved changing direction, processing data, designing the interface, debugging navigation, and working towards deployment. The result was not perfect, but the process reinforced the importance of learning through consistent building rather than waiting for the perfect idea.",
-  whoIsItFor:
-    "Anyone looking for meal inspiration, home cooks who want to discover new recipes, and people who need a simple way to browse dishes by name or ingredient.",
-  inspiration:
-    "The idea evolved from an interest in food recommendation systems and nutritional wellness. Working with a larger recipe dataset led me to focus on a more general problem: helping people discover what to cook when they don't know where to start.",
-  createdAt: "2026-10-13T09:00:00Z",
-  updatedAt: "2026-10-13T21:00:00Z",
-  publishedAt: "2026-10-13T21:00:00Z",
-},
-
-{
-  id: "9",
-  dayNumber: 9,
-  title: "Open When Letters",
-  slug: "open-when-letters",
-  date: "2026-10-10",
-  shortDescription:
-    "A web app for creating personalized 'open when' letters for yourself or loved ones and sharing them through unique links.",
-  problem:
-    "Sometimes, people need a little reminder that they are loved, especially when they feel sad, lonely, or miss someone. Traditional letters are meaningful, but they are not always easy to create, personalize, and share digitally.",
-  solution:
-    "A web app that lets users write personalized letters for specific moments, customize their appearance, and share them through unique links. The MVP keeps the experience simple, with no sign-up or login required.",
-  features: [
-    "Create personalized 'open when' letters for yourself or others",
-    "Customize the appearance of letters",
-    "Save letters to a personal collection",
-    "Generate unique shareable links for individual letters",
-    "Access shared letters through their links without creating an account",
-    "Responsive interface for mobile and desktop devices",
-  ],
-  instructions: [
-    {
-      id: "1",
-      title: "Create a letter",
-      description:
-        "Write a message for a particular moment, such as when someone feels sad, misses you, or needs encouragement.",
-    },
-    {
-      id: "2",
-      title: "Personalize your letter",
-      description:
-        "Customize the appearance to make your letter feel more personal and meaningful.",
-    },
-    {
-      id: "3",
-      title: "Save your letter",
-      description:
-        "Save your letter and keep track of your created letters in your collection. Your collection is tied to the browser you created it in.",
-    },
-    {
-      id: "4",
-      title: "Share it with someone",
-      description:
-        "Copy the unique link for your letter and send it to the intended recipient so they can open and read it.",
-    },
-  ],
-  technologies: [
-    "Next.js",
-    "TypeScript",
-    "Supabase",
-    "PostgreSQL",
-    "Token-Based Access",
-    "Responsive Web Design",
-  ],
-  category: "Frontend",
+  instructions: [  ],
+  technologies: [],
+  category: "Product Design",
   featured: false,
-  coverImage: "https://images.unsplash.com/photo-1567473030492-533b30c5494c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+  coverImage: "https://images.unsplash.com/photo-1542626991-cbc4e32524cc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
   images: [],
-  links: [
-    {
+  links: [],
+  challenges:
+    "Resisting the urge to jump straight into coding and instead spending time thinking through the problem, considering different approaches, and working out how the intended experience should flow.",
+  lessons:
+    "Building a solution involves more than writing code. Understanding the problem, considering the people experiencing it, exploring alternatives, and thinking through the user experience are essential parts of the process. Sometimes, the most important work happens before writing a single line of code.",
+  buildNotes:
+    "I probably wrote fewer than 50 lines of code today. Most of my time went into brainstorming, thinking through the user flow, and prototyping. This was a reminder that progress is not always measured by how much code is written.",
+  whoIsItFor:
+    "Developers, designers, and anyone building digital products who wants to approach problem-solving more intentionally before implementation.",
+  inspiration:
+    "The realization that building a meaningful solution starts with understanding the problem and thinking through the best approach, not immediately opening a code editor.",
+  createdAt: "2026-10-16T09:00:00Z",
+  updatedAt: "2026-10-16T21:00:00Z",
+  publishedAt: "2026-10-16T21:00:00Z",
+},
+  {
+    id: "11",
+    dayNumber: 11,
+    title: "Notification System",
+    slug: "notification-system",
+    date: "2026-10-13",
+    shortDescription:
+      "A backend notification system that allows applications to create, retrieve, and mark notifications as read, with MongoDB for persistent storage.",
+    problem:
+      "Curiosity about how notifications work behind the scenes and a desire to understand the backend logic that powers them.",
+    solution:
+      "Built a basic notification API using Node.js and Express, with MongoDB and Mongoose for persistent storage. The API supports creating notifications, retrieving notifications for a specific user, and marking notifications as read.",
+    features: [
+      "Create notifications with sender, recipient, type, and message",
+      "Retrieve notifications belonging to a specific recipient",
+      "Mark notifications as read",
+      "Persist notification records in MongoDB",
+      "Expose REST API endpoints for notification operations",
+    ],
+    instructions: [
+      {
+        id: "1",
+        title: "Learning Journey",
+        description:
+          "This ended up being more of a learning project and is not intended for end-user use.",
+      },
+      // {
+      //   id: "2",
+      //   title: "Create a notification",
+      //   description:
+      //     "Send a POST request to /api/notifications with a senderId, recipientId, type, and message.",
+      // },
+      // {
+      //   id: "3",
+      //   title: "Retrieve notifications",
+      //   description:
+      //     "Send a GET request to /api/notifications?userId=user-B to retrieve notifications for the specified user.",
+      // },
+      // {
+      //   id: "4",
+      //   title: "Mark a notification as read",
+      //   description:
+      //     "Send a PATCH request to /api/notifications/:id/read using the notification's MongoDB document ID.",
+      // },
+    ],
+    technologies: [
+      "Node.js",
+      "JavaScript",
+      "Express",
+      "MongoDB",
+      "Mongoose",
+      "REST API",
+      "Postman / cURL",
+    ],
+    category: "Backend",
+    featured: true,
+    coverImage:
+      "https://images.unsplash.com/photo-1643845892686-30c241c3938c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+    images: [
+      {
+        id: "1",
+        url: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=800&fit=crop",
+        alt: "Server infrastructure representing the backend notification system",
+        isCover: true,
+      },
+    ],
+    links: [],
+    challenges:
+      "Understanding how the different layers of a backend application work together, from API routes and service logic to database operations. Debugging notification retrieval also reinforced the importance of checking query inputs, stored data, and server-side logs.",
+    lessons:
+      "I learned how to structure a basic backend API using routes, services, and storage logic; connect an Express application to MongoDB with Mongoose; perform asynchronous database queries; and persist notification records instead of keeping them only in memory. I also explored the broader architecture of notification systems and the roles of event triggers, queues, background workers, and delivery channels.",
+    buildNotes:
+      "This build started as an opportunity to learn how notification systems work. I began with in-memory storage, implemented the core notification operations, and then moved to MongoDB so records could persist across server restarts. The current version handles the core API operations; queue processing, automated event triggers, and external delivery channels remain future extensions.",
+    whoIsItFor:
+      "Developers who want to understand the backend foundations of notification functionality in messaging apps, productivity tools, and other applications that need to keep users informed.",
+    inspiration:
+      "Curiosity about how notification systems work behind the scenes, from storing notification records to retrieving them and tracking read status.",
+    createdAt: "2026-10-13T09:00:00Z",
+    updatedAt: "2026-10-13T21:00:00Z",
+    publishedAt: "2026-10-13T21:00:00Z",
+  },
+  {
+    id: "10",
+    dayNumber: 10,
+    title: "Nourish",
+    slug: "nourish",
+    date: "2026-10-13",
+    shortDescription:
+      "A food discovery web app that helps users explore recipes, search by dish or ingredient, and find inspiration when they don't know what to cook.",
+    problem:
+      "Deciding what to cook can be difficult when you have no particular meal in mind. Finding inspiration across a large collection of recipes can involve endless scrolling, making it harder to discover something new to try.",
+    solution:
+      "A food discovery web app that allows users to browse a large recipe collection, search for dishes and ingredients, explore recipe details, and discover a random meal when they need inspiration.",
+    features: [
+      "Browse a collection of over 13,000 recipes",
+      "Search recipes by dish name or ingredient",
+      "Filter recipes to show only those with available photos",
+      "View recipe cards with food images and titles",
+      "Open individual recipes to view ingredients and cooking instructions",
+      "Surprise Me feature for discovering a random recipe",
+      "Paginated recipe gallery for browsing large datasets",
+    ],
+    instructions: [
+      {
+        id: "1",
+        title: "Explore the collection",
+        description:
+          "Open Nourish to browse featured recipes and discover meal ideas from the recipe collection.",
+      },
+      {
+        id: "2",
+        title: "Search for something specific",
+        description:
+          "Enter a dish name or ingredient to find recipes that match what you have in mind.",
+      },
+      {
+        id: "3",
+        title: "Browse and filter recipes",
+        description:
+          "Explore the recipe gallery, sort the results, and filter for recipes with available photos.",
+      },
+      {
+        id: "4",
+        title: "View a recipe",
+        description:
+          "Select a recipe to see its ingredients and cooking instructions before deciding what to make.",
+      },
+      {
+        id: "5",
+        title: "Let Nourish surprise you",
+        description:
+          "Use the Surprise Me feature when you want to discover a meal but don't know what to cook.",
+      },
+    ],
+    technologies: [
+      "Python",
+      "Pandas",
+      "Streamlit",
+      "CSV Data Processing",
+      "Git",
+      "GitHub",
+      "Streamlit Community Cloud",
+    ],
+    category: "Frontend",
+    featured: true,
+    coverImage:
+      "https://images.unsplash.com/photo-1767277672167-18105701959b?q=80&w=388&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+    images: [],
+    links: [
+      {
+        id: "1",
+        label: "Live Demo",
+        url: "https://wellness-recommender.streamlit.app/",
+        type: "demo",
+      },
+      {
+        id: "2",
+        label: "Source Code",
+        url: "https://github.com/ToluwanimiO/wellness-recommender",
+        type: "github",
+      },
+    ],
+    challenges:
+      "The build evolved from an initial wellness-focused food recommendation system into a recipe discovery app. Working with a dataset of over 13,000 recipes introduced data preparation and image-matching challenges. Another challenge was debugging Streamlit's rerun behaviour, which caused randomly selected recipes to change during interactions and interfered with recipe navigation. Preparing the app for deployment also required ensuring that local image paths worked in the cloud environment.",
+    lessons:
+      "I learned more about processing larger datasets with Pandas, matching recipe records to image files, building interactive interfaces with Streamlit, and managing application state across reruns. I also learned that file paths that work on a local Windows machine may need adjustment when deploying to a Linux-based environment.",
+    buildNotes:
+      "I started the day building a wellness-oriented recommendation system that matched food ingredients to nutritional goals. However, I wanted to work with a larger dataset and reconsidered the direction of the project. I pivoted to Nourish, using a dataset of over 13,000 recipes to build a more visual food discovery experience. The day involved changing direction, processing data, designing the interface, debugging navigation, and working towards deployment. The result was not perfect, but the process reinforced the importance of learning through consistent building rather than waiting for the perfect idea.",
+    whoIsItFor:
+      "Anyone looking for meal inspiration, home cooks who want to discover new recipes, and people who need a simple way to browse dishes by name or ingredient.",
+    inspiration:
+      "The idea evolved from an interest in food recommendation systems and nutritional wellness. Working with a larger recipe dataset led me to focus on a more general problem: helping people discover what to cook when they don't know where to start.",
+    createdAt: "2026-10-13T09:00:00Z",
+    updatedAt: "2026-10-13T21:00:00Z",
+    publishedAt: "2026-10-13T21:00:00Z",
+  },
+
+  {
+    id: "9",
+    dayNumber: 9,
+    title: "Open When Letters",
+    slug: "open-when-letters",
+    date: "2026-10-10",
+    shortDescription:
+      "A web app for creating personalized 'open when' letters for yourself or loved ones and sharing them through unique links.",
+    problem:
+      "Sometimes, people need a little reminder that they are loved, especially when they feel sad, lonely, or miss someone. Traditional letters are meaningful, but they are not always easy to create, personalize, and share digitally.",
+    solution:
+      "A web app that lets users write personalized letters for specific moments, customize their appearance, and share them through unique links. The MVP keeps the experience simple, with no sign-up or login required.",
+    features: [
+      "Create personalized 'open when' letters for yourself or others",
+      "Customize the appearance of letters",
+      "Save letters to a personal collection",
+      "Generate unique shareable links for individual letters",
+      "Access shared letters through their links without creating an account",
+      "Responsive interface for mobile and desktop devices",
+    ],
+    instructions: [
+      {
+        id: "1",
+        title: "Create a letter",
+        description:
+          "Write a message for a particular moment, such as when someone feels sad, misses you, or needs encouragement.",
+      },
+      {
+        id: "2",
+        title: "Personalize your letter",
+        description:
+          "Customize the appearance to make your letter feel more personal and meaningful.",
+      },
+      {
+        id: "3",
+        title: "Save your letter",
+        description:
+          "Save your letter and keep track of your created letters in your collection. Your collection is tied to the browser you created it in.",
+      },
+      {
+        id: "4",
+        title: "Share it with someone",
+        description:
+          "Copy the unique link for your letter and send it to the intended recipient so they can open and read it.",
+      },
+    ],
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Supabase",
+      "PostgreSQL",
+      "Token-Based Access",
+      "Responsive Web Design",
+    ],
+    category: "Frontend",
+    featured: false,
+    coverImage:
+      "https://images.unsplash.com/photo-1567473030492-533b30c5494c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+    images: [],
+    links: [
+      {
         id: "1",
         label: "Live Demo",
         url: "https://open-whenletters.netlify.app/",
         type: "demo",
-      }
-  ],
-  challenges:
-    "One interesting challenge was managing letter ownership and sharing without traditional user accounts. I needed a way to associate letters with their creators while allowing recipients to access individual letters through unique links. Another consideration was keeping the MVP simple without introducing a full authentication system.",
-  lessons:
-    "I learned more about implementing token-based access and designing a simple sharing experience without traditional user accounts. I was also reminded that building an MVP involves making deliberate trade-offs: delivering the core experience first while being clear about the limitations that remain.",
-  buildNotes:
-    "This MVP was built with Next.js, TypeScript, and Supabase. It does not require sign-up or login, but the letter collection is tied to the browser used to create it. Letters are text-only, cannot be edited or deleted after saving, and do not support scheduled delivery or email notifications. Users need to share their letter links themselves.",
-  whoIsItFor:
-    "People who want to send thoughtful, personalized messages to friends, family, or themselves for specific moments when encouragement, comfort, or a reminder of love might be needed.",
-  inspiration:
-    "The idea came from the concept of 'open when' letters: messages written for someone to read at a particular moment. I wanted to explore how to bring that thoughtful, sentimental experience into a simple web app that makes creating and sharing these letters easier.",
-  createdAt: "2026-10-10T09:00:00Z",
-  updatedAt: "2026-10-10T21:00:00Z",
-  publishedAt: "2026-10-10T21:00:00Z",
-},
+      },
+    ],
+    challenges:
+      "One interesting challenge was managing letter ownership and sharing without traditional user accounts. I needed a way to associate letters with their creators while allowing recipients to access individual letters through unique links. Another consideration was keeping the MVP simple without introducing a full authentication system.",
+    lessons:
+      "I learned more about implementing token-based access and designing a simple sharing experience without traditional user accounts. I was also reminded that building an MVP involves making deliberate trade-offs: delivering the core experience first while being clear about the limitations that remain.",
+    buildNotes:
+      "This MVP was built with Next.js, TypeScript, and Supabase. It does not require sign-up or login, but the letter collection is tied to the browser used to create it. Letters are text-only, cannot be edited or deleted after saving, and do not support scheduled delivery or email notifications. Users need to share their letter links themselves.",
+    whoIsItFor:
+      "People who want to send thoughtful, personalized messages to friends, family, or themselves for specific moments when encouragement, comfort, or a reminder of love might be needed.",
+    inspiration:
+      "The idea came from the concept of 'open when' letters: messages written for someone to read at a particular moment. I wanted to explore how to bring that thoughtful, sentimental experience into a simple web app that makes creating and sharing these letters easier.",
+    createdAt: "2026-10-10T09:00:00Z",
+    updatedAt: "2026-10-10T21:00:00Z",
+    publishedAt: "2026-10-10T21:00:00Z",
+  },
 
-{
-  id: "8",
-  dayNumber: 8,
-  title: "Church Website",
-  slug: "church-website",
-  date: "2026-10-09",
-  shortDescription:
-    "A website for my church, designed to communicate its identity, share its mission, and make information about the ministry accessible online.",
-  problem:
-    "Churches need an accessible online presence where people can learn about the ministry, understand its mission, find relevant information, and discover ways to connect with and support the work of the church.",
-  solution:
-    "A church website that brings together information about the ministry, its mission, and opportunities to connect and give. The first iteration focuses on presenting the church's identity and making important information accessible through a welcoming digital experience.",
-  features: [
-    "Church landing page with a welcoming introduction",
-    "Sections communicating the church's identity, mission, and vision",
-    "Visual storytelling using shapes, colors, and design elements",
-    "Information about the ministry and its work",
-    "Responsive layout for different screen sizes",
-  ],
-  instructions: [
-    {
-      id: "1",
-      title: "Not available yet",
-      description:"The website is still in development and has not been publicly deployed. It will be shared once it is ready for public access.",
-    }
-  ],
-  technologies: [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "Responsive Web Design",
-  ],
-  category: "Frontend",
-  featured: false,
-  coverImage: "https://images.unsplash.com/photo-1515162305285-0293e4767cc2?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
-  images: [],
-  links: [],
-  challenges:
-    "Turning the church's identity and needs into a clear, welcoming digital experience while making design decisions that communicate its mission effectively. Another consideration was that the website needed to go through the church's approval process before it could be deployed publicly.",
-  lessons:
-    "I was reminded that building a solution involves more than writing code. Understanding the organisation, communicating its message, and deciding how information should be presented are important parts of the process. I also got to think about how design can make a website feel welcoming while helping visitors find what they need.",
-  buildNotes:
-    "This was the first iteration of a website for my church. It is not publicly deployed yet because it needs to go through the approval process and may require further refinement. Even though there is no live link to share yet, it was an opportunity to work on a real-world project with an actual organisation and a genuine need.",
-  whoIsItFor:
-    "Churches and faith-based organisations that want to communicate their identity, share their mission, provide useful information, and establish an accessible online presence.",
-  inspiration:
-    "The project came from the need for my church to have a website. I wanted to create a digital space that communicates the church's identity and makes information about the ministry accessible to people online.",
-  createdAt: "2026-10-09T09:00:00Z",
-  updatedAt: "2026-10-09T21:00:00Z",
-  publishedAt: "2026-10-09T21:00:00Z",
-},
+  {
+    id: "8",
+    dayNumber: 8,
+    title: "Church Website",
+    slug: "church-website",
+    date: "2026-10-09",
+    shortDescription:
+      "A website for my church, designed to communicate its identity, share its mission, and make information about the ministry accessible online.",
+    problem:
+      "Churches need an accessible online presence where people can learn about the ministry, understand its mission, find relevant information, and discover ways to connect with and support the work of the church.",
+    solution:
+      "A church website that brings together information about the ministry, its mission, and opportunities to connect and give. The first iteration focuses on presenting the church's identity and making important information accessible through a welcoming digital experience.",
+    features: [
+      "Church landing page with a welcoming introduction",
+      "Sections communicating the church's identity, mission, and vision",
+      "Visual storytelling using shapes, colors, and design elements",
+      "Information about the ministry and its work",
+      "Responsive layout for different screen sizes",
+    ],
+    instructions: [
+      {
+        id: "1",
+        title: "Not available yet",
+        description:
+          "The website is still in development and has not been publicly deployed. It will be shared once it is ready for public access.",
+      },
+    ],
+    technologies: ["HTML", "CSS", "JavaScript", "Responsive Web Design"],
+    category: "Frontend",
+    featured: false,
+    coverImage:
+      "https://images.unsplash.com/photo-1515162305285-0293e4767cc2?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+    images: [],
+    links: [],
+    challenges:
+      "Turning the church's identity and needs into a clear, welcoming digital experience while making design decisions that communicate its mission effectively. Another consideration was that the website needed to go through the church's approval process before it could be deployed publicly.",
+    lessons:
+      "I was reminded that building a solution involves more than writing code. Understanding the organisation, communicating its message, and deciding how information should be presented are important parts of the process. I also got to think about how design can make a website feel welcoming while helping visitors find what they need.",
+    buildNotes:
+      "This was the first iteration of a website for my church. It is not publicly deployed yet because it needs to go through the approval process and may require further refinement. Even though there is no live link to share yet, it was an opportunity to work on a real-world project with an actual organisation and a genuine need.",
+    whoIsItFor:
+      "Churches and faith-based organisations that want to communicate their identity, share their mission, provide useful information, and establish an accessible online presence.",
+    inspiration:
+      "The project came from the need for my church to have a website. I wanted to create a digital space that communicates the church's identity and makes information about the ministry accessible to people online.",
+    createdAt: "2026-10-09T09:00:00Z",
+    updatedAt: "2026-10-09T21:00:00Z",
+    publishedAt: "2026-10-09T21:00:00Z",
+  },
   {
     id: "7",
     dayNumber: 7,
