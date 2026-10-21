@@ -2,6 +2,199 @@ import { Project } from "@/types";
 
 export const sampleProjects: Project[] = [
   {
+    id: "16",
+    dayNumber: 16,
+    title: "Packwell (AI-Powered)",
+    slug: "packwell-ai-packing-list",
+    date: "2026-10-21",
+    shortDescription:
+      "A packing checklist app that uses AI to suggest items to pack based on your travel plans.",
+    problem:
+      "Packing for a trip can be overwhelming, especially when deciding what to bring for different destinations, activities, and travel needs. Starting a packing list from scratch can also mean forgetting important items.",
+    solution:
+      "A packing checklist app that lets users describe their travel plans and generate a suggested packing list with AI. Users can review the suggestions, uncheck items they do not need, and add the selected items to their checklist.",
+    features: [
+      "Generate packing lists based on travel plans using AI",
+      "Review suggested items before adding them to a checklist",
+      "Select or deselect individual suggested items",
+      "Create and manage trip-specific packing lists",
+      "Maintain a reusable default packing list",
+      "Start new trips with items from the default list",
+      "Add, check off, and manage packing items",
+      "Use the app as an installable Progressive Web App",
+    ],
+    instructions: [
+      {
+        id: "1",
+        title: "Open Packwell",
+        description:
+          "Visit the Packwell app to create a packing list for your trip.",
+      },
+      {
+        id: "2",
+        title: "Create a trip",
+        description:
+          "Add a trip with a name to create a checklist for the items you want to pack.",
+      },
+      {
+        id: "3",
+        title: "Generate a packing list with AI",
+        description:
+          "Describe your travel plans and let AI suggest items you may need. You can also use your own checklist instead.",
+      },
+      {
+        id: "4",
+        title: "Review the suggestions",
+        description:
+          "Go through the generated items and uncheck anything you do not need before adding the selected items to your checklist.",
+      },
+      {
+        id: "5",
+        title: "Pack and track your items",
+        description:
+          "Use the checklist to mark items as packed and keep track of what you still need to pack.",
+      },
+    ],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Gemini API",
+      "Netlify Functions",
+      "Progressive Web Apps",
+    ],
+    category: "Frontend",
+    featured: true,
+    coverImage:
+      "https://images.unsplash.com/photo-1779364815233-84ec09c6d6d5?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+    images: [
+      {
+        id: "1",
+        url: "https://images.unsplash.com/photo-1553531384-411a247ccd73?w=1200&h=800&fit=crop",
+        alt: "Travel bag and packing essentials representing the Packwell packing checklist app",
+        isCover: true,
+      },
+    ],
+    links: [
+      {
+        id: "1",
+        label: "Live Demo",
+        url: "https://pack-check-list.netlify.app/",
+        type: "demo",
+      },
+    ],
+    challenges:
+      "Integrating AI-generated packing suggestions into an existing checklist workflow. I had to consider how to handle API requests through a serverless function, process the generated items, and let users review and select suggestions before adding them to their lists.",
+    lessons:
+      "I learned more about integrating AI into a web application using a serverless function and handling the interaction between the frontend, backend logic, and an external AI API. I also explored how AI-generated data can fit into an existing user workflow rather than being an isolated feature.",
+    buildNotes:
+      "I wanted to make packing easier by letting users describe their travel plans instead of having to think of every item themselves. I also wanted users to remain in control, so they can review AI suggestions and choose what to add to their checklist.",
+    whoIsItFor:
+      "Travellers who want an easier way to organise their packing, create trip-specific checklists, and avoid forgetting essential items.",
+    inspiration:
+      "The idea came from exploring how AI could make an everyday task like preparing for a trip easier while still allowing users to customise their packing lists.",
+    createdAt: "2026-10-21T09:00:00Z",
+    updatedAt: "2026-10-21T21:00:00Z",
+    publishedAt: "2026-10-21T21:00:00Z",
+  },
+ {
+  id: "15",
+  dayNumber: 15,
+  title: "Packwell",
+  slug: "packwell-packing-checklist",
+  date: "2026-10-20",
+  shortDescription:
+    "A packing checklist app that helps users organise trip-specific packing lists and reuse items from a default packing list.",
+  problem:
+    "Preparing for a trip often involves creating a packing list from scratch. Many items are needed across multiple trips, so repeatedly adding the same essentials can be tedious and make it easier to forget something important.",
+  solution:
+    "A packing checklist app that lets users create and manage trip-specific lists while maintaining a reusable default packing list. When creating a new trip, users can automatically populate their checklist with items from their default list and customise it for that trip.",
+  features: [
+    "Create trips with individual packing checklists",
+    "View and open created trips",
+    "Delete trips",
+    "Add and manage packing items",
+    "Mark items as packed",
+    "Maintain a reusable default packing list",
+    "Automatically populate new trips with items from the default list",
+    "Customise packing items for individual trips",
+    "Install and use the app as a Progressive Web App",
+  ],
+  instructions: [
+    {
+      id: "1",
+      title: "Open Packwell",
+      description:
+        "Visit Packwell to create a trip or manage your reusable default packing list.",
+    },
+    {
+      id: "2",
+      title: "Create your default packing list",
+      description:
+        "Add items you commonly take on trips so you can reuse them when preparing for future journeys.",
+    },
+    {
+      id: "3",
+      title: "Create a trip",
+      description:
+        "Give your trip a name. If your default packing list contains items, they will be added to the new trip's checklist.",
+    },
+    {
+      id: "4",
+      title: "Customise your checklist",
+      description:
+        "Add any trip-specific items you need and adjust the checklist to suit your plans.",
+    },
+    {
+      id: "5",
+      title: "Track your packing",
+      description:
+        "Mark items as packed as you prepare for your trip, and use the checklist to keep track of what remains.",
+    },
+  ],
+  technologies: [
+    "React",
+    "TypeScript",
+    "Vite",
+    "Tailwind CSS",
+    "Progressive Web Apps",
+  ],
+  category: "Frontend",
+  featured: true,
+  coverImage:
+    "https://images.unsplash.com/photo-1557183200-f0fec6612738?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+  images: [
+    {
+      id: "1",
+      url: "https://images.unsplash.com/photo-1553531384-411a247ccd73?w=1200&h=800&fit=crop",
+      alt: "Travel bag and packing essentials representing the Packwell packing checklist app",
+      isCover: true,
+    },
+  ],
+  links: [
+    {
+      id: "1",
+      label: "Live Demo",
+      url: "https://pack-check-list.netlify.app/",
+      type: "demo",
+    },
+  ],
+  challenges:
+    "The technical implementation wasn't particularly difficult, but finding the energy to keep building after a long, exhausting day was the real challenge.",
+  lessons:
+    "I strengthened my understanding of React state management",
+  buildNotes:
+    "I wanted to reduce the effort involved in preparing for multiple trips by letting users reuse their commonly packed items instead of recreating the same checklist every time.",
+  whoIsItFor:
+    "Travellers who want to organise their packing, reuse common items across trips, and keep track of what they have packed.",
+  inspiration:
+    "The idea came from the repetitive process of preparing packing lists for different trips and the opportunity to make that process easier with reusable checklists.",
+  createdAt: "2026-10-20T09:00:00Z",
+  updatedAt: "2026-10-20T21:00:00Z",
+  publishedAt: "2026-10-20T21:00:00Z",
+},
+  {
     id: "14",
     dayNumber: 14,
     title: "TimeTrail Update",
@@ -199,45 +392,46 @@ export const sampleProjects: Project[] = [
     publishedAt: "2026-10-12T21:00:00Z",
   },
   {
-  id: "12",
-  dayNumber: 12,
-  title: "From Idea to Prototype",
-  slug: "idea-to-prototype",
-  date: "2026-10-16",
-  shortDescription:
-    "A product discovery and prototyping session focused on understanding a problem, exploring possible solutions, and thinking through the user experience before writing code.",
-  problem:
-    "Jumping straight into coding without fully understanding a problem or considering how people will interact with a solution can lead to unnecessary complexity and products that do not adequately address users' needs.",
-  solution:
-    "Dedicated time to brainstorming, exploring possible approaches, mapping out the user flow, and prototyping ideas before committing to implementation.",
-  features: [
-    "Brainstorming and exploring possible solutions",
-    "Thinking through the problem before implementation",
-    "Mapping out the intended user flow",
-    "Prototyping to explore and communicate ideas",
-    "Evaluating the user experience before writing code",
-  ],
-  instructions: [  ],
-  technologies: [],
-  category: "Product Design",
-  featured: false,
-  coverImage: "https://images.unsplash.com/photo-1542626991-cbc4e32524cc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
-  images: [],
-  links: [],
-  challenges:
-    "Resisting the urge to jump straight into coding and instead spending time thinking through the problem, considering different approaches, and working out how the intended experience should flow.",
-  lessons:
-    "Building a solution involves more than writing code. Understanding the problem, considering the people experiencing it, exploring alternatives, and thinking through the user experience are essential parts of the process. Sometimes, the most important work happens before writing a single line of code.",
-  buildNotes:
-    "I probably wrote fewer than 50 lines of code today. Most of my time went into brainstorming, thinking through the user flow, and prototyping. This was a reminder that progress is not always measured by how much code is written.",
-  whoIsItFor:
-    "Developers, designers, and anyone building digital products who wants to approach problem-solving more intentionally before implementation.",
-  inspiration:
-    "The realization that building a meaningful solution starts with understanding the problem and thinking through the best approach, not immediately opening a code editor.",
-  createdAt: "2026-10-16T09:00:00Z",
-  updatedAt: "2026-10-16T21:00:00Z",
-  publishedAt: "2026-10-16T21:00:00Z",
-},
+    id: "12",
+    dayNumber: 12,
+    title: "From Idea to Prototype",
+    slug: "idea-to-prototype",
+    date: "2026-10-16",
+    shortDescription:
+      "A product discovery and prototyping session focused on understanding a problem, exploring possible solutions, and thinking through the user experience before writing code.",
+    problem:
+      "Jumping straight into coding without fully understanding a problem or considering how people will interact with a solution can lead to unnecessary complexity and products that do not adequately address users' needs.",
+    solution:
+      "Dedicated time to brainstorming, exploring possible approaches, mapping out the user flow, and prototyping ideas before committing to implementation.",
+    features: [
+      "Brainstorming and exploring possible solutions",
+      "Thinking through the problem before implementation",
+      "Mapping out the intended user flow",
+      "Prototyping to explore and communicate ideas",
+      "Evaluating the user experience before writing code",
+    ],
+    instructions: [],
+    technologies: [],
+    category: "Product Design",
+    featured: false,
+    coverImage:
+      "https://images.unsplash.com/photo-1542626991-cbc4e32524cc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+    images: [],
+    links: [],
+    challenges:
+      "Resisting the urge to jump straight into coding and instead spending time thinking through the problem, considering different approaches, and working out how the intended experience should flow.",
+    lessons:
+      "Building a solution involves more than writing code. Understanding the problem, considering the people experiencing it, exploring alternatives, and thinking through the user experience are essential parts of the process. Sometimes, the most important work happens before writing a single line of code.",
+    buildNotes:
+      "I probably wrote fewer than 50 lines of code today. Most of my time went into brainstorming, thinking through the user flow, and prototyping. This was a reminder that progress is not always measured by how much code is written.",
+    whoIsItFor:
+      "Developers, designers, and anyone building digital products who wants to approach problem-solving more intentionally before implementation.",
+    inspiration:
+      "The realization that building a meaningful solution starts with understanding the problem and thinking through the best approach, not immediately opening a code editor.",
+    createdAt: "2026-10-16T09:00:00Z",
+    updatedAt: "2026-10-16T21:00:00Z",
+    publishedAt: "2026-10-16T21:00:00Z",
+  },
   {
     id: "11",
     dayNumber: 11,
