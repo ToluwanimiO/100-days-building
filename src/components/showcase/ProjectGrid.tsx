@@ -14,7 +14,7 @@ export default function ProjectGrid({ projects }: ProjectGridProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const completedDays = projects.length;
 
-  const categories = ['all', 'frontend', 'automation', 'mobile'];
+  const categories = ['all', 'fullstack', 'frontend', 'backend', 'automation', 'mobile'];
 
   // Filter projects based on selected category
   const filteredProjects = selectedCategory === 'all' 

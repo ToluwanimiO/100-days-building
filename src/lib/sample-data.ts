@@ -1,6 +1,111 @@
 import { Project } from "@/types";
 
 export const sampleProjects: Project[] = [
+  
+{
+  id: "17",
+  dayNumber: 17,
+  title: "Financial Future Simulator",
+  slug: "financial-future-simulator",
+  date: "2026-10-27",
+  shortDescription:
+    "An interactive financial simulator that projects savings over time and lets users explore how changes in income and expenses affect their savings goals.",
+  problem:
+    "Planning towards a savings goal can be difficult when it is unclear how current savings, monthly income, expenses, and interest rates affect the time needed to reach a target. Static calculators provide an estimate but make it harder to explore how different financial scenarios could change the outcome.",
+  solution:
+    "An interactive financial simulator that projects savings over time based on user-defined financial inputs. It estimates how long it could take to reach a savings goal and uses an interactive chart that lets users drag income and expense points to adjust assumptions and immediately see how the projection changes.",
+  features: [
+    "Enter starting savings and a target savings goal",
+    "Set monthly income and expenses",
+    "Specify an annual interest rate",
+    "Project savings balances over time",
+    "Estimate the number of months needed to reach a savings goal",
+    "Visualise income, expenses, and savings on an interactive chart",
+    "Drag income and expense points directly on the graph to adjust financial assumptions",
+    "Recalculate savings projections when assumptions change",
+    "Display a savings goal reference line on the chart",
+    "Handle simulations where the savings goal is not reached within the projected period",
+  ],
+  instructions: [
+    {
+      id: "1",
+      title: "Open the simulator",
+      description:
+        "Visit the Financial Future Simulator to explore how your financial situation could affect your savings goals.",
+    },
+    {
+      id: "2",
+      title: "Enter your financial details",
+      description:
+        "Provide your starting savings, savings goal, monthly income, monthly expenses, and annual interest rate.",
+    },
+    {
+      id: "3",
+      title: "View your financial projection",
+      description:
+        "Explore the chart to see how your income, expenses, and savings balance may change over time, including your projected timeline for reaching your goal.",
+    },
+    {
+      id: "4",
+      title: "Experiment with different scenarios",
+      description:
+        "Drag the income and expense points on the graph to change your assumptions and observe how the savings projection responds.",
+    },
+    {
+      id: "5",
+      title: "Compare possible outcomes",
+      description:
+        "Try different income and expense scenarios to explore how they could affect your savings growth and the time needed to reach your target.",
+    },
+  ],
+  technologies: [
+    "React",
+    "Apache ECharts",
+    "TypeScript",
+    "Vite",
+    "Tailwind CSS",
+    "echarts-for-react",
+  ],
+  category: "Frontend",
+  featured: true,
+  coverImage: "https://images.unsplash.com/photo-1767424412548-1a1ac7f4b9bc?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+  images: [
+    {
+      id: "1",
+      url: "",
+      alt: "Financial Future Simulator showing savings projections and interactive income and expense charts",
+      isCover: true,
+    },
+  ],
+  links: [
+    {
+      id: "1",
+      label: "Live Demo",
+      url: "https://financial-future-simulator.netlify.app/",
+      type: "demo",
+    },
+    {
+      id: "2",
+      label: "GitHub Repository",
+      url: "https://github.com/ToluwanimiO/financial-future-simulator",
+      type: "github",
+    },
+  ],
+  challenges:
+    "Making the chart draggable was the main technical challenge. The Apache ECharts documentation demo used a different structure from mine, so directly applying its approach wasn't enough. I had to understand how the demo mapped draggable elements to chart data, identify what needed to change for my dynamically generated financial projections, and work out how to position the handles and translate drag movements into updated income and expense values. I then connected those changes to the simulation logic so each interaction would recalculate the projections. It involved more than implementing a demo; I had to understand the underlying approach and adapt it to my specific use case.",
+  lessons:
+    "I learnt how to visualise results with Apache ECharts. I also learned how to connect draggable chart graphics to application state so users can manipulate data visually and see the effects of their changes.",
+  buildNotes:
+    "I wanted to explore building something beyond interfaces that primarily display information. I explored a few ideas before settling on a Financial Future Simulator: a tool where code could represent a real-world situation, simulate how it might change, and help people explore different possibilities. I particularly enjoyed figuring out how to make the graph interactive and connect chart interactions to the simulation logic.",
+  whoIsItFor:
+    "People who want to explore how their current savings, income, expenses, and interest assumptions could affect their progress towards a savings goal.",
+  inspiration:
+    "I wanted to explore a different kind of software project: one that models a real-world situation, runs calculations, and lets users experiment with different scenarios instead of simply displaying information.",
+  createdAt: "2026-10-27T09:00:00Z",
+  updatedAt: "2026-10-27T10:00:00Z",
+  publishedAt: "2026-10-27T10:00:00Z",
+},
+
   {
     id: "16",
     dayNumber: 16,
@@ -57,10 +162,11 @@ export const sampleProjects: Project[] = [
     ],
     technologies: [
       "React",
+      "Gemini API",
       "TypeScript",
       "Vite",
       "Tailwind CSS",
-      "Gemini API",
+      
       "Netlify Functions",
       "Progressive Web Apps",
     ],
@@ -242,10 +348,10 @@ export const sampleProjects: Project[] = [
     ],
     technologies: [
       "React",
+      "Picture-in-Picture API",
       "TypeScript",
       "Vite",
       "vite-plugin-pwa",
-      "Picture-in-Picture API",
       "Service Workers",
       "Notifications API",
     ],
@@ -347,17 +453,17 @@ export const sampleProjects: Project[] = [
     ],
     technologies: [
       "React",
+      "Supabase",
       "TypeScript",
       "Tailwind CSS",
       "Vite",
-      "Supabase",
       "PostgreSQL",
       "Supabase Auth",
       "Lucide React",
       "vite-plugin-pwa",
       "Google Calendar Event Links",
     ],
-    category: "Frontend",
+    category: "Fullstack",
     featured: true,
     coverImage:
       "https://images.unsplash.com/photo-1758502033995-e52a218738ee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
@@ -663,7 +769,7 @@ export const sampleProjects: Project[] = [
       "Token-Based Access",
       "Responsive Web Design",
     ],
-    category: "Frontend",
+    category: "Fullstack",
     featured: false,
     coverImage:
       "https://images.unsplash.com/photo-1567473030492-533b30c5494c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
@@ -875,7 +981,7 @@ export const sampleProjects: Project[] = [
           "Search across your data, use filters to narrow the results, and click any card to view its full details.",
       },
     ],
-    technologies: ["Next JS", "TypeScript", "SheetJS"],
+    technologies: ["Next JS", "SheetJS","TypeScript" ],
     category: "Frontend",
     featured: true,
     coverImage:
@@ -1161,7 +1267,7 @@ export const sampleProjects: Project[] = [
         description: "Select the app to send the content into the workflow.",
       },
     ],
-    technologies: ["React Native", "TypeScript ", "Android share intents"],
+    technologies: ["React Native", "Android share intents", "TypeScript " ],
     category: "Mobile",
     featured: false,
     coverImage:
