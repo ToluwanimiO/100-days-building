@@ -3,6 +3,104 @@ import { Project } from "@/types";
 export const sampleProjects: Project[] = [
   
 {
+  id: "18",
+  dayNumber: 18,
+  title: "Inflation Simulator",
+  slug: "inflation-simulator",
+  date: "2026-10-28",
+  shortDescription:
+    "An interactive inflation simulator that uses IMF data to explore how inflation could affect money's purchasing power over time.",
+  problem:
+    "It can be difficult to understand how inflation affects the future purchasing power of money. Inflation rates are often presented as percentages, making it harder to see their cumulative effect on the value of an amount over several years.",
+  solution:
+    "An interactive inflation simulator that uses inflation data from the International Monetary Fund (IMF), including projections for future years, to estimate how purchasing power changes over time. Users can select a country, enter an amount, choose a target year, and adjust individual annual inflation rates to explore different scenarios.",
+  features: [
+    "Select a country to explore its inflation rates",
+    "Enter an amount to simulate its future purchasing power",
+    "Choose a target year for the projection",
+    "Use initial annual inflation rates sourced from IMF data",
+    "Explore the cumulative effect of inflation over multiple years",
+    "Adjust individual annual inflation rates to model different scenarios",
+    "Recalculate purchasing power based on updated inflation assumptions",
+    "Visualise inflation and its impact over time",
+    "Display IMF source metadata where available",
+  ],
+  instructions: [
+    {
+      id: "1",
+      title: "Open the simulator",
+      description:
+        "Visit the Inflation Simulator to explore how inflation could affect the purchasing power of your money.",
+    },
+    {
+      id: "2",
+      title: "Choose a country and amount",
+      description:
+        "Select a country, enter the amount you want to explore, and choose a target year.",
+    },
+    {
+      id: "3",
+      title: "View the projection",
+      description:
+        "See how the selected country's annual inflation rates could affect the purchasing power of your money over time.",
+    },
+    {
+      id: "4",
+      title: "Adjust the inflation rates",
+      description:
+        "Edit individual annual inflation rates to explore how different assumptions affect the results.",
+    },
+    {
+      id: "5",
+      title: "Explore different scenarios",
+      description:
+        "Experiment with different rates and compare how inflation assumptions change the projected purchasing power of your money.",
+    },
+  ],
+  technologies: [
+    "React",
+    "IMF DataMapper API",
+    "TypeScript",
+    "Vite",
+    "Tailwind CSS",
+    "Recharts",
+    
+  ],
+  category: "Frontend",
+  featured: true,
+  coverImage: "https://images.unsplash.com/photo-1702099630732-cdf2ba90e730?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+  images: [
+    {
+      id: "1",
+      url: "",
+      alt: "Inflation Simulator showing projected purchasing power based on annual inflation rates",
+      isCover: true,
+    },
+  ],
+  links: [
+    {
+      id: "1",
+      label: "Live Demo",
+      url: "https://inflation-explorer.netlify.app/",
+      type: "demo",
+    },
+  ],
+  challenges:
+    "Getting the IMF data to work reliably in the deployed app was a challenge. The API requests worked locally but returned HTTP 403 errors when the Netlify Function made them in production. Direct browser requests also ran into CORS restrictions, and adding a User-Agent header did not resolve the issue. Since the app did not need the latest data on every request, I changed my approach: I saved an IMF data response as a static JSON file so the app could use a local snapshot instead of depending on live API requests at runtime.",
+  lessons:
+    "I learned more about integrating external data sources, handling API access restrictions and CORS, and thinking about deployment environments when designing an application. I also explored how a static data snapshot can reduce runtime dependencies when real-time updates are unnecessary.",
+  buildNotes:
+    "I wanted to explore how software could make economic data easier to understand and interact with. After connecting the app to the IMF DataMapper API, I worked on making inflation projections adjustable so users could explore how different annual rates affect purchasing power. Working through the deployment issue also reminded me that getting something to work locally is only one part of building a reliable application.",
+  whoIsItFor:
+    "People who want to understand how inflation could affect their money's purchasing power and explore different inflation scenarios for a selected country.",
+  inspiration:
+    "I wanted to make economic data more interactive and easier to understand by turning inflation percentages into a practical simulation of how the purchasing power of money changes over time.",
+  createdAt: "2026-10-28T09:00:00Z",
+  updatedAt: "2026-10-28T10:00:00Z",
+  publishedAt: "2026-10-28T10:00:00Z",
+},
+
+{
   id: "17",
   dayNumber: 17,
   title: "Financial Future Simulator",
