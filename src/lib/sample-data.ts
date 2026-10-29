@@ -1,7 +1,106 @@
 import { Project } from "@/types";
 
 export const sampleProjects: Project[] = [
-  
+  {
+  id: "19",
+  dayNumber: 19,
+  title: "Birthday Calendar Importer",
+  slug: "birthday-calendar-importer",
+  date: "2026-10-29",
+  shortDescription:
+    "A tool that converts birthdays stored in Excel or CSV spreadsheets into recurring calendar events that can be imported into a calendar app.",
+  problem:
+    "Remembering birthdays can be difficult, especially when the information is already stored in spreadsheets for teams, student associations, volunteer groups, or personal contacts. Manually creating calendar events for each person can be tedious, particularly when the list contains many people.",
+  solution:
+    "A birthday calendar importer that allows users to upload an Excel or CSV file, select the columns containing names and birthdays, review and correct the imported records, and download an ICS calendar file. The exported events are configured as recurring, all-day birthday events that users can import into a compatible calendar application.",
+  features: [
+    "Upload Excel and CSV files containing names and birthdays",
+    "Select the worksheet to import when a workbook contains multiple sheets",
+    "Map spreadsheet columns to names and birthdays",
+    "Choose the date format for numeric dates",
+    "Preview imported birthday records before exporting",
+    "Edit names and correct birthday entries",
+    "Validate birthday dates and flag records that need attention",
+    "Identify possible duplicate entries",
+    "Choose which valid birthdays to include in the export",
+    "Customize the calendar name and optional event title prefix",
+    "Optionally include birth years in event titles",
+    "Download an ICS file containing recurring, all-day birthday events",
+    "Use sample data to explore the workflow",
+  ],
+  instructions: [
+    {
+      id: "1",
+      title: "Upload a spreadsheet",
+      description:
+        "Upload an Excel workbook or CSV file containing the names and birthdays you want to add to your calendar. You can also use sample data to explore the app.",
+    },
+    {
+      id: "2",
+      title: "Map the columns",
+      description:
+        "Choose the worksheet if necessary, then select the columns containing names and birthdays. Specify the date format used for numeric dates.",
+    },
+    {
+      id: "3",
+      title: "Review the birthdays",
+      description:
+        "Preview the imported records, correct names or dates, check validation warnings, and review possible duplicates before exporting.",
+    },
+    {
+      id: "4",
+      title: "Configure the calendar",
+      description:
+        "Choose a calendar name, optionally add a prefix to event titles, and decide whether to include birth years in the titles.",
+    },
+    {
+      id: "5",
+      title: "Export and import",
+      description:
+        "Download the ICS file containing your selected birthdays, then use your calendar application's import feature to add the events.",
+    },
+  ],
+  technologies: [
+    "React",
+        "ICS Calendar File Generation",
+
+    "TypeScript",
+    "Vite",
+    "Excel/CSV Parsing",
+  ],
+  category: "Frontend",
+  featured: true,
+  coverImage: "",
+  images: [
+    {
+      id: "1",
+      url: "",
+      alt: "Birthday Calendar Importer interface for converting spreadsheet birthdays into calendar events",
+      isCover: true,
+    },
+  ],
+  links: [
+    {
+      id: "1",
+      label: "Live Demo",
+      url: "https://birthday-importer.netlify.app/",
+      type: "demo",
+    },
+  ],
+  challenges:
+    "Handling dates consistently was an important part of the build. Spreadsheet dates can appear in different formats, and numeric dates such as 03/04/1998 can mean different days depending on the date convention being used. The importer therefore needed to let users choose the date order and review records before exporting them. Another consideration was generating calendar events that recur annually without requiring users to create each year's event manually.",
+  lessons:
+    "I explored the practical details of importing structured data from Excel and CSV files, validating user-provided dates, and generating calendar files that can be used outside the application. I also considered how previewing, editing, and flagging potentially problematic records can help users catch errors before exporting.",
+  buildNotes:
+    "The idea came from missing someone's birthday and realizing I already had a spreadsheet containing the details of people in a unit I once headed. Instead of manually creating calendar events one by one, I decided to build a tool that could turn the existing spreadsheet into an importable calendar file. I wanted the workflow to remain simple: upload, map columns, review the data, and export.",
+  whoIsItFor:
+    "Team leads, HR teams, student leaders, community and volunteer coordinators, and anyone who keeps birthday information in a spreadsheet and wants to transfer it into a calendar.",
+  inspiration:
+    "I recently missed someone's birthday and started thinking about how many other birthdays I might have forgotten. Since I already had an Excel spreadsheet containing some of those details, I wondered why I couldn't simply add them to my calendar. That small, personal problem inspired this build.",
+  createdAt: "2026-10-29T09:00:00Z",
+  updatedAt: "2026-10-29T17:00:00Z",
+  publishedAt: "2026-10-29T17:00:00Z",
+},
 {
   id: "18",
   dayNumber: 18,
