@@ -70,7 +70,7 @@ export const sampleProjects: Project[] = [
   ],
   category: "Frontend",
   featured: true,
-  coverImage: "",
+  coverImage: "https://images.unsplash.com/photo-1544155892-b2b6c64204fc?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
   images: [
     {
       id: "1",
