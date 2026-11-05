@@ -1,6 +1,244 @@
 import { Project } from "@/types";
 
 export const sampleProjects: Project[] = [
+{
+  id: "22",
+  dayNumber: 22,
+  title: "Exploring Constraint Optimization",
+  slug: "constraint-optimization-scheduler",
+  date: "2026-11-05",
+  shortDescription:
+    "An exploration of two scheduling algorithms that generate weekly timetables, comparing a greedy approach with an optimizer that explores alternative schedules.",
+  problem:
+    "Creating a useful timetable involves more than filling available hours. Tasks have different priorities, deadlines, duration requirements, and preferred working times. Fixed commitments and daily limits further restrict what can be scheduled. A scheduling approach that makes decisions one at a time may produce a valid timetable without finding the best trade-off between these competing requirements.",
+  solution:
+    "I implemented a second scheduling approach using beam search and compared it with my existing greedy scheduling algorithm. The optimizer generates alternative sessions, validates the resulting schedules, evaluates their quality using an objective function, and retains a limited number of promising alternatives for further exploration. I also expanded candidate generation to consider multiple start times and changed the ranking strategy to prioritize deadline success and work coverage before the overall weighted score.",
+  features: [
+    "Generate weekly timetables from tasks, availability, and fixed commitments",
+    "Support task priorities, deadlines, weekly targets, and daily time limits",
+    "Respect scheduling constraints such as availability, non-overlapping sessions, and deadline cutoffs",
+    "Generate candidate sessions at multiple start times in 30-minute increments",
+    "Use a greedy algorithm as a baseline scheduling approach",
+    "Explore alternative schedules using beam search",
+    "Evaluate schedules using deadline success, work coverage, priority alignment, and preference satisfaction",
+    "Rank candidate schedules using lexicographic ordering",
+    "Deduplicate equivalent search states",
+    "Limit search using configurable beam width and maximum search steps",
+    "Generate task allocation summaries showing scheduled and remaining minutes",
+    "Compare greedy and optimized schedules using the same test fixture",
+    "Measure candidate generation, validation rejections, and state expansions",
+    "Document experimental results, trade-offs, and limitations",
+  ],
+  instructions: [
+    {
+      id: "1",
+      title: "Define the scheduling problem",
+      description:
+        "Provide tasks with weekly time targets, priorities, deadlines, duration requirements, and optional preferences. Specify weekly availability and fixed commitments.",
+    },
+    {
+      id: "2",
+      title: "Generate a baseline timetable",
+      description:
+        "Run the greedy scheduling algorithm to establish a baseline for comparing how much work can be scheduled and how well the timetable satisfies the scheduling objectives.",
+    },
+    {
+      id: "3",
+      title: "Explore alternative schedules",
+      description:
+        "Run the optimizer, which generates possible sessions, validates candidate schedules, evaluates their quality, and retains a limited set of promising alternatives for subsequent search steps.",
+    },
+    {
+      id: "4",
+      title: "Compare the results",
+      description:
+        "Evaluate both approaches using the same test fixture. Compare scheduled minutes, deadline success, priority alignment, preference satisfaction, and overall weighted score.",
+    },
+    {
+      id: "5",
+      title: "Inspect the search",
+      description:
+        "Review the search statistics to understand how many candidates were generated, how many were rejected, and how many valid state expansions occurred before deduplication.",
+    },
+  ],
+  technologies: [
+    "TypeScript",
+    "Beam Search",
+    "Constraint Validation",
+    "Objective Functions",
+    "Algorithm Testing",
+    "tsx",
+  ],
+  category: "Algorithms",
+  featured: true,
+  coverImage: "",
+  images: [
+    {
+      id: "1",
+      url: "",
+      alt: "Comparison of a greedy scheduling approach and an optimizer that explores alternative weekly timetables",
+      isCover: true,
+    },
+  ],
+  links: [
+    {
+      id: "1",
+      label: "Source Code",
+      url: "https://github.com/ToluwanimiO/greedy-scheduler",
+      type: "github",
+    },
+  ],
+  challenges:
+    "One challenge was deciding how to compare schedules when several objectives compete. A schedule could achieve a higher weighted score while scheduling less of the requested work. To address this, I changed the search-state comparator to prioritize deadline success first, work coverage second, and the weighted score third. I also expanded candidate generation to consider multiple start times. The resulting timetable did not change after this expansion, which reinforced the importance of evaluating code changes through observed results rather than assuming that generating more candidates automatically improves the outcome.",
+  lessons:
+    "I learned to distinguish hard constraints, which determine whether a timetable is valid, from soft objectives, which determine whether one valid timetable is preferable to another. I also explored how beam search preserves promising alternatives while limiting the amount of search performed. Comparing the algorithms showed that both could schedule all requested work in my test fixture, while the optimizer achieved better preference satisfaction and a higher weighted score. The experiment also highlighted that success on one fixture does not prove global optimality or guarantee that the optimizer will always outperform the greedy approach.",
+  buildNotes:
+    "I started with a greedy scheduling algorithm and wanted to investigate whether exploring alternative scheduling decisions could produce better results. I implemented a beam-search optimizer, introduced an objective function, expanded candidate generation to consider multiple start times, and changed the ranking strategy to prioritize deadline success and work coverage. I then ran both algorithms against the same test fixture and added counters to measure the optimizer's search activity.",
+  whoIsItFor:
+    "Developers interested in scheduling systems, algorithm design, constraint optimization, search strategies, and the trade-offs involved in building software that must balance multiple competing objectives.",
+  inspiration:
+    "While building a goals-to-timetable application, I became interested in a deeper question: how can an algorithm generate a timetable that does more than fit tasks into available time? I wanted to understand how different scheduling strategies make trade-offs and whether exploring alternative solutions could improve the results.",
+  technicalDive: {
+    title: "Technical Deep Dive: From Greedy Scheduling to Beam Search",
+    introduction:
+      "This experiment investigates two approaches to weekly timetable generation. The greedy algorithm provides a baseline, while the optimizer uses bounded search to explore alternative schedules. Both are evaluated against the same test fixture.",
+    sections: [
+      {
+        id: "1",
+        title: "Formulating the scheduling problem",
+        content:
+          "The scheduler must satisfy hard constraints before considering schedule quality. These include availability, non-overlapping sessions, fixed commitments, weekly task targets, daily limits, minimum session durations, and firm deadline cutoffs. Soft objectives determine how to compare valid schedules based on deadline success, work coverage, priority alignment, and preference satisfaction.",
+      },
+      {
+        id: "2",
+        title: "Defining the objective function",
+        content:
+          "The scoreSchedule function evaluates four metrics. Deadline success measures the priority-weighted completion of tasks with deadlines. Work coverage measures scheduled minutes against requested minutes. Priority alignment measures how much scheduled time is allocated to higher-priority tasks. Preference satisfaction measures how well scheduled sessions match preferred days and times. The current weights are 0.40, 0.30, 0.20, and 0.10 respectively. These are design choices for the experiment, not proven optimal weights.",
+      },
+      {
+        id: "3",
+        title: "Implementing beam search",
+        content:
+          "The optimizer begins with an empty schedule. For each state in the current beam, it generates candidate sessions for each task, validates the resulting schedule, scores valid states, and deduplicates them using a state key. It then retains the best-ranked states for the next iteration. The current search uses a beam width of 80 and a maximum of 30 search steps.",
+      },
+      {
+        id: "4",
+        title: "Expanding candidate generation",
+        content:
+          "Candidate generation considers multiple start times within each free window, advancing in 30-minute increments. Candidate durations are limited by the remaining task target, daily allowance, available window, and deadline. Unsplittable tasks must fit as one uninterrupted session, while splittable tasks must respect their minimum session duration. Expanding the start-time options did not change the best timetable in the current fixture.",
+      },
+      {
+        id: "5",
+        title: "Introducing lexicographic ranking",
+        content:
+          "Instead of relying only on the weighted score, the comparator first prefers higher deadline success, then higher work coverage, and finally a higher weighted score. This ensures that the search ranking reflects the chosen hierarchy of objectives. It also affects which states survive the beam-width limit.",
+      },
+      {
+        id: "6",
+        title: "Experimental setup",
+        content:
+          "The test fixture contains four tasks: interview preparation (180 minutes), system design (120 minutes), DevOps (180 minutes), and project work (120 minutes). The total requested workload is 600 minutes. The fixture includes task priorities, deadlines, daily limits, preferred times, weekly availability, and fixed commitments. Both algorithms use the same input.",
+      },
+      {
+        id: "7",
+        title: "Results and comparison",
+        content:
+          "Both algorithms scheduled all 600 requested minutes and achieved a deadline-success metric of 1.0 and priority-alignment metric of 0.70. The greedy algorithm achieved preference satisfaction of 0.60 and a weighted score of approximately 90.0. The optimizer achieved preference satisfaction of 0.75 and a weighted score of 91.5. On this fixture, the optimizer improved preference satisfaction while preserving work coverage and deadline success.",
+      },
+      {
+        id: "8",
+        title: "Search statistics",
+        content:
+          "The latest optimizer run generated 7,909 candidates, rejected zero candidates during schedule validation, and produced 7,909 valid state expansions before deduplication. The final beam contained 80 states. The best schedule covered 600 minutes and achieved a weighted score of 91.5. These counters are cumulative across the search and do not represent unique complete timetables.",
+      },
+      {
+        id: "9",
+        title: "Limitations and next experiments",
+        content:
+          "The results come from one test fixture and do not establish global optimality. Zero validation rejections does not prove that every constraint is implemented correctly. Further work includes comparing beam widths of 40, 80, and 160, adding more challenging fixtures, measuring unique-state counts and runtime, and testing hard constraints with deliberately invalid schedules.",
+      },
+    ],
+    objectiveWeights: {
+      deadlineSuccess: 0.4,
+      workCoverage: 0.3,
+      priorityAlignment: 0.2,
+      preferenceSatisfaction: 0.1,
+    },
+    searchConfiguration: {
+      beamWidth: 80,
+      maxSearchSteps: 30,
+      candidateStartIntervalMinutes: 30,
+    },
+    searchStatistics: {
+      candidatesGenerated: 7909,
+      candidatesRejected: 0,
+      validStateExpansionsBeforeDeduplication: 7909,
+      finalBeamSize: 80,
+      bestScheduledMinutes: 600,
+      bestWeightedScore: 91.5,
+    },
+    comparison: [
+      {
+        metric: "Scheduled minutes",
+        greedy: "600",
+        optimizer: "600",
+      },
+      {
+        metric: "Deadline success",
+        greedy: "1.0",
+        optimizer: "1.0",
+      },
+      {
+        metric: "Work coverage",
+        greedy: "1.0",
+        optimizer: "1.0",
+      },
+      {
+        metric: "Priority alignment",
+        greedy: "0.70",
+        optimizer: "0.70",
+      },
+      {
+        metric: "Preference satisfaction",
+        greedy: "0.60",
+        optimizer: "0.75",
+      },
+      {
+        metric: "Weighted score",
+        greedy: "~90.0",
+        optimizer: "91.5",
+      },
+    ],
+    codeReferences: [
+      {
+        label: "Optimizer implementation",
+        path: "src/scheduler/optimizerScheduler.ts",
+      },
+      {
+        label: "Objective function",
+        path: "src/scheduler/objective.ts",
+      },
+      {
+        label: "Greedy baseline",
+        path: "src/scheduler/greedyScheduler.ts",
+      },
+      {
+        label: "Optimizer test fixture",
+        path: "tests/fixtures/optimizer-test-input.ts",
+      },
+      {
+        label: "Comparison runner",
+        path: "src/runOptimizer.ts",
+      },
+    ],
+    runCommand: "npx tsx src/runOptimizer.ts",
+    conclusion:
+      "The experiment demonstrates that beam search can find a better-scoring schedule than the greedy baseline on this fixture. It does not prove that the optimizer always outperforms greedy scheduling or finds a globally optimal timetable. The next step is to test how search width and problem complexity affect solution quality and runtime.",
+  },
+  createdAt: "2026-11-05T09:00:00Z",
+  updatedAt: "2026-11-05T17:00:00Z",
+  publishedAt: "2026-11-05T17:00:00Z",
+},
   {
   id: "19",
   dayNumber: 19,

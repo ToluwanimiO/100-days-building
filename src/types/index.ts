@@ -24,6 +24,8 @@ export interface Project {
   createdAt: string;
   updatedAt: string;
   publishedAt?: string;
+  technicalDive?: TechnicalDive;
+
 }
 
 export interface InstructionStep {
@@ -95,3 +97,56 @@ export interface ProjectFormData {
   whoIsItFor?: string;
   inspiration?: string;
 }
+
+
+export type TechnicalDiveSection = {
+  id: string;
+  title: string;
+  content: string;
+};
+
+export type ObjectiveWeights = {
+  deadlineSuccess: number;
+  workCoverage: number;
+  priorityAlignment: number;
+  preferenceSatisfaction: number;
+};
+
+export type SearchConfiguration = {
+  beamWidth: number;
+  maxSearchSteps: number;
+  candidateStartIntervalMinutes: number;
+};
+
+export type SearchStatistics = {
+  candidatesGenerated: number;
+  candidatesRejected: number;
+  validStateExpansionsBeforeDeduplication: number;
+  finalBeamSize: number;
+  bestScheduledMinutes: number;
+  bestWeightedScore: number;
+};
+
+export type AlgorithmComparison = {
+  metric: string;
+  greedy: string;
+  optimizer: string;
+};
+
+export type CodeReference = {
+  label: string;
+  path: string;
+};
+
+export type TechnicalDive = {
+  title: string;
+  introduction: string;
+  sections: TechnicalDiveSection[];
+  objectiveWeights?: ObjectiveWeights;
+  searchConfiguration?: SearchConfiguration;
+  searchStatistics?: SearchStatistics;
+  comparison?: AlgorithmComparison[];
+  codeReferences?: CodeReference[];
+  runCommand?: string;
+  conclusion: string;
+};
