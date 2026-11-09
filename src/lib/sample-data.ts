@@ -1,6 +1,108 @@
 import { Project } from "@/types";
 
 export const sampleProjects: Project[] = [
+  
+{
+  id: "23",
+  dayNumber: 23,
+  title: "Goal-to-Timetable Scheduling Engine",
+  slug: "goal-to-timetable-scheduling-engine",
+  date: "2026-11-09",
+  shortDescription:
+    "A scheduling tool that turns goals, deadlines, available hours, and recurring commitments into a structured weekly timetable.",
+  problem:
+    "Balancing personal goals, learning targets, deadlines, work, and recurring commitments can make weekly planning difficult. Manually deciding what to work on, when to work on it, and how much time to allocate to each task can be time-consuming. A schedule that ignores existing commitments or competing priorities may also be unrealistic from the start.",
+  solution:
+    "A goal-to-timetable scheduling engine that takes users' goals, weekly work targets, deadlines, available time, and fixed commitments and generates a feasible weekly timetable. The project explores different scheduling algorithms, including greedy scheduling and beam-search-based optimization, and provides a frontend through which users can enter their planning information and interact with the scheduling experience.",
+  features: [
+    "Define goals and the tasks associated with them",
+    "Set weekly work targets for individual tasks",
+    "Specify task priorities and firm deadlines",
+    "Set minimum session durations and optional daily time limits",
+    "Define available time across the days of the week",
+    "Add recurring routines and fixed commitments",
+    "Specify preferred days and times for tasks",
+    "Generate schedules using a greedy scheduling algorithm",
+    "Generate alternative schedules using beam-search-based optimization",
+    "Compare scheduling approaches using objective scores and work coverage",
+    "Account for deadlines and daily availability constraints",
+    "Identify tasks that cannot be fully scheduled and explain why",
+    "Present planning information through a user-facing frontend",
+  ],
+  instructions: [
+    {
+      id: "1",
+      title: "Define your goals",
+      description:
+        "Enter the tasks you want to complete, set their weekly work targets, and specify priorities, deadlines, and any daily session limits.",
+    },
+    {
+      id: "2",
+      title: "Set your availability",
+      description:
+        "Specify the hours you can dedicate to your goals throughout the week, taking existing commitments and recurring routines into account.",
+    },
+    {
+      id: "3",
+      title: "Configure your preferences",
+      description:
+        "Define preferred days and times for tasks, along with scheduling constraints such as minimum session durations.",
+    },
+    {
+      id: "4",
+      title: "Generate a timetable",
+      description:
+        "Use the scheduling engine to allocate tasks to available time slots while considering deadlines, priorities, and scheduling constraints.",
+    },
+    {
+      id: "5",
+      title: "Review your schedule",
+      description:
+        "Review the generated timetable, examine any unallocated work, and evaluate how well the schedule meets your planning requirements.",
+    },
+  ],
+  technologies: [
+    "React",
+    "TypeScript",
+    "Vite",
+    "Greedy Scheduling",
+    "Beam Search",
+    "Constraint Optimization",
+  ],
+  category: "Frontend",
+  featured: true,
+  coverImage: "",
+  images: [
+    {
+      id: "1",
+      url: "",
+      alt: "Goal-to-timetable scheduling engine frontend for planning weekly goals, availability, and commitments",
+      isCover: true,
+    },
+  ],
+  links: [
+    {
+      id: "1",
+      label: "Live Demo",
+      url: "https://scheduless.netlify.app/",
+      type: "demo",
+    },
+  ],
+  challenges:
+    "One of the main challenges is translating the scheduling engine's underlying concepts into an interface that users can understand and navigate. The frontend needs to collect different kinds of planning information without making the process overwhelming. The scheduling problem itself also involves competing requirements: allocating enough time to tasks, respecting firm deadlines, working within available hours, and accounting for user preferences. These considerations make it important to distinguish between a schedule that simply fills time slots and one that satisfies meaningful planning objectives.",
+  lessons:
+    "This stage of the project has helped me think about how algorithmic systems are presented to users. A scheduling algorithm may produce a valid timetable, but the overall experience also depends on how clearly users can define their goals and constraints and understand the resulting schedule. It has reinforced the connection between algorithm design, frontend development, and the practical usability of software.",
+  buildNotes:
+    "I started this project to explore how computer science concepts could help solve a practical planning problem. After modelling the scheduling domain and implementing greedy scheduling and a beam-search-based optimization approach, I began developing the frontend to make the engine accessible through a user-facing interface. My focus today was translating the scheduling workflow into an experience through which users can provide their planning information and work toward a realistic weekly timetable.",
+  whoIsItFor:
+    "Students, professionals, independent learners, and anyone balancing multiple goals, deadlines, routines, and commitments who wants a more structured way to plan their week.",
+  inspiration:
+    "Balancing personal goals, learning new skills, projects, and recurring commitments made me think about whether scheduling could be treated as a computational problem rather than relying entirely on manual planning. I wanted to explore how algorithms could allocate limited time across competing priorities and turn the result into a timetable people could use in everyday life.",
+  createdAt: "2026-11-09T09:00:00Z",
+  updatedAt: "2026-11-09T17:00:00Z",
+  publishedAt: "2026-11-09T17:00:00Z",
+},
+
 {
   id: "22",
   dayNumber: 22,
