@@ -1,7 +1,111 @@
 import { Project } from "@/types";
 
 export const sampleProjects: Project[] = [
-  
+  {
+  id: "24",
+  dayNumber: 24,
+  title: "SIWES Company Finder",
+  slug: "siwes-company-finder",
+  date: "2026-11-11",
+  shortDescription:
+    "A searchable company directory that helps Nigerian students discover organisations by discipline, location, and other available company information.",
+  problem:
+    "Finding a suitable organisation for the Student Industrial Work Experience Scheme (SIWES) can be challenging for Nigerian students. Students may not know which companies to explore, where those organisations are located, or which ones are relevant to their academic disciplines. Discovering potential organisations often requires searching across multiple websites and directories, while the information available may be incomplete, outdated, or difficult to verify.",
+  solution:
+    "A searchable company directory initially conceived to help Nigerian students discover potential SIWES placement organisations. The project evolved into a broader company directory that groups organisations by academic and professional disciplines and provides available company information to support discovery. Its data pipeline uses Python-based web scraping, aggregation, and automated validation, with AI-assisted classification where available. The project also incorporates data-quality checks to flag potential inconsistencies for review.",
+  features: [
+    "Browse a directory of organisations collected from multiple public sources",
+    "Search for companies by name",
+    "Explore organisations grouped by discipline",
+    "Filter company listings using available discipline information",
+    "Explore company information, including location and website where available",
+    "Aggregate company names from ITF-related SIWES employer records",
+    "Discover additional company website candidates from public sources",
+    "Extract and organise company information using Python-based web scraping",
+    "Apply automated data-validation checks to identify potential inconsistencies",
+    "Use AI-assisted classification where available",
+    "Flag missing information and potential duplicate company records",
+    "Identify suspicious discipline assignments and possible company–website mismatches for review",
+    "Support multiple discipline data formats in the frontend",
+    "Display discipline labels consistently using mapped discipline codes",
+    "Communicate data limitations through an accuracy disclaimer",
+  ],
+  instructions: [
+    {
+      id: "1",
+      title: "Explore the directory",
+      description:
+        "Open the directory to browse the available organisations and explore the information provided for each company.",
+    },
+    {
+      id: "2",
+      title: "Search for an organisation",
+      description:
+        "Use the available search functionality to find companies by name and narrow your search to organisations relevant to your interests.",
+    },
+    {
+      id: "3",
+      title: "Explore by discipline",
+      description:
+        "Browse companies grouped by discipline to discover organisations that may be relevant to your academic background or career interests.",
+    },
+    {
+      id: "4",
+      title: "Review company information",
+      description:
+        "Check the available company details, including location, website, and relevant disciplines, where provided.",
+    },
+    {
+      id: "5",
+      title: "Verify placement opportunities",
+      description:
+        "Contact organisations directly and consult your institution's SIWES coordinator or the ITF to confirm placement availability and eligibility before applying.",
+    },
+  ],
+  technologies: [
+    "Python",
+    "BeautifulSoup",
+    "JavaScript",
+    "HTML",
+    "CSS",
+    "Web Scraping",
+    "Data Validation",
+    "AI-Assisted Classification",
+    "CSV Data Processing",
+  ],
+  category: "Fullstack",
+  featured: true,
+  coverImage: "https://images.unsplash.com/photo-1773047747721-f75d546d7290?q=80&w=1413&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+  images: [
+    {
+      id: "1",
+      url: "",
+      alt: "SIWES Company Finder interface showing company listings grouped by discipline",
+      isCover: true,
+    },
+  ],
+  links: [
+    {
+      id: "1",
+      label: "Live Demo",
+      url: "https://siwes-finder.netlify.app/",
+      type: "demo",
+    },
+  ],
+  challenges:
+    "One of the main challenges was building a useful directory from company information scattered across different sources. The initial ITF-related records provided company names, but additional information such as locations, websites, and relevant disciplines was not consistently available. Expanding the dataset required a web-scraping pipeline that could collect and organise information while accommodating different website structures. Data quality introduced another challenge: automated collection and classification can produce incomplete records, duplicate entries, irrelevant links, and potentially incorrect discipline assignments. I implemented automated checks to flag these issues for review rather than treating every collected record as accurate. I also had to account for inconsistencies in how discipline information was represented in the seed data so that the frontend could display both space-separated strings and arrays correctly.",
+  lessons:
+    "This project reinforced that building a useful data-driven application involves more than collecting records and displaying them in a searchable interface. Data acquisition, normalisation, validation, classification, and presentation are interconnected parts of the system. It also highlighted the limitations of automation: web scraping and AI-assisted classification can accelerate data processing, but they do not guarantee correctness. Reliable systems need validation mechanisms, transparent limitations, and ways to identify records that require further review.",
+  buildNotes:
+    "I began with the idea of helping Nigerian students discover potential SIWES placement organisations. I collected employer names from ITF-related records and expanded the dataset using publicly available sources. I then developed a Python-based pipeline for web scraping, data aggregation, and automated validation, with AI-assisted classification where available. I also implemented data-quality checks to flag missing information, possible duplicates, suspicious discipline assignments, and potential company–website mismatches. On the frontend, I updated the rendering logic to handle different discipline data formats consistently. As the project evolved, the original SIWES-specific concept became a broader company directory organised by discipline. The focus is on making company discovery easier while being transparent about the limitations of the underlying data.",
+  whoIsItFor:
+    "Nigerian university and polytechnic students searching for potential SIWES placement organisations, as well as students and other users looking to discover companies by academic discipline and location.",
+  inspiration:
+    "Finding an organisation for SIWES can be difficult when students do not know which companies to consider or where to find relevant information. I wanted to explore how a searchable directory could make that discovery process easier. As I worked on the idea, I also became interested in the engineering challenges behind the directory: collecting information from multiple sources, structuring it consistently, and identifying potential data-quality problems through automation.",
+  createdAt: "2026-11-11T09:00:00Z",
+  updatedAt: "2026-11-11T17:00:00Z",
+  publishedAt: "2026-11-11T17:00:00Z",
+},
 {
   id: "23",
   dayNumber: 23,
@@ -71,7 +175,7 @@ export const sampleProjects: Project[] = [
   ],
   category: "Frontend",
   featured: true,
-  coverImage: "",
+  coverImage: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=868&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
   images: [
     {
       id: "1",
