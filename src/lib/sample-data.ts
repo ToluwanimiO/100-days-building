@@ -445,6 +445,65 @@ export const sampleProjects: Project[] = [
   updatedAt: "2026-11-05T17:00:00Z",
   publishedAt: "2026-11-05T17:00:00Z",
 },
+{
+  id: "20",
+  dayNumber: 20,
+  title: "Modeling a Scheduling Problem",
+  slug: "modeling-a-scheduling-problem",
+  date: "2026-11-05",
+  shortDescription:
+    "A TypeScript domain model for a goal-to-timetable scheduling engine, defining task requirements, availability, constraints, and scheduling objectives before algorithm implementation.",
+  problem:
+    "Turning personal goals, deadlines, and available time into a realistic weekly timetable is more complex than assigning tasks to empty time slots. Tasks have different priorities, weekly duration targets, deadlines, and session-splitting requirements, while users have availability windows and recurring commitments. Without a clear model of feasibility and schedule quality, it is difficult to implement or evaluate a scheduling algorithm reliably.",
+  solution:
+    "I began designing a goal-to-timetable scheduling engine by defining its domain model and the rules that determine whether a schedule is valid and how its quality should be evaluated. I distinguished hard constraints, which determine feasibility, from soft preferences, which influence the quality of a feasible timetable. I also modelled the core entities and scheduling strategies in TypeScript, establishing a foundation for implementing and comparing scheduling algorithms.",
+  features: [
+    "Model goals and their associated tasks",
+    "Represent weekly task-duration targets and optional daily limits",
+    "Define task priorities and firm deadlines",
+    "Represent minimum session durations and task-splitting requirements",
+    "Model weekly availability windows",
+    "Represent recurring routines and fixed commitments",
+    "Distinguish hard constraints from soft scheduling preferences",
+    "Define scheduling strategies for priority-first, deadline-first, and balanced-progress approaches",
+    "Establish rules for preventing overlapping sessions",
+    "Define feasibility requirements for availability, daily limits, and deadlines",
+    "Model allocation results for scheduled and unallocated work",
+    "Establish evaluation criteria for comparing scheduling approaches",
+  ],
+  instructions: [
+  ],
+  technologies: [
+    "TypeScript",
+    "Domain Modeling",
+    "Constraint Modeling",
+    "Algorithm Design",
+    "Software Engineering",
+  ],
+  category: "Algorithms",
+  featured: false,
+  coverImage: "",
+  images: [
+    {
+      id: "1",
+      url: "",
+      alt: "TypeScript domain model for a goal-to-timetable scheduling engine",
+      isCover: true,
+    },
+  ],
+  links: [],
+  lessons:
+    "This exercise reinforced the importance of modelling a problem before choosing an algorithm. Explicit domain types, constraints, and evaluation criteria provide a clearer foundation for implementation and testing. It also highlighted the distinction between finding a feasible solution and finding a high-quality one: a schedule must first respect the rules, then be evaluated according to the objectives it is intended to serve.",
+  buildNotes:
+    "Today, I started designing the goal-to-timetable scheduling engine. Before implementing an algorithm, I defined what a valid schedule should look like and how to evaluate its quality. I modelled tasks, weekly targets, priorities, deadlines, session requirements, availability, fixed commitments, and scheduling strategies in TypeScript. I also separated hard constraints from soft preferences to distinguish schedule feasibility from schedule quality. The next step is to implement a greedy scheduling algorithm, establish a baseline, and explore where constraint optimization could improve its decisions.",
+  whoIsItFor:
+    "Software engineers, computer science students, and developers interested in algorithm design, domain modeling, constraint-based scheduling, and translating real-world planning problems into computational systems.",
+  inspiration:
+    "Balancing personal goals, learning targets, projects, deadlines, and recurring commitments made me curious about whether weekly planning could be treated as a computational scheduling problem. Rather than immediately building an interface or writing an algorithm, I wanted to understand the problem itself, define its constraints, and establish what a useful solution should achieve.",
+  createdAt: "2026-11-05T09:00:00Z",
+  updatedAt: "2026-11-05T17:00:00Z",
+  publishedAt: "2026-11-05T17:00:00Z",
+},
   {
   id: "19",
   dayNumber: 19,
