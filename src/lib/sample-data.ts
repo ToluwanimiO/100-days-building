@@ -2,809 +2,874 @@ import { Project } from "@/types";
 
 export const sampleProjects: Project[] = [
   {
-  id: "24",
-  dayNumber: 24,
-  title: "SIWES Company Finder",
-  slug: "siwes-company-finder",
-  date: "2026-11-11",
-  shortDescription:
-    "A searchable company directory that helps Nigerian students discover organisations by discipline, location, and other available company information.",
-  problem:
-    "Finding a suitable organisation for the Student Industrial Work Experience Scheme (SIWES) can be challenging for Nigerian students. Students may not know which companies to explore, where those organisations are located, or which ones are relevant to their academic disciplines. Discovering potential organisations often requires searching across multiple websites and directories, while the information available may be incomplete, outdated, or difficult to verify.",
-  solution:
-    "A searchable company directory initially conceived to help Nigerian students discover potential SIWES placement organisations. The project evolved into a broader company directory that groups organisations by academic and professional disciplines and provides available company information to support discovery. Its data pipeline uses Python-based web scraping, aggregation, and automated validation, with AI-assisted classification where available. The project also incorporates data-quality checks to flag potential inconsistencies for review.",
-  features: [
-    "Browse a directory of organisations collected from multiple public sources",
-    "Search for companies by name",
-    "Explore organisations grouped by discipline",
-    "Filter company listings using available discipline information",
-    "Explore company information, including location and website where available",
-    "Aggregate company names from ITF-related SIWES employer records",
-    "Discover additional company website candidates from public sources",
-    "Extract and organise company information using Python-based web scraping",
-    "Apply automated data-validation checks to identify potential inconsistencies",
-    "Use AI-assisted classification where available",
-    "Flag missing information and potential duplicate company records",
-    "Identify suspicious discipline assignments and possible company–website mismatches for review",
-    "Support multiple discipline data formats in the frontend",
-    "Display discipline labels consistently using mapped discipline codes",
-    "Communicate data limitations through an accuracy disclaimer",
-  ],
-  instructions: [
-    {
-      id: "1",
-      title: "Explore the directory",
-      description:
-        "Open the directory to browse the available organisations and explore the information provided for each company.",
-    },
-    {
-      id: "2",
-      title: "Search for an organisation",
-      description:
-        "Use the available search functionality to find companies by name and narrow your search to organisations relevant to your interests.",
-    },
-    {
-      id: "3",
-      title: "Explore by discipline",
-      description:
-        "Browse companies grouped by discipline to discover organisations that may be relevant to your academic background or career interests.",
-    },
-    {
-      id: "4",
-      title: "Review company information",
-      description:
-        "Check the available company details, including location, website, and relevant disciplines, where provided.",
-    },
-    {
-      id: "5",
-      title: "Verify placement opportunities",
-      description:
-        "Contact organisations directly and consult your institution's SIWES coordinator or the ITF to confirm placement availability and eligibility before applying.",
-    },
-  ],
-  technologies: [
-    "Python",
-    "BeautifulSoup",
-    "JavaScript",
-    "HTML",
-    "CSS",
-    "Web Scraping",
-    "Data Validation",
-    "AI-Assisted Classification",
-    "CSV Data Processing",
-  ],
-  category: "Fullstack",
-  featured: true,
-  coverImage: "https://images.unsplash.com/photo-1773047747721-f75d546d7290?q=80&w=1413&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
-  images: [
-    {
-      id: "1",
-      url: "",
-      alt: "SIWES Company Finder interface showing company listings grouped by discipline",
-      isCover: true,
-    },
-  ],
-  links: [
-    {
-      id: "1",
-      label: "Live Demo",
-      url: "https://siwes-finder.netlify.app/",
-      type: "demo",
-    },
-  ],
-  challenges:
-    "One of the main challenges was building a useful directory from company information scattered across different sources. The initial ITF-related records provided company names, but additional information such as locations, websites, and relevant disciplines was not consistently available. Expanding the dataset required a web-scraping pipeline that could collect and organise information while accommodating different website structures. Data quality introduced another challenge: automated collection and classification can produce incomplete records, duplicate entries, irrelevant links, and potentially incorrect discipline assignments. I implemented automated checks to flag these issues for review rather than treating every collected record as accurate. I also had to account for inconsistencies in how discipline information was represented in the seed data so that the frontend could display both space-separated strings and arrays correctly.",
-  lessons:
-    "This project reinforced that building a useful data-driven application involves more than collecting records and displaying them in a searchable interface. Data acquisition, normalisation, validation, classification, and presentation are interconnected parts of the system. It also highlighted the limitations of automation: web scraping and AI-assisted classification can accelerate data processing, but they do not guarantee correctness. Reliable systems need validation mechanisms, transparent limitations, and ways to identify records that require further review.",
-  buildNotes:
-    "I began with the idea of helping Nigerian students discover potential SIWES placement organisations. I collected employer names from ITF-related records and expanded the dataset using publicly available sources. I then developed a Python-based pipeline for web scraping, data aggregation, and automated validation, with AI-assisted classification where available. I also implemented data-quality checks to flag missing information, possible duplicates, suspicious discipline assignments, and potential company–website mismatches. On the frontend, I updated the rendering logic to handle different discipline data formats consistently. As the project evolved, the original SIWES-specific concept became a broader company directory organised by discipline. The focus is on making company discovery easier while being transparent about the limitations of the underlying data.",
-  whoIsItFor:
-    "Nigerian university and polytechnic students searching for potential SIWES placement organisations, as well as students and other users looking to discover companies by academic discipline and location.",
-  inspiration:
-    "Finding an organisation for SIWES can be difficult when students do not know which companies to consider or where to find relevant information. I wanted to explore how a searchable directory could make that discovery process easier. As I worked on the idea, I also became interested in the engineering challenges behind the directory: collecting information from multiple sources, structuring it consistently, and identifying potential data-quality problems through automation.",
-  createdAt: "2026-11-11T09:00:00Z",
-  updatedAt: "2026-11-11T17:00:00Z",
-  publishedAt: "2026-11-11T17:00:00Z",
-},
-{
-  id: "23",
-  dayNumber: 23,
-  title: "Goal-to-Timetable Scheduling Engine",
-  slug: "goal-to-timetable-scheduling-engine",
-  date: "2026-11-09",
-  shortDescription:
-    "A scheduling tool that turns goals, deadlines, available hours, and recurring commitments into a structured weekly timetable.",
-  problem:
-    "Balancing personal goals, learning targets, deadlines, work, and recurring commitments can make weekly planning difficult. Manually deciding what to work on, when to work on it, and how much time to allocate to each task can be time-consuming. A schedule that ignores existing commitments or competing priorities may also be unrealistic from the start.",
-  solution:
-    "A goal-to-timetable scheduling engine that takes users' goals, weekly work targets, deadlines, available time, and fixed commitments and generates a feasible weekly timetable. The project explores different scheduling algorithms, including greedy scheduling and beam-search-based optimization, and provides a frontend through which users can enter their planning information and interact with the scheduling experience.",
-  features: [
-    "Define goals and the tasks associated with them",
-    "Set weekly work targets for individual tasks",
-    "Specify task priorities and firm deadlines",
-    "Set minimum session durations and optional daily time limits",
-    "Define available time across the days of the week",
-    "Add recurring routines and fixed commitments",
-    "Specify preferred days and times for tasks",
-    "Generate schedules using a greedy scheduling algorithm",
-    "Generate alternative schedules using beam-search-based optimization",
-    "Compare scheduling approaches using objective scores and work coverage",
-    "Account for deadlines and daily availability constraints",
-    "Identify tasks that cannot be fully scheduled and explain why",
-    "Present planning information through a user-facing frontend",
-  ],
-  instructions: [
-    {
-      id: "1",
-      title: "Define your goals",
-      description:
-        "Enter the tasks you want to complete, set their weekly work targets, and specify priorities, deadlines, and any daily session limits.",
-    },
-    {
-      id: "2",
-      title: "Set your availability",
-      description:
-        "Specify the hours you can dedicate to your goals throughout the week, taking existing commitments and recurring routines into account.",
-    },
-    {
-      id: "3",
-      title: "Configure your preferences",
-      description:
-        "Define preferred days and times for tasks, along with scheduling constraints such as minimum session durations.",
-    },
-    {
-      id: "4",
-      title: "Generate a timetable",
-      description:
-        "Use the scheduling engine to allocate tasks to available time slots while considering deadlines, priorities, and scheduling constraints.",
-    },
-    {
-      id: "5",
-      title: "Review your schedule",
-      description:
-        "Review the generated timetable, examine any unallocated work, and evaluate how well the schedule meets your planning requirements.",
-    },
-  ],
-  technologies: [
-    "React",
-    "TypeScript",
-    "Vite",
-    "Greedy Scheduling",
-    "Beam Search",
-    "Constraint Optimization",
-  ],
-  category: "Frontend",
-  featured: true,
-  coverImage: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=868&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
-  images: [
-    {
-      id: "1",
-      url: "",
-      alt: "Goal-to-timetable scheduling engine frontend for planning weekly goals, availability, and commitments",
-      isCover: true,
-    },
-  ],
-  links: [
-    {
-      id: "1",
-      label: "Live Demo",
-      url: "https://scheduless.netlify.app/",
-      type: "demo",
-    },
-  ],
-  challenges:
-    "One of the main challenges is translating the scheduling engine's underlying concepts into an interface that users can understand and navigate. The frontend needs to collect different kinds of planning information without making the process overwhelming. The scheduling problem itself also involves competing requirements: allocating enough time to tasks, respecting firm deadlines, working within available hours, and accounting for user preferences. These considerations make it important to distinguish between a schedule that simply fills time slots and one that satisfies meaningful planning objectives.",
-  lessons:
-    "This stage of the project has helped me think about how algorithmic systems are presented to users. A scheduling algorithm may produce a valid timetable, but the overall experience also depends on how clearly users can define their goals and constraints and understand the resulting schedule. It has reinforced the connection between algorithm design, frontend development, and the practical usability of software.",
-  buildNotes:
-    "I started this project to explore how computer science concepts could help solve a practical planning problem. After modelling the scheduling domain and implementing greedy scheduling and a beam-search-based optimization approach, I began developing the frontend to make the engine accessible through a user-facing interface. My focus today was translating the scheduling workflow into an experience through which users can provide their planning information and work toward a realistic weekly timetable.",
-  whoIsItFor:
-    "Students, professionals, independent learners, and anyone balancing multiple goals, deadlines, routines, and commitments who wants a more structured way to plan their week.",
-  inspiration:
-    "Balancing personal goals, learning new skills, projects, and recurring commitments made me think about whether scheduling could be treated as a computational problem rather than relying entirely on manual planning. I wanted to explore how algorithms could allocate limited time across competing priorities and turn the result into a timetable people could use in everyday life.",
-  createdAt: "2026-11-09T09:00:00Z",
-  updatedAt: "2026-11-09T17:00:00Z",
-  publishedAt: "2026-11-09T17:00:00Z",
-},
-
-{
-  id: "22",
-  dayNumber: 22,
-  title: "Exploring Constraint Optimization",
-  slug: "constraint-optimization-scheduler",
-  date: "2026-11-05",
-  shortDescription:
-    "An exploration of two scheduling algorithms that generate weekly timetables, comparing a greedy approach with an optimizer that explores alternative schedules.",
-  problem:
-    "Creating a useful timetable involves more than filling available hours. Tasks have different priorities, deadlines, duration requirements, and preferred working times. Fixed commitments and daily limits further restrict what can be scheduled. A scheduling approach that makes decisions one at a time may produce a valid timetable without finding the best trade-off between these competing requirements.",
-  solution:
-    "I implemented a second scheduling approach using beam search and compared it with my existing greedy scheduling algorithm. The optimizer generates alternative sessions, validates the resulting schedules, evaluates their quality using an objective function, and retains a limited number of promising alternatives for further exploration. I also expanded candidate generation to consider multiple start times and changed the ranking strategy to prioritize deadline success and work coverage before the overall weighted score.",
-  features: [
-    "Generate weekly timetables from tasks, availability, and fixed commitments",
-    "Support task priorities, deadlines, weekly targets, and daily time limits",
-    "Respect scheduling constraints such as availability, non-overlapping sessions, and deadline cutoffs",
-    "Generate candidate sessions at multiple start times in 30-minute increments",
-    "Use a greedy algorithm as a baseline scheduling approach",
-    "Explore alternative schedules using beam search",
-    "Evaluate schedules using deadline success, work coverage, priority alignment, and preference satisfaction",
-    "Rank candidate schedules using lexicographic ordering",
-    "Deduplicate equivalent search states",
-    "Limit search using configurable beam width and maximum search steps",
-    "Generate task allocation summaries showing scheduled and remaining minutes",
-    "Compare greedy and optimized schedules using the same test fixture",
-    "Measure candidate generation, validation rejections, and state expansions",
-    "Document experimental results, trade-offs, and limitations",
-  ],
-  instructions: [
-    {
-      id: "1",
-      title: "Define the scheduling problem",
-      description:
-        "Provide tasks with weekly time targets, priorities, deadlines, duration requirements, and optional preferences. Specify weekly availability and fixed commitments.",
-    },
-    {
-      id: "2",
-      title: "Generate a baseline timetable",
-      description:
-        "Run the greedy scheduling algorithm to establish a baseline for comparing how much work can be scheduled and how well the timetable satisfies the scheduling objectives.",
-    },
-    {
-      id: "3",
-      title: "Explore alternative schedules",
-      description:
-        "Run the optimizer, which generates possible sessions, validates candidate schedules, evaluates their quality, and retains a limited set of promising alternatives for subsequent search steps.",
-    },
-    {
-      id: "4",
-      title: "Compare the results",
-      description:
-        "Evaluate both approaches using the same test fixture. Compare scheduled minutes, deadline success, priority alignment, preference satisfaction, and overall weighted score.",
-    },
-    {
-      id: "5",
-      title: "Inspect the search",
-      description:
-        "Review the search statistics to understand how many candidates were generated, how many were rejected, and how many valid state expansions occurred before deduplication.",
-    },
-  ],
-  technologies: [
-    "TypeScript",
-    "Beam Search",
-    "Constraint Validation",
-    "Objective Functions",
-    "Algorithm Testing",
-    "tsx",
-  ],
-  category: "Algorithms",
-  featured: true,
-  coverImage: "",
-  images: [
-    {
-      id: "1",
-      url: "",
-      alt: "Comparison of a greedy scheduling approach and an optimizer that explores alternative weekly timetables",
-      isCover: true,
-    },
-  ],
-  links: [
-    {
-      id: "1",
-      label: "Source Code",
-      url: "https://github.com/ToluwanimiO/greedy-scheduler",
-      type: "github",
-    },
-  ],
-  challenges:
-    "One challenge was deciding how to compare schedules when several objectives compete. A schedule could achieve a higher weighted score while scheduling less of the requested work. To address this, I changed the search-state comparator to prioritize deadline success first, work coverage second, and the weighted score third. I also expanded candidate generation to consider multiple start times. The resulting timetable did not change after this expansion, which reinforced the importance of evaluating code changes through observed results rather than assuming that generating more candidates automatically improves the outcome.",
-  lessons:
-    "I learned to distinguish hard constraints, which determine whether a timetable is valid, from soft objectives, which determine whether one valid timetable is preferable to another. I also explored how beam search preserves promising alternatives while limiting the amount of search performed. Comparing the algorithms showed that both could schedule all requested work in my test fixture, while the optimizer achieved better preference satisfaction and a higher weighted score. The experiment also highlighted that success on one fixture does not prove global optimality or guarantee that the optimizer will always outperform the greedy approach.",
-  buildNotes:
-    "I started with a greedy scheduling algorithm and wanted to investigate whether exploring alternative scheduling decisions could produce better results. I implemented a beam-search optimizer, introduced an objective function, expanded candidate generation to consider multiple start times, and changed the ranking strategy to prioritize deadline success and work coverage. I then ran both algorithms against the same test fixture and added counters to measure the optimizer's search activity.",
-  whoIsItFor:
-    "Developers interested in scheduling systems, algorithm design, constraint optimization, search strategies, and the trade-offs involved in building software that must balance multiple competing objectives.",
-  inspiration:
-    "While building a goals-to-timetable application, I became interested in a deeper question: how can an algorithm generate a timetable that does more than fit tasks into available time? I wanted to understand how different scheduling strategies make trade-offs and whether exploring alternative solutions could improve the results.",
-  technicalDive: {
-    title: "Technical Deep Dive: From Greedy Scheduling to Beam Search",
-    introduction:
-      "This experiment investigates two approaches to weekly timetable generation. The greedy algorithm provides a baseline, while the optimizer uses bounded search to explore alternative schedules. Both are evaluated against the same test fixture.",
-    sections: [
+    id: "24",
+    dayNumber: 24,
+    title: "SIWES Company Finder",
+    slug: "siwes-company-finder",
+    date: "2026-11-11",
+    shortDescription:
+      "A searchable company directory that helps Nigerian students discover organisations by discipline, location, and other available company information.",
+    problem:
+      "Finding a suitable organisation for the Student Industrial Work Experience Scheme (SIWES) can be challenging for Nigerian students. Students may not know which companies to explore, where those organisations are located, or which ones are relevant to their academic disciplines. Discovering potential organisations often requires searching across multiple websites and directories, while the information available may be incomplete, outdated, or difficult to verify.",
+    solution:
+      "A searchable company directory initially conceived to help Nigerian students discover potential SIWES placement organisations. The project evolved into a broader company directory that groups organisations by academic and professional disciplines and provides available company information to support discovery. Its data pipeline uses Python-based web scraping, aggregation, and automated validation, with AI-assisted classification where available. The project also incorporates data-quality checks to flag potential inconsistencies for review.",
+    features: [
+      "Browse a directory of organisations collected from multiple public sources",
+      "Search for companies by name",
+      "Explore organisations grouped by discipline",
+      "Filter company listings using available discipline information",
+      "Explore company information, including location and website where available",
+      "Aggregate company names from ITF-related SIWES employer records",
+      "Discover additional company website candidates from public sources",
+      "Extract and organise company information using Python-based web scraping",
+      "Apply automated data-validation checks to identify potential inconsistencies",
+      "Use AI-assisted classification where available",
+      "Flag missing information and potential duplicate company records",
+      "Identify suspicious discipline assignments and possible company–website mismatches for review",
+      "Support multiple discipline data formats in the frontend",
+      "Display discipline labels consistently using mapped discipline codes",
+      "Communicate data limitations through an accuracy disclaimer",
+    ],
+    instructions: [
       {
         id: "1",
-        title: "Formulating the scheduling problem",
-        content:
-          "The scheduler must satisfy hard constraints before considering schedule quality. These include availability, non-overlapping sessions, fixed commitments, weekly task targets, daily limits, minimum session durations, and firm deadline cutoffs. Soft objectives determine how to compare valid schedules based on deadline success, work coverage, priority alignment, and preference satisfaction.",
+        title: "Explore the directory",
+        description:
+          "Open the directory to browse the available organisations and explore the information provided for each company.",
       },
       {
         id: "2",
-        title: "Defining the objective function",
-        content:
-          "The scoreSchedule function evaluates four metrics. Deadline success measures the priority-weighted completion of tasks with deadlines. Work coverage measures scheduled minutes against requested minutes. Priority alignment measures how much scheduled time is allocated to higher-priority tasks. Preference satisfaction measures how well scheduled sessions match preferred days and times. The current weights are 0.40, 0.30, 0.20, and 0.10 respectively. These are design choices for the experiment, not proven optimal weights.",
+        title: "Search for an organisation",
+        description:
+          "Use the available search functionality to find companies by name and narrow your search to organisations relevant to your interests.",
       },
       {
         id: "3",
-        title: "Implementing beam search",
-        content:
-          "The optimizer begins with an empty schedule. For each state in the current beam, it generates candidate sessions for each task, validates the resulting schedule, scores valid states, and deduplicates them using a state key. It then retains the best-ranked states for the next iteration. The current search uses a beam width of 80 and a maximum of 30 search steps.",
+        title: "Explore by discipline",
+        description:
+          "Browse companies grouped by discipline to discover organisations that may be relevant to your academic background or career interests.",
       },
       {
         id: "4",
-        title: "Expanding candidate generation",
-        content:
-          "Candidate generation considers multiple start times within each free window, advancing in 30-minute increments. Candidate durations are limited by the remaining task target, daily allowance, available window, and deadline. Unsplittable tasks must fit as one uninterrupted session, while splittable tasks must respect their minimum session duration. Expanding the start-time options did not change the best timetable in the current fixture.",
+        title: "Review company information",
+        description:
+          "Check the available company details, including location, website, and relevant disciplines, where provided.",
       },
       {
         id: "5",
-        title: "Introducing lexicographic ranking",
-        content:
-          "Instead of relying only on the weighted score, the comparator first prefers higher deadline success, then higher work coverage, and finally a higher weighted score. This ensures that the search ranking reflects the chosen hierarchy of objectives. It also affects which states survive the beam-width limit.",
-      },
-      {
-        id: "6",
-        title: "Experimental setup",
-        content:
-          "The test fixture contains four tasks: interview preparation (180 minutes), system design (120 minutes), DevOps (180 minutes), and project work (120 minutes). The total requested workload is 600 minutes. The fixture includes task priorities, deadlines, daily limits, preferred times, weekly availability, and fixed commitments. Both algorithms use the same input.",
-      },
-      {
-        id: "7",
-        title: "Results and comparison",
-        content:
-          "Both algorithms scheduled all 600 requested minutes and achieved a deadline-success metric of 1.0 and priority-alignment metric of 0.70. The greedy algorithm achieved preference satisfaction of 0.60 and a weighted score of approximately 90.0. The optimizer achieved preference satisfaction of 0.75 and a weighted score of 91.5. On this fixture, the optimizer improved preference satisfaction while preserving work coverage and deadline success.",
-      },
-      {
-        id: "8",
-        title: "Search statistics",
-        content:
-          "The latest optimizer run generated 7,909 candidates, rejected zero candidates during schedule validation, and produced 7,909 valid state expansions before deduplication. The final beam contained 80 states. The best schedule covered 600 minutes and achieved a weighted score of 91.5. These counters are cumulative across the search and do not represent unique complete timetables.",
-      },
-      {
-        id: "9",
-        title: "Limitations and next experiments",
-        content:
-          "The results come from one test fixture and do not establish global optimality. Zero validation rejections does not prove that every constraint is implemented correctly. Further work includes comparing beam widths of 40, 80, and 160, adding more challenging fixtures, measuring unique-state counts and runtime, and testing hard constraints with deliberately invalid schedules.",
+        title: "Verify placement opportunities",
+        description:
+          "Contact organisations directly and consult your institution's SIWES coordinator or the ITF to confirm placement availability and eligibility before applying.",
       },
     ],
-    objectiveWeights: {
-      deadlineSuccess: 0.4,
-      workCoverage: 0.3,
-      priorityAlignment: 0.2,
-      preferenceSatisfaction: 0.1,
-    },
-    searchConfiguration: {
-      beamWidth: 80,
-      maxSearchSteps: 30,
-      candidateStartIntervalMinutes: 30,
-    },
-    searchStatistics: {
-      candidatesGenerated: 7909,
-      candidatesRejected: 0,
-      validStateExpansionsBeforeDeduplication: 7909,
-      finalBeamSize: 80,
-      bestScheduledMinutes: 600,
-      bestWeightedScore: 91.5,
-    },
-    comparison: [
+    technologies: [
+      "Python",
+      "BeautifulSoup",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Web Scraping",
+      "Data Validation",
+      "AI-Assisted Classification",
+      "CSV Data Processing",
+    ],
+    category: "Fullstack",
+    featured: true,
+    coverImage:
+      "https://images.unsplash.com/photo-1773047747721-f75d546d7290?q=80&w=1413&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+    images: [
       {
-        metric: "Scheduled minutes",
-        greedy: "600",
-        optimizer: "600",
-      },
-      {
-        metric: "Deadline success",
-        greedy: "1.0",
-        optimizer: "1.0",
-      },
-      {
-        metric: "Work coverage",
-        greedy: "1.0",
-        optimizer: "1.0",
-      },
-      {
-        metric: "Priority alignment",
-        greedy: "0.70",
-        optimizer: "0.70",
-      },
-      {
-        metric: "Preference satisfaction",
-        greedy: "0.60",
-        optimizer: "0.75",
-      },
-      {
-        metric: "Weighted score",
-        greedy: "~90.0",
-        optimizer: "91.5",
+        id: "1",
+        url: "",
+        alt: "SIWES Company Finder interface showing company listings grouped by discipline",
+        isCover: true,
       },
     ],
-    codeReferences: [
+    links: [
       {
-        label: "Optimizer implementation",
-        path: "src/scheduler/optimizerScheduler.ts",
-      },
-      {
-        label: "Objective function",
-        path: "src/scheduler/objective.ts",
-      },
-      {
-        label: "Greedy baseline",
-        path: "src/scheduler/greedyScheduler.ts",
-      },
-      {
-        label: "Optimizer test fixture",
-        path: "tests/fixtures/optimizer-test-input.ts",
-      },
-      {
-        label: "Comparison runner",
-        path: "src/runOptimizer.ts",
+        id: "1",
+        label: "Live Demo",
+        url: "https://siwes-finder.netlify.app/",
+        type: "demo",
       },
     ],
-    runCommand: "npx tsx src/runOptimizer.ts",
-    conclusion:
-      "The experiment demonstrates that beam search can find a better-scoring schedule than the greedy baseline on this fixture. It does not prove that the optimizer always outperforms greedy scheduling or finds a globally optimal timetable. The next step is to test how search width and problem complexity affect solution quality and runtime.",
+    challenges:
+      "One of the main challenges was building a useful directory from company information scattered across different sources. The initial ITF-related records provided company names, but additional information such as locations, websites, and relevant disciplines was not consistently available. Expanding the dataset required a web-scraping pipeline that could collect and organise information while accommodating different website structures. Data quality introduced another challenge: automated collection and classification can produce incomplete records, duplicate entries, irrelevant links, and potentially incorrect discipline assignments. I implemented automated checks to flag these issues for review rather than treating every collected record as accurate. I also had to account for inconsistencies in how discipline information was represented in the seed data so that the frontend could display both space-separated strings and arrays correctly.",
+    lessons:
+      "This project reinforced that building a useful data-driven application involves more than collecting records and displaying them in a searchable interface. Data acquisition, normalisation, validation, classification, and presentation are interconnected parts of the system. It also highlighted the limitations of automation: web scraping and AI-assisted classification can accelerate data processing, but they do not guarantee correctness. Reliable systems need validation mechanisms, transparent limitations, and ways to identify records that require further review.",
+    buildNotes:
+      "I began with the idea of helping Nigerian students discover potential SIWES placement organisations. I collected employer names from ITF-related records and expanded the dataset using publicly available sources. I then developed a Python-based pipeline for web scraping, data aggregation, and automated validation, with AI-assisted classification where available. I also implemented data-quality checks to flag missing information, possible duplicates, suspicious discipline assignments, and potential company–website mismatches. On the frontend, I updated the rendering logic to handle different discipline data formats consistently. As the project evolved, the original SIWES-specific concept became a broader company directory organised by discipline. The focus is on making company discovery easier while being transparent about the limitations of the underlying data.",
+    whoIsItFor:
+      "Nigerian university and polytechnic students searching for potential SIWES placement organisations, as well as students and other users looking to discover companies by academic discipline and location.",
+    inspiration:
+      "Finding an organisation for SIWES can be difficult when students do not know which companies to consider or where to find relevant information. I wanted to explore how a searchable directory could make that discovery process easier. As I worked on the idea, I also became interested in the engineering challenges behind the directory: collecting information from multiple sources, structuring it consistently, and identifying potential data-quality problems through automation.",
+    createdAt: "2026-11-11T09:00:00Z",
+    updatedAt: "2026-11-11T17:00:00Z",
+    publishedAt: "2026-11-11T17:00:00Z",
   },
-  createdAt: "2026-11-05T09:00:00Z",
-  updatedAt: "2026-11-05T17:00:00Z",
-  publishedAt: "2026-11-05T17:00:00Z",
-},
-{
-  id: "20",
-  dayNumber: 20,
-  title: "Modeling a Scheduling Problem",
-  slug: "modeling-a-scheduling-problem",
-  date: "2026-11-05",
-  shortDescription:
-    "A TypeScript domain model for a goal-to-timetable scheduling engine, defining task requirements, availability, constraints, and scheduling objectives before algorithm implementation.",
-  problem:
-    "Turning personal goals, deadlines, and available time into a realistic weekly timetable is more complex than assigning tasks to empty time slots. Tasks have different priorities, weekly duration targets, deadlines, and session-splitting requirements, while users have availability windows and recurring commitments. Without a clear model of feasibility and schedule quality, it is difficult to implement or evaluate a scheduling algorithm reliably.",
-  solution:
-    "I began designing a goal-to-timetable scheduling engine by defining its domain model and the rules that determine whether a schedule is valid and how its quality should be evaluated. I distinguished hard constraints, which determine feasibility, from soft preferences, which influence the quality of a feasible timetable. I also modelled the core entities and scheduling strategies in TypeScript, establishing a foundation for implementing and comparing scheduling algorithms.",
-  features: [
-    "Model goals and their associated tasks",
-    "Represent weekly task-duration targets and optional daily limits",
-    "Define task priorities and firm deadlines",
-    "Represent minimum session durations and task-splitting requirements",
-    "Model weekly availability windows",
-    "Represent recurring routines and fixed commitments",
-    "Distinguish hard constraints from soft scheduling preferences",
-    "Define scheduling strategies for priority-first, deadline-first, and balanced-progress approaches",
-    "Establish rules for preventing overlapping sessions",
-    "Define feasibility requirements for availability, daily limits, and deadlines",
-    "Model allocation results for scheduled and unallocated work",
-    "Establish evaluation criteria for comparing scheduling approaches",
-  ],
-  instructions: [
-  ],
-  technologies: [
-    "TypeScript",
-    "Domain Modeling",
-    "Constraint Modeling",
-    "Algorithm Design",
-    "Software Engineering",
-  ],
-  category: "Algorithms",
-  featured: false,
-  coverImage: "",
-  images: [
-    {
-      id: "1",
-      url: "",
-      alt: "TypeScript domain model for a goal-to-timetable scheduling engine",
-      isCover: true,
-    },
-  ],
-  links: [],
-  lessons:
-    "This exercise reinforced the importance of modelling a problem before choosing an algorithm. Explicit domain types, constraints, and evaluation criteria provide a clearer foundation for implementation and testing. It also highlighted the distinction between finding a feasible solution and finding a high-quality one: a schedule must first respect the rules, then be evaluated according to the objectives it is intended to serve.",
-  buildNotes:
-    "Today, I started designing the goal-to-timetable scheduling engine. Before implementing an algorithm, I defined what a valid schedule should look like and how to evaluate its quality. I modelled tasks, weekly targets, priorities, deadlines, session requirements, availability, fixed commitments, and scheduling strategies in TypeScript. I also separated hard constraints from soft preferences to distinguish schedule feasibility from schedule quality. The next step is to implement a greedy scheduling algorithm, establish a baseline, and explore where constraint optimization could improve its decisions.",
-  whoIsItFor:
-    "Software engineers, computer science students, and developers interested in algorithm design, domain modeling, constraint-based scheduling, and translating real-world planning problems into computational systems.",
-  inspiration:
-    "Balancing personal goals, learning targets, projects, deadlines, and recurring commitments made me curious about whether weekly planning could be treated as a computational scheduling problem. Rather than immediately building an interface or writing an algorithm, I wanted to understand the problem itself, define its constraints, and establish what a useful solution should achieve.",
-  createdAt: "2026-11-05T09:00:00Z",
-  updatedAt: "2026-11-05T17:00:00Z",
-  publishedAt: "2026-11-05T17:00:00Z",
-},
   {
-  id: "19",
-  dayNumber: 19,
-  title: "Birthday Calendar Importer",
-  slug: "birthday-calendar-importer",
-  date: "2026-10-29",
-  shortDescription:
-    "A tool that converts birthdays stored in Excel or CSV spreadsheets into recurring calendar events that can be imported into a calendar app.",
-  problem:
-    "Remembering birthdays can be difficult, especially when the information is already stored in spreadsheets for teams, student associations, volunteer groups, or personal contacts. Manually creating calendar events for each person can be tedious, particularly when the list contains many people.",
-  solution:
-    "A birthday calendar importer that allows users to upload an Excel or CSV file, select the columns containing names and birthdays, review and correct the imported records, and download an ICS calendar file. The exported events are configured as recurring, all-day birthday events that users can import into a compatible calendar application.",
-  features: [
-    "Upload Excel and CSV files containing names and birthdays",
-    "Select the worksheet to import when a workbook contains multiple sheets",
-    "Map spreadsheet columns to names and birthdays",
-    "Choose the date format for numeric dates",
-    "Preview imported birthday records before exporting",
-    "Edit names and correct birthday entries",
-    "Validate birthday dates and flag records that need attention",
-    "Identify possible duplicate entries",
-    "Choose which valid birthdays to include in the export",
-    "Customize the calendar name and optional event title prefix",
-    "Optionally include birth years in event titles",
-    "Download an ICS file containing recurring, all-day birthday events",
-    "Use sample data to explore the workflow",
-  ],
-  instructions: [
-    {
-      id: "1",
-      title: "Upload a spreadsheet",
-      description:
-        "Upload an Excel workbook or CSV file containing the names and birthdays you want to add to your calendar. You can also use sample data to explore the app.",
-    },
-    {
-      id: "2",
-      title: "Map the columns",
-      description:
-        "Choose the worksheet if necessary, then select the columns containing names and birthdays. Specify the date format used for numeric dates.",
-    },
-    {
-      id: "3",
-      title: "Review the birthdays",
-      description:
-        "Preview the imported records, correct names or dates, check validation warnings, and review possible duplicates before exporting.",
-    },
-    {
-      id: "4",
-      title: "Configure the calendar",
-      description:
-        "Choose a calendar name, optionally add a prefix to event titles, and decide whether to include birth years in the titles.",
-    },
-    {
-      id: "5",
-      title: "Export and import",
-      description:
-        "Download the ICS file containing your selected birthdays, then use your calendar application's import feature to add the events.",
-    },
-  ],
-  technologies: [
-    "React",
-        "ICS Calendar File Generation",
+    id: "23",
+    dayNumber: 23,
+    title: "Goal-to-Timetable Scheduling Engine",
+    slug: "goal-to-timetable-scheduling-engine",
+    date: "2026-11-09",
+    shortDescription:
+      "A scheduling tool that turns goals, deadlines, available hours, and recurring commitments into a structured weekly timetable.",
+    problem:
+      "Balancing personal goals, learning targets, deadlines, work, and recurring commitments can make weekly planning difficult. Manually deciding what to work on, when to work on it, and how much time to allocate to each task can be time-consuming. A schedule that ignores existing commitments or competing priorities may also be unrealistic from the start.",
+    solution:
+      "A goal-to-timetable scheduling engine that takes users' goals, weekly work targets, deadlines, available time, and fixed commitments and generates a feasible weekly timetable. The project explores different scheduling algorithms, including greedy scheduling and beam-search-based optimization, and provides a frontend through which users can enter their planning information and interact with the scheduling experience.",
+    features: [
+      "Define goals and the tasks associated with them",
+      "Set weekly work targets for individual tasks",
+      "Specify task priorities and firm deadlines",
+      "Set minimum session durations and optional daily time limits",
+      "Define available time across the days of the week",
+      "Add recurring routines and fixed commitments",
+      "Specify preferred days and times for tasks",
+      "Generate schedules using a greedy scheduling algorithm",
+      "Generate alternative schedules using beam-search-based optimization",
+      "Compare scheduling approaches using objective scores and work coverage",
+      "Account for deadlines and daily availability constraints",
+      "Identify tasks that cannot be fully scheduled and explain why",
+      "Present planning information through a user-facing frontend",
+    ],
+    instructions: [
+      {
+        id: "1",
+        title: "Define your goals",
+        description:
+          "Enter the tasks you want to complete, set their weekly work targets, and specify priorities, deadlines, and any daily session limits.",
+      },
+      {
+        id: "2",
+        title: "Set your availability",
+        description:
+          "Specify the hours you can dedicate to your goals throughout the week, taking existing commitments and recurring routines into account.",
+      },
+      {
+        id: "3",
+        title: "Configure your preferences",
+        description:
+          "Define preferred days and times for tasks, along with scheduling constraints such as minimum session durations.",
+      },
+      {
+        id: "4",
+        title: "Generate a timetable",
+        description:
+          "Use the scheduling engine to allocate tasks to available time slots while considering deadlines, priorities, and scheduling constraints.",
+      },
+      {
+        id: "5",
+        title: "Review your schedule",
+        description:
+          "Review the generated timetable, examine any unallocated work, and evaluate how well the schedule meets your planning requirements.",
+      },
+    ],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Greedy Scheduling",
+      "Beam Search",
+      "Constraint Optimization",
+    ],
+    category: "Frontend",
+    featured: true,
+    coverImage:
+      "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=868&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+    images: [
+      {
+        id: "1",
+        url: "",
+        alt: "Goal-to-timetable scheduling engine frontend for planning weekly goals, availability, and commitments",
+        isCover: true,
+      },
+    ],
+    links: [
+      {
+        id: "1",
+        label: "Live Demo",
+        url: "https://scheduless.netlify.app/",
+        type: "demo",
+      },
+    ],
+    challenges:
+      "One of the main challenges is translating the scheduling engine's underlying concepts into an interface that users can understand and navigate. The frontend needs to collect different kinds of planning information without making the process overwhelming. The scheduling problem itself also involves competing requirements: allocating enough time to tasks, respecting firm deadlines, working within available hours, and accounting for user preferences. These considerations make it important to distinguish between a schedule that simply fills time slots and one that satisfies meaningful planning objectives.",
+    lessons:
+      "This stage of the project has helped me think about how algorithmic systems are presented to users. A scheduling algorithm may produce a valid timetable, but the overall experience also depends on how clearly users can define their goals and constraints and understand the resulting schedule. It has reinforced the connection between algorithm design, frontend development, and the practical usability of software.",
+    buildNotes:
+      "I started this project to explore how computer science concepts could help solve a practical planning problem. After modelling the scheduling domain and implementing greedy scheduling and a beam-search-based optimization approach, I began developing the frontend to make the engine accessible through a user-facing interface. My focus today was translating the scheduling workflow into an experience through which users can provide their planning information and work toward a realistic weekly timetable.",
+    whoIsItFor:
+      "Students, professionals, independent learners, and anyone balancing multiple goals, deadlines, routines, and commitments who wants a more structured way to plan their week.",
+    inspiration:
+      "Balancing personal goals, learning new skills, projects, and recurring commitments made me think about whether scheduling could be treated as a computational problem rather than relying entirely on manual planning. I wanted to explore how algorithms could allocate limited time across competing priorities and turn the result into a timetable people could use in everyday life.",
+    createdAt: "2026-11-09T09:00:00Z",
+    updatedAt: "2026-11-09T17:00:00Z",
+    publishedAt: "2026-11-09T17:00:00Z",
+  },
 
-    "TypeScript",
-    "Vite",
-    "Excel/CSV Parsing",
-  ],
-  category: "Frontend",
-  featured: true,
-  coverImage: "https://images.unsplash.com/photo-1544155892-b2b6c64204fc?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
-  images: [
-    {
-      id: "1",
-      url: "",
-      alt: "Birthday Calendar Importer interface for converting spreadsheet birthdays into calendar events",
-      isCover: true,
+  {
+    id: "22",
+    dayNumber: 22,
+    title: "Exploring Constraint Optimization",
+    slug: "constraint-optimization-scheduler",
+    date: "2026-11-05",
+    shortDescription:
+      "An exploration of two scheduling algorithms that generate weekly timetables, comparing a greedy approach with an optimizer that explores alternative schedules.",
+    problem:
+      "Creating a useful timetable involves more than filling available hours. Tasks have different priorities, deadlines, duration requirements, and preferred working times. Fixed commitments and daily limits further restrict what can be scheduled. A scheduling approach that makes decisions one at a time may produce a valid timetable without finding the best trade-off between these competing requirements.",
+    solution:
+      "I implemented a second scheduling approach using beam search and compared it with my existing greedy scheduling algorithm. The optimizer generates alternative sessions, validates the resulting schedules, evaluates their quality using an objective function, and retains a limited number of promising alternatives for further exploration. I also expanded candidate generation to consider multiple start times and changed the ranking strategy to prioritize deadline success and work coverage before the overall weighted score.",
+    features: [
+      "Generate weekly timetables from tasks, availability, and fixed commitments",
+      "Support task priorities, deadlines, weekly targets, and daily time limits",
+      "Respect scheduling constraints such as availability, non-overlapping sessions, and deadline cutoffs",
+      "Generate candidate sessions at multiple start times in 30-minute increments",
+      "Use a greedy algorithm as a baseline scheduling approach",
+      "Explore alternative schedules using beam search",
+      "Evaluate schedules using deadline success, work coverage, priority alignment, and preference satisfaction",
+      "Rank candidate schedules using lexicographic ordering",
+      "Deduplicate equivalent search states",
+      "Limit search using configurable beam width and maximum search steps",
+      "Generate task allocation summaries showing scheduled and remaining minutes",
+      "Compare greedy and optimized schedules using the same test fixture",
+      "Measure candidate generation, validation rejections, and state expansions",
+      "Document experimental results, trade-offs, and limitations",
+    ],
+    instructions: [
+      {
+        id: "1",
+        title: "Define the scheduling problem",
+        description:
+          "Provide tasks with weekly time targets, priorities, deadlines, duration requirements, and optional preferences. Specify weekly availability and fixed commitments.",
+      },
+      {
+        id: "2",
+        title: "Generate a baseline timetable",
+        description:
+          "Run the greedy scheduling algorithm to establish a baseline for comparing how much work can be scheduled and how well the timetable satisfies the scheduling objectives.",
+      },
+      {
+        id: "3",
+        title: "Explore alternative schedules",
+        description:
+          "Run the optimizer, which generates possible sessions, validates candidate schedules, evaluates their quality, and retains a limited set of promising alternatives for subsequent search steps.",
+      },
+      {
+        id: "4",
+        title: "Compare the results",
+        description:
+          "Evaluate both approaches using the same test fixture. Compare scheduled minutes, deadline success, priority alignment, preference satisfaction, and overall weighted score.",
+      },
+      {
+        id: "5",
+        title: "Inspect the search",
+        description:
+          "Review the search statistics to understand how many candidates were generated, how many were rejected, and how many valid state expansions occurred before deduplication.",
+      },
+    ],
+    technologies: [
+      "TypeScript",
+      "Beam Search",
+      "Constraint Validation",
+      "Objective Functions",
+      "Algorithm Testing",
+      "tsx",
+    ],
+    category: "Algorithms",
+    featured: true,
+    coverImage: "",
+    images: [
+      {
+        id: "1",
+        url: "",
+        alt: "Comparison of a greedy scheduling approach and an optimizer that explores alternative weekly timetables",
+        isCover: true,
+      },
+    ],
+    links: [
+      {
+        id: "1",
+        label: "Source Code",
+        url: "https://github.com/ToluwanimiO/greedy-scheduler",
+        type: "github",
+      },
+    ],
+    challenges:
+      "One challenge was deciding how to compare schedules when several objectives compete. A schedule could achieve a higher weighted score while scheduling less of the requested work. To address this, I changed the search-state comparator to prioritize deadline success first, work coverage second, and the weighted score third. I also expanded candidate generation to consider multiple start times. The resulting timetable did not change after this expansion, which reinforced the importance of evaluating code changes through observed results rather than assuming that generating more candidates automatically improves the outcome.",
+    lessons:
+      "I learned to distinguish hard constraints, which determine whether a timetable is valid, from soft objectives, which determine whether one valid timetable is preferable to another. I also explored how beam search preserves promising alternatives while limiting the amount of search performed. Comparing the algorithms showed that both could schedule all requested work in my test fixture, while the optimizer achieved better preference satisfaction and a higher weighted score. The experiment also highlighted that success on one fixture does not prove global optimality or guarantee that the optimizer will always outperform the greedy approach.",
+    buildNotes:
+      "I started with a greedy scheduling algorithm and wanted to investigate whether exploring alternative scheduling decisions could produce better results. I implemented a beam-search optimizer, introduced an objective function, expanded candidate generation to consider multiple start times, and changed the ranking strategy to prioritize deadline success and work coverage. I then ran both algorithms against the same test fixture and added counters to measure the optimizer's search activity.",
+    whoIsItFor:
+      "Developers interested in scheduling systems, algorithm design, constraint optimization, search strategies, and the trade-offs involved in building software that must balance multiple competing objectives.",
+    inspiration:
+      "While building a goals-to-timetable application, I became interested in a deeper question: how can an algorithm generate a timetable that does more than fit tasks into available time? I wanted to understand how different scheduling strategies make trade-offs and whether exploring alternative solutions could improve the results.",
+    technicalDive: {
+      title: "Technical Deep Dive: From Greedy Scheduling to Beam Search",
+      introduction:
+        "This experiment investigates two approaches to weekly timetable generation. The greedy algorithm provides a baseline, while the optimizer uses bounded search to explore alternative schedules. Both are evaluated against the same test fixture.",
+      sections: [
+        {
+          id: "1",
+          title: "Formulating the scheduling problem",
+          content:
+            "The scheduler must satisfy hard constraints before considering schedule quality. These include availability, non-overlapping sessions, fixed commitments, weekly task targets, daily limits, minimum session durations, and firm deadline cutoffs. Soft objectives determine how to compare valid schedules based on deadline success, work coverage, priority alignment, and preference satisfaction.",
+        },
+        {
+          id: "2",
+          title: "Defining the objective function",
+          content:
+            "The scoreSchedule function evaluates four metrics. Deadline success measures the priority-weighted completion of tasks with deadlines. Work coverage measures scheduled minutes against requested minutes. Priority alignment measures how much scheduled time is allocated to higher-priority tasks. Preference satisfaction measures how well scheduled sessions match preferred days and times. The current weights are 0.40, 0.30, 0.20, and 0.10 respectively. These are design choices for the experiment, not proven optimal weights.",
+        },
+        {
+          id: "3",
+          title: "Implementing beam search",
+          content:
+            "The optimizer begins with an empty schedule. For each state in the current beam, it generates candidate sessions for each task, validates the resulting schedule, scores valid states, and deduplicates them using a state key. It then retains the best-ranked states for the next iteration. The current search uses a beam width of 80 and a maximum of 30 search steps.",
+        },
+        {
+          id: "4",
+          title: "Expanding candidate generation",
+          content:
+            "Candidate generation considers multiple start times within each free window, advancing in 30-minute increments. Candidate durations are limited by the remaining task target, daily allowance, available window, and deadline. Unsplittable tasks must fit as one uninterrupted session, while splittable tasks must respect their minimum session duration. Expanding the start-time options did not change the best timetable in the current fixture.",
+        },
+        {
+          id: "5",
+          title: "Introducing lexicographic ranking",
+          content:
+            "Instead of relying only on the weighted score, the comparator first prefers higher deadline success, then higher work coverage, and finally a higher weighted score. This ensures that the search ranking reflects the chosen hierarchy of objectives. It also affects which states survive the beam-width limit.",
+        },
+        {
+          id: "6",
+          title: "Experimental setup",
+          content:
+            "The test fixture contains four tasks: interview preparation (180 minutes), system design (120 minutes), DevOps (180 minutes), and project work (120 minutes). The total requested workload is 600 minutes. The fixture includes task priorities, deadlines, daily limits, preferred times, weekly availability, and fixed commitments. Both algorithms use the same input.",
+        },
+        {
+          id: "7",
+          title: "Results and comparison",
+          content:
+            "Both algorithms scheduled all 600 requested minutes and achieved a deadline-success metric of 1.0 and priority-alignment metric of 0.70. The greedy algorithm achieved preference satisfaction of 0.60 and a weighted score of approximately 90.0. The optimizer achieved preference satisfaction of 0.75 and a weighted score of 91.5. On this fixture, the optimizer improved preference satisfaction while preserving work coverage and deadline success.",
+        },
+        {
+          id: "8",
+          title: "Search statistics",
+          content:
+            "The latest optimizer run generated 7,909 candidates, rejected zero candidates during schedule validation, and produced 7,909 valid state expansions before deduplication. The final beam contained 80 states. The best schedule covered 600 minutes and achieved a weighted score of 91.5. These counters are cumulative across the search and do not represent unique complete timetables.",
+        },
+        {
+          id: "9",
+          title: "Limitations and next experiments",
+          content:
+            "The results come from one test fixture and do not establish global optimality. Zero validation rejections does not prove that every constraint is implemented correctly. Further work includes comparing beam widths of 40, 80, and 160, adding more challenging fixtures, measuring unique-state counts and runtime, and testing hard constraints with deliberately invalid schedules.",
+        },
+      ],
+      objectiveWeights: {
+        deadlineSuccess: 0.4,
+        workCoverage: 0.3,
+        priorityAlignment: 0.2,
+        preferenceSatisfaction: 0.1,
+      },
+      searchConfiguration: {
+        beamWidth: 80,
+        maxSearchSteps: 30,
+        candidateStartIntervalMinutes: 30,
+      },
+      searchStatistics: {
+        candidatesGenerated: 7909,
+        candidatesRejected: 0,
+        validStateExpansionsBeforeDeduplication: 7909,
+        finalBeamSize: 80,
+        bestScheduledMinutes: 600,
+        bestWeightedScore: 91.5,
+      },
+      comparison: [
+        {
+          metric: "Scheduled minutes",
+          greedy: "600",
+          optimizer: "600",
+        },
+        {
+          metric: "Deadline success",
+          greedy: "1.0",
+          optimizer: "1.0",
+        },
+        {
+          metric: "Work coverage",
+          greedy: "1.0",
+          optimizer: "1.0",
+        },
+        {
+          metric: "Priority alignment",
+          greedy: "0.70",
+          optimizer: "0.70",
+        },
+        {
+          metric: "Preference satisfaction",
+          greedy: "0.60",
+          optimizer: "0.75",
+        },
+        {
+          metric: "Weighted score",
+          greedy: "~90.0",
+          optimizer: "91.5",
+        },
+      ],
+      codeReferences: [
+        {
+          label: "Optimizer implementation",
+          path: "src/scheduler/optimizerScheduler.ts",
+        },
+        {
+          label: "Objective function",
+          path: "src/scheduler/objective.ts",
+        },
+        {
+          label: "Greedy baseline",
+          path: "src/scheduler/greedyScheduler.ts",
+        },
+        {
+          label: "Optimizer test fixture",
+          path: "tests/fixtures/optimizer-test-input.ts",
+        },
+        {
+          label: "Comparison runner",
+          path: "src/runOptimizer.ts",
+        },
+      ],
+      runCommand: "npx tsx src/runOptimizer.ts",
+      conclusion:
+        "The experiment demonstrates that beam search can find a better-scoring schedule than the greedy baseline on this fixture. It does not prove that the optimizer always outperforms greedy scheduling or finds a globally optimal timetable. The next step is to test how search width and problem complexity affect solution quality and runtime.",
     },
-  ],
-  links: [
-    {
-      id: "1",
-      label: "Live Demo",
-      url: "https://birthday-importer.netlify.app/",
-      type: "demo",
-    },
-  ],
-  challenges:
-    "Handling dates consistently was an important part of the build. Spreadsheet dates can appear in different formats, and numeric dates such as 03/04/1998 can mean different days depending on the date convention being used. The importer therefore needed to let users choose the date order and review records before exporting them. Another consideration was generating calendar events that recur annually without requiring users to create each year's event manually.",
-  lessons:
-    "I explored the practical details of importing structured data from Excel and CSV files, validating user-provided dates, and generating calendar files that can be used outside the application. I also considered how previewing, editing, and flagging potentially problematic records can help users catch errors before exporting.",
-  buildNotes:
-    "The idea came from missing someone's birthday and realizing I already had a spreadsheet containing the details of people in a unit I once headed. Instead of manually creating calendar events one by one, I decided to build a tool that could turn the existing spreadsheet into an importable calendar file. I wanted the workflow to remain simple: upload, map columns, review the data, and export.",
-  whoIsItFor:
-    "Team leads, HR teams, student leaders, community and volunteer coordinators, and anyone who keeps birthday information in a spreadsheet and wants to transfer it into a calendar.",
-  inspiration:
-    "I recently missed someone's birthday and started thinking about how many other birthdays I might have forgotten. Since I already had an Excel spreadsheet containing some of those details, I wondered why I couldn't simply add them to my calendar. That small, personal problem inspired this build.",
-  createdAt: "2026-10-29T09:00:00Z",
-  updatedAt: "2026-10-29T17:00:00Z",
-  publishedAt: "2026-10-29T17:00:00Z",
-},
-{
-  id: "18",
-  dayNumber: 18,
-  title: "Inflation Simulator",
-  slug: "inflation-simulator",
-  date: "2026-10-28",
-  shortDescription:
-    "An interactive inflation simulator that uses IMF data to explore how inflation could affect money's purchasing power over time.",
-  problem:
-    "It can be difficult to understand how inflation affects the future purchasing power of money. Inflation rates are often presented as percentages, making it harder to see their cumulative effect on the value of an amount over several years.",
-  solution:
-    "An interactive inflation simulator that uses inflation data from the International Monetary Fund (IMF), including projections for future years, to estimate how purchasing power changes over time. Users can select a country, enter an amount, choose a target year, and adjust individual annual inflation rates to explore different scenarios.",
-  features: [
-    "Select a country to explore its inflation rates",
-    "Enter an amount to simulate its future purchasing power",
-    "Choose a target year for the projection",
-    "Use initial annual inflation rates sourced from IMF data",
-    "Explore the cumulative effect of inflation over multiple years",
-    "Adjust individual annual inflation rates to model different scenarios",
-    "Recalculate purchasing power based on updated inflation assumptions",
-    "Visualise inflation and its impact over time",
-    "Display IMF source metadata where available",
-  ],
-  instructions: [
-    {
-      id: "1",
-      title: "Open the simulator",
-      description:
-        "Visit the Inflation Simulator to explore how inflation could affect the purchasing power of your money.",
-    },
-    {
-      id: "2",
-      title: "Choose a country and amount",
-      description:
-        "Select a country, enter the amount you want to explore, and choose a target year.",
-    },
-    {
-      id: "3",
-      title: "View the projection",
-      description:
-        "See how the selected country's annual inflation rates could affect the purchasing power of your money over time.",
-    },
-    {
-      id: "4",
-      title: "Adjust the inflation rates",
-      description:
-        "Edit individual annual inflation rates to explore how different assumptions affect the results.",
-    },
-    {
-      id: "5",
-      title: "Explore different scenarios",
-      description:
-        "Experiment with different rates and compare how inflation assumptions change the projected purchasing power of your money.",
-    },
-  ],
-  technologies: [
-    "React",
-    "IMF DataMapper API",
-    "TypeScript",
-    "Vite",
-    "Tailwind CSS",
-    "Recharts",
-    
-  ],
-  category: "Frontend",
-  featured: true,
-  coverImage: "https://images.unsplash.com/photo-1702099630732-cdf2ba90e730?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
-  images: [
-    {
-      id: "1",
-      url: "",
-      alt: "Inflation Simulator showing projected purchasing power based on annual inflation rates",
-      isCover: true,
-    },
-  ],
-  links: [
-    {
-      id: "1",
-      label: "Live Demo",
-      url: "https://inflation-explorer.netlify.app/",
-      type: "demo",
-    },
-  ],
-  challenges:
-    "Getting the IMF data to work reliably in the deployed app was a challenge. The API requests worked locally but returned HTTP 403 errors when the Netlify Function made them in production. Direct browser requests also ran into CORS restrictions, and adding a User-Agent header did not resolve the issue. Since the app did not need the latest data on every request, I changed my approach: I saved an IMF data response as a static JSON file so the app could use a local snapshot instead of depending on live API requests at runtime.",
-  lessons:
-    "I learned more about integrating external data sources, handling API access restrictions and CORS, and thinking about deployment environments when designing an application. I also explored how a static data snapshot can reduce runtime dependencies when real-time updates are unnecessary.",
-  buildNotes:
-    "I wanted to explore how software could make economic data easier to understand and interact with. After connecting the app to the IMF DataMapper API, I worked on making inflation projections adjustable so users could explore how different annual rates affect purchasing power. Working through the deployment issue also reminded me that getting something to work locally is only one part of building a reliable application.",
-  whoIsItFor:
-    "People who want to understand how inflation could affect their money's purchasing power and explore different inflation scenarios for a selected country.",
-  inspiration:
-    "I wanted to make economic data more interactive and easier to understand by turning inflation percentages into a practical simulation of how the purchasing power of money changes over time.",
-  createdAt: "2026-10-28T09:00:00Z",
-  updatedAt: "2026-10-28T10:00:00Z",
-  publishedAt: "2026-10-28T10:00:00Z",
-},
+    createdAt: "2026-11-05T09:00:00Z",
+    updatedAt: "2026-11-05T17:00:00Z",
+    publishedAt: "2026-11-05T17:00:00Z",
+  },
+  {
+    id: "21",
+    dayNumber: 21,
+    title: "Building a Greedy Scheduling Algorithm",
+    slug: "building-a-greedy-scheduling-algorithm",
+    date: "2026-11-06",
+    shortDescription:
+      "A TypeScript scheduling algorithm that allocates tasks to available time slots using priority-first, deadline-first, and balanced-progress strategies while enforcing scheduling constraints.",
+    problem:
+      "Once the scheduling problem was modelled, the next challenge was turning its rules into an algorithm that could allocate work to available time slots. Fixed commitments reduce available time, deadlines restrict when tasks can be scheduled, and minimum session durations and daily limits affect how work can be distributed. The engine also needs to explain when requested work cannot be fully accommodated.",
+    solution:
+      "I implemented a greedy scheduling algorithm that incrementally allocates task sessions according to a selected strategy. The engine builds free time windows by subtracting fixed commitments from availability, applies scheduling constraints, and tracks scheduled work, remaining work, and reasons tasks could not be fully scheduled. I also wrote tests to evaluate the algorithm's behaviour and investigate issues in balanced-progress allocation and firm-deadline testing.",
+    features: [
+      "Build free time windows by subtracting fixed commitments from availability",
+      "Allocate task sessions using priority-first, deadline-first, and balanced-progress strategies",
+      "Enforce minimum session durations and daily work limits",
+      "Respect firm deadlines when allocating task sessions",
+      "Track scheduled minutes and remaining work",
+      "Record reasons tasks cannot be fully scheduled",
+      "Validate generated schedules against hard constraints",
+      "Test scheduling behaviour and investigate allocation edge cases",
+    ],
+    instructions: [],
+    technologies: [
+      "TypeScript",
+      "Greedy Algorithms",
+      "Time-Interval Modeling",
+      "Constraint Validation",
+      "Unit Testing",
+    ],
+    category: "Algorithms",
+    featured: false,
+    coverImage: "",
+    images: [
+      {
+        id: "1",
+        url: "",
+        alt: "Greedy scheduling algorithm allocating tasks across available weekly time slots",
+        isCover: true,
+      },
+    ],
+    links: [
+      {
+        id: "1",
+        label: "Source Code",
+        url: "https://github.com/ToluwanimiO/greedy-scheduler",
+        type: "github",
+      },
+    ],
+    challenges:
+      "A key challenge was translating time availability and task requirements into allocation decisions that respect all hard constraints. Testing exposed issues that needed investigation: the balanced-progress strategy was not distributing time as intended, and the firm-deadline test required more appropriate input to verify the expected behaviour. Investigating these cases reinforced the importance of distinguishing between a test setup problem and an actual implementation defect.",
+    lessons:
+      "I learned that meaningful tests depend on accurately modelling the behaviour being tested, including the inputs and constraints that determine the expected result.",
+    buildNotes:
+      "I implemented the core greedy scheduling engine, including free-window construction, task allocation, constraint enforcement, and allocation-result tracking. I added three strategies—priority-first, deadline-first, and balanced-progress—and wrote tests to evaluate the engine. I then investigated unexpected balanced-progress behaviour and refined the firm-deadline test setup. This established a baseline for comparing scheduling strategies and exploring optimization approaches.",
+    whoIsItFor:
+      "Developers and computer science learners interested in greedy algorithms, scheduling problems, constraint handling, and automated testing.",
+    inspiration: "",
+    createdAt: "2026-11-06T09:00:00Z",
+    updatedAt: "2026-11-06T17:00:00Z",
+    publishedAt: "2026-11-06T17:00:00Z",
+  },
+  {
+    id: "20",
+    dayNumber: 20,
+    title: "Modeling a Scheduling Problem",
+    slug: "modeling-a-scheduling-problem",
+    date: "2026-11-05",
+    shortDescription:
+      "A TypeScript domain model for a goal-to-timetable scheduling engine, defining task requirements, availability, constraints, and scheduling objectives before algorithm implementation.",
+    problem:
+      "Turning personal goals, deadlines, and available time into a realistic weekly timetable is more complex than assigning tasks to empty time slots. Tasks have different priorities, weekly duration targets, deadlines, and session-splitting requirements, while users have availability windows and recurring commitments. Without a clear model of feasibility and schedule quality, it is difficult to implement or evaluate a scheduling algorithm reliably.",
+    solution:
+      "I began designing a goal-to-timetable scheduling engine by defining its domain model and the rules that determine whether a schedule is valid and how its quality should be evaluated. I distinguished hard constraints, which determine feasibility, from soft preferences, which influence the quality of a feasible timetable. I also modelled the core entities and scheduling strategies in TypeScript, establishing a foundation for implementing and comparing scheduling algorithms.",
+    features: [
+      "Model goals and their associated tasks",
+      "Represent weekly task-duration targets and optional daily limits",
+      "Define task priorities and firm deadlines",
+      "Represent minimum session durations and task-splitting requirements",
+      "Model weekly availability windows",
+      "Represent recurring routines and fixed commitments",
+      "Distinguish hard constraints from soft scheduling preferences",
+      "Define scheduling strategies for priority-first, deadline-first, and balanced-progress approaches",
+      "Establish rules for preventing overlapping sessions",
+      "Define feasibility requirements for availability, daily limits, and deadlines",
+      "Model allocation results for scheduled and unallocated work",
+      "Establish evaluation criteria for comparing scheduling approaches",
+    ],
+    instructions: [],
+    technologies: [
+      "TypeScript",
+      "Domain Modeling",
+      "Constraint Modeling",
+      "Algorithm Design",
+      "Software Engineering",
+    ],
+    category: "Algorithms",
+    featured: false,
+    coverImage: "",
+    images: [
+      {
+        id: "1",
+        url: "",
+        alt: "TypeScript domain model for a goal-to-timetable scheduling engine",
+        isCover: true,
+      },
+    ],
+    links: [],
+    lessons:
+      "This exercise reinforced the importance of modelling a problem before choosing an algorithm. Explicit domain types, constraints, and evaluation criteria provide a clearer foundation for implementation and testing. It also highlighted the distinction between finding a feasible solution and finding a high-quality one: a schedule must first respect the rules, then be evaluated according to the objectives it is intended to serve.",
+    buildNotes:
+      "Today, I started designing the goal-to-timetable scheduling engine. Before implementing an algorithm, I defined what a valid schedule should look like and how to evaluate its quality. I modelled tasks, weekly targets, priorities, deadlines, session requirements, availability, fixed commitments, and scheduling strategies in TypeScript. I also separated hard constraints from soft preferences to distinguish schedule feasibility from schedule quality. The next step is to implement a greedy scheduling algorithm, establish a baseline, and explore where constraint optimization could improve its decisions.",
+    whoIsItFor:
+      "Software engineers, computer science students, and developers interested in algorithm design, domain modeling, constraint-based scheduling, and translating real-world planning problems into computational systems.",
+    inspiration:
+      "Balancing personal goals, learning targets, projects, deadlines, and recurring commitments made me curious about whether weekly planning could be treated as a computational scheduling problem. Rather than immediately building an interface or writing an algorithm, I wanted to understand the problem itself, define its constraints, and establish what a useful solution should achieve.",
+    createdAt: "2026-11-05T09:00:00Z",
+    updatedAt: "2026-11-05T17:00:00Z",
+    publishedAt: "2026-11-05T17:00:00Z",
+  },
+  {
+    id: "19",
+    dayNumber: 19,
+    title: "Birthday Calendar Importer",
+    slug: "birthday-calendar-importer",
+    date: "2026-10-29",
+    shortDescription:
+      "A tool that converts birthdays stored in Excel or CSV spreadsheets into recurring calendar events that can be imported into a calendar app.",
+    problem:
+      "Remembering birthdays can be difficult, especially when the information is already stored in spreadsheets for teams, student associations, volunteer groups, or personal contacts. Manually creating calendar events for each person can be tedious, particularly when the list contains many people.",
+    solution:
+      "A birthday calendar importer that allows users to upload an Excel or CSV file, select the columns containing names and birthdays, review and correct the imported records, and download an ICS calendar file. The exported events are configured as recurring, all-day birthday events that users can import into a compatible calendar application.",
+    features: [
+      "Upload Excel and CSV files containing names and birthdays",
+      "Select the worksheet to import when a workbook contains multiple sheets",
+      "Map spreadsheet columns to names and birthdays",
+      "Choose the date format for numeric dates",
+      "Preview imported birthday records before exporting",
+      "Edit names and correct birthday entries",
+      "Validate birthday dates and flag records that need attention",
+      "Identify possible duplicate entries",
+      "Choose which valid birthdays to include in the export",
+      "Customize the calendar name and optional event title prefix",
+      "Optionally include birth years in event titles",
+      "Download an ICS file containing recurring, all-day birthday events",
+      "Use sample data to explore the workflow",
+    ],
+    instructions: [
+      {
+        id: "1",
+        title: "Upload a spreadsheet",
+        description:
+          "Upload an Excel workbook or CSV file containing the names and birthdays you want to add to your calendar. You can also use sample data to explore the app.",
+      },
+      {
+        id: "2",
+        title: "Map the columns",
+        description:
+          "Choose the worksheet if necessary, then select the columns containing names and birthdays. Specify the date format used for numeric dates.",
+      },
+      {
+        id: "3",
+        title: "Review the birthdays",
+        description:
+          "Preview the imported records, correct names or dates, check validation warnings, and review possible duplicates before exporting.",
+      },
+      {
+        id: "4",
+        title: "Configure the calendar",
+        description:
+          "Choose a calendar name, optionally add a prefix to event titles, and decide whether to include birth years in the titles.",
+      },
+      {
+        id: "5",
+        title: "Export and import",
+        description:
+          "Download the ICS file containing your selected birthdays, then use your calendar application's import feature to add the events.",
+      },
+    ],
+    technologies: [
+      "React",
+      "ICS Calendar File Generation",
 
-{
-  id: "17",
-  dayNumber: 17,
-  title: "Financial Future Simulator",
-  slug: "financial-future-simulator",
-  date: "2026-10-27",
-  shortDescription:
-    "An interactive financial simulator that projects savings over time and lets users explore how changes in income and expenses affect their savings goals.",
-  problem:
-    "Planning towards a savings goal can be difficult when it is unclear how current savings, monthly income, expenses, and interest rates affect the time needed to reach a target. Static calculators provide an estimate but make it harder to explore how different financial scenarios could change the outcome.",
-  solution:
-    "An interactive financial simulator that projects savings over time based on user-defined financial inputs. It estimates how long it could take to reach a savings goal and uses an interactive chart that lets users drag income and expense points to adjust assumptions and immediately see how the projection changes.",
-  features: [
-    "Enter starting savings and a target savings goal",
-    "Set monthly income and expenses",
-    "Specify an annual interest rate",
-    "Project savings balances over time",
-    "Estimate the number of months needed to reach a savings goal",
-    "Visualise income, expenses, and savings on an interactive chart",
-    "Drag income and expense points directly on the graph to adjust financial assumptions",
-    "Recalculate savings projections when assumptions change",
-    "Display a savings goal reference line on the chart",
-    "Handle simulations where the savings goal is not reached within the projected period",
-  ],
-  instructions: [
-    {
-      id: "1",
-      title: "Open the simulator",
-      description:
-        "Visit the Financial Future Simulator to explore how your financial situation could affect your savings goals.",
-    },
-    {
-      id: "2",
-      title: "Enter your financial details",
-      description:
-        "Provide your starting savings, savings goal, monthly income, monthly expenses, and annual interest rate.",
-    },
-    {
-      id: "3",
-      title: "View your financial projection",
-      description:
-        "Explore the chart to see how your income, expenses, and savings balance may change over time, including your projected timeline for reaching your goal.",
-    },
-    {
-      id: "4",
-      title: "Experiment with different scenarios",
-      description:
-        "Drag the income and expense points on the graph to change your assumptions and observe how the savings projection responds.",
-    },
-    {
-      id: "5",
-      title: "Compare possible outcomes",
-      description:
-        "Try different income and expense scenarios to explore how they could affect your savings growth and the time needed to reach your target.",
-    },
-  ],
-  technologies: [
-    "React",
-    "Apache ECharts",
-    "TypeScript",
-    "Vite",
-    "Tailwind CSS",
-    "echarts-for-react",
-  ],
-  category: "Frontend",
-  featured: true,
-  coverImage: "https://images.unsplash.com/photo-1767424412548-1a1ac7f4b9bc?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
-  images: [
-    {
-      id: "1",
-      url: "",
-      alt: "Financial Future Simulator showing savings projections and interactive income and expense charts",
-      isCover: true,
-    },
-  ],
-  links: [
-    {
-      id: "1",
-      label: "Live Demo",
-      url: "https://financial-future-simulator.netlify.app/",
-      type: "demo",
-    },
-    {
-      id: "2",
-      label: "GitHub Repository",
-      url: "https://github.com/ToluwanimiO/financial-future-simulator",
-      type: "github",
-    },
-  ],
-  challenges:
-    "Making the chart draggable was the main technical challenge. The Apache ECharts documentation demo used a different structure from mine, so directly applying its approach wasn't enough. I had to understand how the demo mapped draggable elements to chart data, identify what needed to change for my dynamically generated financial projections, and work out how to position the handles and translate drag movements into updated income and expense values. I then connected those changes to the simulation logic so each interaction would recalculate the projections. It involved more than implementing a demo; I had to understand the underlying approach and adapt it to my specific use case.",
-  lessons:
-    "I learnt how to visualise results with Apache ECharts. I also learned how to connect draggable chart graphics to application state so users can manipulate data visually and see the effects of their changes.",
-  buildNotes:
-    "I wanted to explore building something beyond interfaces that primarily display information. I explored a few ideas before settling on a Financial Future Simulator: a tool where code could represent a real-world situation, simulate how it might change, and help people explore different possibilities. I particularly enjoyed figuring out how to make the graph interactive and connect chart interactions to the simulation logic.",
-  whoIsItFor:
-    "People who want to explore how their current savings, income, expenses, and interest assumptions could affect their progress towards a savings goal.",
-  inspiration:
-    "I wanted to explore a different kind of software project: one that models a real-world situation, runs calculations, and lets users experiment with different scenarios instead of simply displaying information.",
-  createdAt: "2026-10-27T09:00:00Z",
-  updatedAt: "2026-10-27T10:00:00Z",
-  publishedAt: "2026-10-27T10:00:00Z",
-},
+      "TypeScript",
+      "Vite",
+      "Excel/CSV Parsing",
+    ],
+    category: "Frontend",
+    featured: true,
+    coverImage:
+      "https://images.unsplash.com/photo-1544155892-b2b6c64204fc?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+    images: [
+      {
+        id: "1",
+        url: "",
+        alt: "Birthday Calendar Importer interface for converting spreadsheet birthdays into calendar events",
+        isCover: true,
+      },
+    ],
+    links: [
+      {
+        id: "1",
+        label: "Live Demo",
+        url: "https://birthday-importer.netlify.app/",
+        type: "demo",
+      },
+    ],
+    challenges:
+      "Handling dates consistently was an important part of the build. Spreadsheet dates can appear in different formats, and numeric dates such as 03/04/1998 can mean different days depending on the date convention being used. The importer therefore needed to let users choose the date order and review records before exporting them. Another consideration was generating calendar events that recur annually without requiring users to create each year's event manually.",
+    lessons:
+      "I explored the practical details of importing structured data from Excel and CSV files, validating user-provided dates, and generating calendar files that can be used outside the application. I also considered how previewing, editing, and flagging potentially problematic records can help users catch errors before exporting.",
+    buildNotes:
+      "The idea came from missing someone's birthday and realizing I already had a spreadsheet containing the details of people in a unit I once headed. Instead of manually creating calendar events one by one, I decided to build a tool that could turn the existing spreadsheet into an importable calendar file. I wanted the workflow to remain simple: upload, map columns, review the data, and export.",
+    whoIsItFor:
+      "Team leads, HR teams, student leaders, community and volunteer coordinators, and anyone who keeps birthday information in a spreadsheet and wants to transfer it into a calendar.",
+    inspiration:
+      "I recently missed someone's birthday and started thinking about how many other birthdays I might have forgotten. Since I already had an Excel spreadsheet containing some of those details, I wondered why I couldn't simply add them to my calendar. That small, personal problem inspired this build.",
+    createdAt: "2026-10-29T09:00:00Z",
+    updatedAt: "2026-10-29T17:00:00Z",
+    publishedAt: "2026-10-29T17:00:00Z",
+  },
+  {
+    id: "18",
+    dayNumber: 18,
+    title: "Inflation Simulator",
+    slug: "inflation-simulator",
+    date: "2026-10-28",
+    shortDescription:
+      "An interactive inflation simulator that uses IMF data to explore how inflation could affect money's purchasing power over time.",
+    problem:
+      "It can be difficult to understand how inflation affects the future purchasing power of money. Inflation rates are often presented as percentages, making it harder to see their cumulative effect on the value of an amount over several years.",
+    solution:
+      "An interactive inflation simulator that uses inflation data from the International Monetary Fund (IMF), including projections for future years, to estimate how purchasing power changes over time. Users can select a country, enter an amount, choose a target year, and adjust individual annual inflation rates to explore different scenarios.",
+    features: [
+      "Select a country to explore its inflation rates",
+      "Enter an amount to simulate its future purchasing power",
+      "Choose a target year for the projection",
+      "Use initial annual inflation rates sourced from IMF data",
+      "Explore the cumulative effect of inflation over multiple years",
+      "Adjust individual annual inflation rates to model different scenarios",
+      "Recalculate purchasing power based on updated inflation assumptions",
+      "Visualise inflation and its impact over time",
+      "Display IMF source metadata where available",
+    ],
+    instructions: [
+      {
+        id: "1",
+        title: "Open the simulator",
+        description:
+          "Visit the Inflation Simulator to explore how inflation could affect the purchasing power of your money.",
+      },
+      {
+        id: "2",
+        title: "Choose a country and amount",
+        description:
+          "Select a country, enter the amount you want to explore, and choose a target year.",
+      },
+      {
+        id: "3",
+        title: "View the projection",
+        description:
+          "See how the selected country's annual inflation rates could affect the purchasing power of your money over time.",
+      },
+      {
+        id: "4",
+        title: "Adjust the inflation rates",
+        description:
+          "Edit individual annual inflation rates to explore how different assumptions affect the results.",
+      },
+      {
+        id: "5",
+        title: "Explore different scenarios",
+        description:
+          "Experiment with different rates and compare how inflation assumptions change the projected purchasing power of your money.",
+      },
+    ],
+    technologies: [
+      "React",
+      "IMF DataMapper API",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Recharts",
+    ],
+    category: "Frontend",
+    featured: true,
+    coverImage:
+      "https://images.unsplash.com/photo-1702099630732-cdf2ba90e730?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+    images: [
+      {
+        id: "1",
+        url: "",
+        alt: "Inflation Simulator showing projected purchasing power based on annual inflation rates",
+        isCover: true,
+      },
+    ],
+    links: [
+      {
+        id: "1",
+        label: "Live Demo",
+        url: "https://inflation-explorer.netlify.app/",
+        type: "demo",
+      },
+    ],
+    challenges:
+      "Getting the IMF data to work reliably in the deployed app was a challenge. The API requests worked locally but returned HTTP 403 errors when the Netlify Function made them in production. Direct browser requests also ran into CORS restrictions, and adding a User-Agent header did not resolve the issue. Since the app did not need the latest data on every request, I changed my approach: I saved an IMF data response as a static JSON file so the app could use a local snapshot instead of depending on live API requests at runtime.",
+    lessons:
+      "I learned more about integrating external data sources, handling API access restrictions and CORS, and thinking about deployment environments when designing an application. I also explored how a static data snapshot can reduce runtime dependencies when real-time updates are unnecessary.",
+    buildNotes:
+      "I wanted to explore how software could make economic data easier to understand and interact with. After connecting the app to the IMF DataMapper API, I worked on making inflation projections adjustable so users could explore how different annual rates affect purchasing power. Working through the deployment issue also reminded me that getting something to work locally is only one part of building a reliable application.",
+    whoIsItFor:
+      "People who want to understand how inflation could affect their money's purchasing power and explore different inflation scenarios for a selected country.",
+    inspiration:
+      "I wanted to make economic data more interactive and easier to understand by turning inflation percentages into a practical simulation of how the purchasing power of money changes over time.",
+    createdAt: "2026-10-28T09:00:00Z",
+    updatedAt: "2026-10-28T10:00:00Z",
+    publishedAt: "2026-10-28T10:00:00Z",
+  },
+
+  {
+    id: "17",
+    dayNumber: 17,
+    title: "Financial Future Simulator",
+    slug: "financial-future-simulator",
+    date: "2026-10-27",
+    shortDescription:
+      "An interactive financial simulator that projects savings over time and lets users explore how changes in income and expenses affect their savings goals.",
+    problem:
+      "Planning towards a savings goal can be difficult when it is unclear how current savings, monthly income, expenses, and interest rates affect the time needed to reach a target. Static calculators provide an estimate but make it harder to explore how different financial scenarios could change the outcome.",
+    solution:
+      "An interactive financial simulator that projects savings over time based on user-defined financial inputs. It estimates how long it could take to reach a savings goal and uses an interactive chart that lets users drag income and expense points to adjust assumptions and immediately see how the projection changes.",
+    features: [
+      "Enter starting savings and a target savings goal",
+      "Set monthly income and expenses",
+      "Specify an annual interest rate",
+      "Project savings balances over time",
+      "Estimate the number of months needed to reach a savings goal",
+      "Visualise income, expenses, and savings on an interactive chart",
+      "Drag income and expense points directly on the graph to adjust financial assumptions",
+      "Recalculate savings projections when assumptions change",
+      "Display a savings goal reference line on the chart",
+      "Handle simulations where the savings goal is not reached within the projected period",
+    ],
+    instructions: [
+      {
+        id: "1",
+        title: "Open the simulator",
+        description:
+          "Visit the Financial Future Simulator to explore how your financial situation could affect your savings goals.",
+      },
+      {
+        id: "2",
+        title: "Enter your financial details",
+        description:
+          "Provide your starting savings, savings goal, monthly income, monthly expenses, and annual interest rate.",
+      },
+      {
+        id: "3",
+        title: "View your financial projection",
+        description:
+          "Explore the chart to see how your income, expenses, and savings balance may change over time, including your projected timeline for reaching your goal.",
+      },
+      {
+        id: "4",
+        title: "Experiment with different scenarios",
+        description:
+          "Drag the income and expense points on the graph to change your assumptions and observe how the savings projection responds.",
+      },
+      {
+        id: "5",
+        title: "Compare possible outcomes",
+        description:
+          "Try different income and expense scenarios to explore how they could affect your savings growth and the time needed to reach your target.",
+      },
+    ],
+    technologies: [
+      "React",
+      "Apache ECharts",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "echarts-for-react",
+    ],
+    category: "Frontend",
+    featured: true,
+    coverImage:
+      "https://images.unsplash.com/photo-1767424412548-1a1ac7f4b9bc?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+    images: [
+      {
+        id: "1",
+        url: "",
+        alt: "Financial Future Simulator showing savings projections and interactive income and expense charts",
+        isCover: true,
+      },
+    ],
+    links: [
+      {
+        id: "1",
+        label: "Live Demo",
+        url: "https://financial-future-simulator.netlify.app/",
+        type: "demo",
+      },
+      {
+        id: "2",
+        label: "GitHub Repository",
+        url: "https://github.com/ToluwanimiO/financial-future-simulator",
+        type: "github",
+      },
+    ],
+    challenges:
+      "Making the chart draggable was the main technical challenge. The Apache ECharts documentation demo used a different structure from mine, so directly applying its approach wasn't enough. I had to understand how the demo mapped draggable elements to chart data, identify what needed to change for my dynamically generated financial projections, and work out how to position the handles and translate drag movements into updated income and expense values. I then connected those changes to the simulation logic so each interaction would recalculate the projections. It involved more than implementing a demo; I had to understand the underlying approach and adapt it to my specific use case.",
+    lessons:
+      "I learnt how to visualise results with Apache ECharts. I also learned how to connect draggable chart graphics to application state so users can manipulate data visually and see the effects of their changes.",
+    buildNotes:
+      "I wanted to explore building something beyond interfaces that primarily display information. I explored a few ideas before settling on a Financial Future Simulator: a tool where code could represent a real-world situation, simulate how it might change, and help people explore different possibilities. I particularly enjoyed figuring out how to make the graph interactive and connect chart interactions to the simulation logic.",
+    whoIsItFor:
+      "People who want to explore how their current savings, income, expenses, and interest assumptions could affect their progress towards a savings goal.",
+    inspiration:
+      "I wanted to explore a different kind of software project: one that models a real-world situation, runs calculations, and lets users experiment with different scenarios instead of simply displaying information.",
+    createdAt: "2026-10-27T09:00:00Z",
+    updatedAt: "2026-10-27T10:00:00Z",
+    publishedAt: "2026-10-27T10:00:00Z",
+  },
 
   {
     id: "16",
@@ -866,7 +931,7 @@ export const sampleProjects: Project[] = [
       "TypeScript",
       "Vite",
       "Tailwind CSS",
-      
+
       "Netlify Functions",
       "Progressive Web Apps",
     ],
@@ -904,102 +969,101 @@ export const sampleProjects: Project[] = [
     updatedAt: "2026-10-21T21:00:00Z",
     publishedAt: "2026-10-21T21:00:00Z",
   },
- {
-  id: "15",
-  dayNumber: 15,
-  title: "Packwell",
-  slug: "packwell-packing-checklist",
-  date: "2026-10-20",
-  shortDescription:
-    "A packing checklist app that helps users organise trip-specific packing lists and reuse items from a default packing list.",
-  problem:
-    "Preparing for a trip often involves creating a packing list from scratch. Many items are needed across multiple trips, so repeatedly adding the same essentials can be tedious and make it easier to forget something important.",
-  solution:
-    "A packing checklist app that lets users create and manage trip-specific lists while maintaining a reusable default packing list. When creating a new trip, users can automatically populate their checklist with items from their default list and customise it for that trip.",
-  features: [
-    "Create trips with individual packing checklists",
-    "View and open created trips",
-    "Delete trips",
-    "Add and manage packing items",
-    "Mark items as packed",
-    "Maintain a reusable default packing list",
-    "Automatically populate new trips with items from the default list",
-    "Customise packing items for individual trips",
-    "Install and use the app as a Progressive Web App",
-  ],
-  instructions: [
-    {
-      id: "1",
-      title: "Open Packwell",
-      description:
-        "Visit Packwell to create a trip or manage your reusable default packing list.",
-    },
-    {
-      id: "2",
-      title: "Create your default packing list",
-      description:
-        "Add items you commonly take on trips so you can reuse them when preparing for future journeys.",
-    },
-    {
-      id: "3",
-      title: "Create a trip",
-      description:
-        "Give your trip a name. If your default packing list contains items, they will be added to the new trip's checklist.",
-    },
-    {
-      id: "4",
-      title: "Customise your checklist",
-      description:
-        "Add any trip-specific items you need and adjust the checklist to suit your plans.",
-    },
-    {
-      id: "5",
-      title: "Track your packing",
-      description:
-        "Mark items as packed as you prepare for your trip, and use the checklist to keep track of what remains.",
-    },
-  ],
-  technologies: [
-    "React",
-    "TypeScript",
-    "Vite",
-    "Tailwind CSS",
-    "Progressive Web Apps",
-  ],
-  category: "Frontend",
-  featured: true,
-  coverImage:
-    "https://images.unsplash.com/photo-1557183200-f0fec6612738?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
-  images: [
-    {
-      id: "1",
-      url: "https://images.unsplash.com/photo-1553531384-411a247ccd73?w=1200&h=800&fit=crop",
-      alt: "Travel bag and packing essentials representing the Packwell packing checklist app",
-      isCover: true,
-    },
-  ],
-  links: [
-    {
-      id: "1",
-      label: "Live Demo",
-      url: "https://pack-check-list.netlify.app/",
-      type: "demo",
-    },
-  ],
-  challenges:
-    "The technical implementation wasn't particularly difficult, but finding the energy to keep building after a long, exhausting day was the real challenge.",
-  lessons:
-    "I strengthened my understanding of React state management",
-  buildNotes:
-    "I wanted to reduce the effort involved in preparing for multiple trips by letting users reuse their commonly packed items instead of recreating the same checklist every time.",
-  whoIsItFor:
-    "Travellers who want to organise their packing, reuse common items across trips, and keep track of what they have packed.",
-  inspiration:
-    "The idea came from the repetitive process of preparing packing lists for different trips and the opportunity to make that process easier with reusable checklists.",
-  createdAt: "2026-10-20T09:00:00Z",
-  updatedAt: "2026-10-20T21:00:00Z",
-  publishedAt: "2026-10-20T21:00:00Z",
-},
+  {
+    id: "15",
+    dayNumber: 15,
+    title: "Packwell",
+    slug: "packwell-packing-checklist",
+    date: "2026-10-20",
+    shortDescription:
+      "A packing checklist app that helps users organise trip-specific packing lists and reuse items from a default packing list.",
+    problem:
+      "Preparing for a trip often involves creating a packing list from scratch. Many items are needed across multiple trips, so repeatedly adding the same essentials can be tedious and make it easier to forget something important.",
+    solution:
+      "A packing checklist app that lets users create and manage trip-specific lists while maintaining a reusable default packing list. When creating a new trip, users can automatically populate their checklist with items from their default list and customise it for that trip.",
+    features: [
+      "Create trips with individual packing checklists",
+      "View and open created trips",
+      "Delete trips",
+      "Add and manage packing items",
+      "Mark items as packed",
+      "Maintain a reusable default packing list",
+      "Automatically populate new trips with items from the default list",
+      "Customise packing items for individual trips",
+      "Install and use the app as a Progressive Web App",
+    ],
+    instructions: [
+      {
+        id: "1",
+        title: "Open Packwell",
+        description:
+          "Visit Packwell to create a trip or manage your reusable default packing list.",
+      },
+      {
+        id: "2",
+        title: "Create your default packing list",
+        description:
+          "Add items you commonly take on trips so you can reuse them when preparing for future journeys.",
+      },
+      {
+        id: "3",
+        title: "Create a trip",
+        description:
+          "Give your trip a name. If your default packing list contains items, they will be added to the new trip's checklist.",
+      },
+      {
+        id: "4",
+        title: "Customise your checklist",
+        description:
+          "Add any trip-specific items you need and adjust the checklist to suit your plans.",
+      },
+      {
+        id: "5",
+        title: "Track your packing",
+        description:
+          "Mark items as packed as you prepare for your trip, and use the checklist to keep track of what remains.",
+      },
+    ],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Progressive Web Apps",
+    ],
+    category: "Frontend",
+    featured: true,
+    coverImage:
+      "https://images.unsplash.com/photo-1557183200-f0fec6612738?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+    images: [
+      {
+        id: "1",
+        url: "https://images.unsplash.com/photo-1553531384-411a247ccd73?w=1200&h=800&fit=crop",
+        alt: "Travel bag and packing essentials representing the Packwell packing checklist app",
+        isCover: true,
+      },
+    ],
+    links: [
+      {
+        id: "1",
+        label: "Live Demo",
+        url: "https://pack-check-list.netlify.app/",
+        type: "demo",
+      },
+    ],
+    challenges:
+      "The technical implementation wasn't particularly difficult, but finding the energy to keep building after a long, exhausting day was the real challenge.",
+    lessons: "I strengthened my understanding of React state management",
+    buildNotes:
+      "I wanted to reduce the effort involved in preparing for multiple trips by letting users reuse their commonly packed items instead of recreating the same checklist every time.",
+    whoIsItFor:
+      "Travellers who want to organise their packing, reuse common items across trips, and keep track of what they have packed.",
+    inspiration:
+      "The idea came from the repetitive process of preparing packing lists for different trips and the opportunity to make that process easier with reusable checklists.",
+    createdAt: "2026-10-20T09:00:00Z",
+    updatedAt: "2026-10-20T21:00:00Z",
+    publishedAt: "2026-10-20T21:00:00Z",
+  },
   {
     id: "14",
     dayNumber: 14,
@@ -1681,7 +1745,7 @@ export const sampleProjects: Project[] = [
           "Search across your data, use filters to narrow the results, and click any card to view its full details.",
       },
     ],
-    technologies: ["Next JS", "SheetJS","TypeScript" ],
+    technologies: ["Next JS", "SheetJS", "TypeScript"],
     category: "Frontend",
     featured: true,
     coverImage:
@@ -1967,7 +2031,7 @@ export const sampleProjects: Project[] = [
         description: "Select the app to send the content into the workflow.",
       },
     ],
-    technologies: ["React Native", "Android share intents", "TypeScript " ],
+    technologies: ["React Native", "Android share intents", "TypeScript "],
     category: "Mobile",
     featured: false,
     coverImage:
